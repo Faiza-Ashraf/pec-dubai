@@ -59,7 +59,10 @@ textarea {
 .font-mono {
   font-family: var(--font-mono), monospace;
 }
-
+html,
+body {
+  overscroll-behavior: none;
+}
 @keyframes scrollLine {
   0% {
     opacity: 0.2;
