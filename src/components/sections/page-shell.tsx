@@ -16,7 +16,7 @@ export function PageShell({
 }: PageShellProps) {
   return (
     <main className="flex-1">
-      <section className="border-b border-white/8 py-20 sm:py-24">
+      <section className="border-b border-[var(--color-gold-border)] bg-[var(--color-obsidian)] py-20 sm:py-24">
         <Container>
           <p className="font-mono text-[11px] uppercase tracking-[0.26em] text-[var(--color-gold-light)]">
             {eyebrow}

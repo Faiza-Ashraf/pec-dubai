@@ -8,8 +8,8 @@ export function AboutSection() {
       <Container>
         <div className="grid gap-[72px] lg:grid-cols-2 lg:items-center">
           <div className="relative">
-            <div className="relative aspect-[3/4] overflow-hidden bg-[#1e2328]">
-              <div className="absolute inset-0 bg-[linear-gradient(135deg,#1e2328,#171b20)]" />
+            <div className="relative aspect-[3/4] overflow-hidden bg-[var(--color-surface-muted)] shadow-[0_24px_70px_rgba(23,32,39,0.12)]">
+              <div className="absolute inset-0 bg-[linear-gradient(135deg,#f8f6f0,#e7e1d5)]" />
               <div className="absolute inset-0 grid place-items-center">
                 <svg viewBox="0 0 360 480" className="h-[85%] w-[85%] opacity-55">
                   <rect x="30" y="60" width="300" height="380" fill="none" stroke="rgba(184,151,106,0.2)" strokeWidth="1" />
@@ -27,7 +27,7 @@ export function AboutSection() {
                   </text>
                 </svg>
               </div>
-              <div className="absolute bottom-[-16px] right-[-16px] min-w-[100px] bg-[var(--color-gold)] px-4 py-5 text-center text-[var(--color-obsidian)]">
+              <div className="absolute bottom-[-16px] right-[-16px] min-w-[100px] bg-[var(--color-gold)] px-4 py-5 text-center text-white">
                 <div className="font-display text-[2rem] leading-none">20+</div>
                 <div className="mt-1 text-[0.55rem] font-semibold uppercase tracking-[0.12em]">
                   Years of
@@ -36,7 +36,7 @@ export function AboutSection() {
                 </div>
               </div>
             </div>
-            <div className="pointer-events-none absolute bottom-[-20px] left-[20px] right-[-20px] top-[20px] -z-10 border border-[#8a6e4a] max-[860px]:hidden" />
+            <div className="pointer-events-none absolute bottom-[-20px] left-[20px] right-[-20px] top-[20px] -z-10 border border-[rgba(159,123,78,0.36)] max-[860px]:hidden" />
           </div>
 
           <div>
@@ -48,12 +48,12 @@ export function AboutSection() {
               <br />
               <span className="text-[var(--color-gold-light)] italic">Driven by Vision</span>
             </h2>
-            <p className="mt-6 text-[0.92rem] leading-[1.8] text-[#c4c8ce]">
+            <p className="mt-6 text-[0.92rem] leading-[1.8] text-[var(--color-ink-soft)]">
               PEC Dubai is a multidisciplinary engineering and architecture consultancy
               delivering integrated design, structural engineering, MEP systems, and
               project supervision services across the UAE and GCC.
             </p>
-            <p className="mt-6 text-[0.92rem] leading-[1.8] text-[#c4c8ce]">
+            <p className="mt-6 text-[0.92rem] leading-[1.8] text-[var(--color-ink-soft)]">
               Founded on the principle that exceptional buildings are born from the
               union of creative vision and engineering precision, we serve private
               developers, government authorities, luxury real-estate developers, and
@@ -63,7 +63,7 @@ export function AboutSection() {
               {aboutBadges.map((badge) => (
                 <div
                   key={badge}
-                  className="border border-[var(--color-gold-border)] p-[18px] transition hover:border-[#8a6e4a] hover:bg-[rgba(184,151,106,0.03)]"
+                  className="border border-[var(--color-gold-border)] bg-white/45 p-[18px] transition hover:border-[rgba(159,123,78,0.4)] hover:bg-[var(--color-surface)]"
                 >
                   <div className="mb-[10px] h-[2px] w-7 bg-[var(--color-gold)]" />
                   <div className="mb-1 text-[0.6rem] uppercase tracking-[0.18em] text-[var(--color-gold)]">

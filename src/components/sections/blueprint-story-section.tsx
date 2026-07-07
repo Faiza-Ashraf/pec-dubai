@@ -62,7 +62,7 @@ export function BlueprintStorySection() {
           step,
           {
             opacity: 1,
-            backgroundColor: "rgba(184,151,106,0.04)",
+            backgroundColor: "rgba(255,253,248,0.82)",
             duration: 0.12,
           },
           0.68 + index * 0.06,
@@ -74,7 +74,7 @@ export function BlueprintStorySection() {
   }, []);
 
   return (
-    <section id="blueprint" className="bg-[#0f1215] py-[clamp(70px,10vw,140px)]">
+    <section id="blueprint" className="bg-[#eee9df] py-[clamp(70px,10vw,140px)]">
       <Container>
         <div ref={rootRef}>
           <div className="mx-auto max-w-[760px] text-center">
@@ -106,7 +106,7 @@ export function BlueprintStorySection() {
                   <path
                     d="M 40 0 L 0 0 0 40"
                     fill="none"
-                    stroke="rgba(184,151,106,0.06)"
+                    stroke="rgba(23,32,39,0.07)"
                     strokeWidth="0.5"
                   />
                 </pattern>
@@ -118,7 +118,7 @@ export function BlueprintStorySection() {
                 y1="0"
                 x2="400"
                 y2="480"
-                stroke="rgba(184,151,106,0.04)"
+                stroke="rgba(23,32,39,0.055)"
                 strokeWidth="1"
               />
               <line
@@ -126,7 +126,7 @@ export function BlueprintStorySection() {
                 y1="240"
                 x2="800"
                 y2="240"
-                stroke="rgba(184,151,106,0.04)"
+                stroke="rgba(23,32,39,0.055)"
                 strokeWidth="1"
               />
 
@@ -136,7 +136,7 @@ export function BlueprintStorySection() {
                 y="110"
                 width="480"
                 height="260"
-                stroke="rgba(216,243,255,0.9)"
+                stroke="rgba(23,32,39,0.78)"
                 strokeWidth="2"
               />
               <line
@@ -145,7 +145,7 @@ export function BlueprintStorySection() {
                 y1="110"
                 x2="320"
                 y2="370"
-                stroke="rgba(216,243,255,0.9)"
+                stroke="rgba(23,32,39,0.78)"
                 strokeWidth="2"
               />
               <line
@@ -154,7 +154,7 @@ export function BlueprintStorySection() {
                 y1="110"
                 x2="480"
                 y2="370"
-                stroke="rgba(216,243,255,0.9)"
+                stroke="rgba(23,32,39,0.78)"
                 strokeWidth="2"
               />
               <line
@@ -163,7 +163,7 @@ export function BlueprintStorySection() {
                 y1="240"
                 x2="640"
                 y2="240"
-                stroke="rgba(216,243,255,0.9)"
+                stroke="rgba(23,32,39,0.78)"
                 strokeWidth="2"
               />
               <line
@@ -291,7 +291,7 @@ export function BlueprintStorySection() {
                 ref={(element) => {
                   stepRefs.current[index] = element;
                 }}
-                className="bg-[#0f1215] px-[18px] py-7 text-center opacity-25"
+                className="bg-[#eee9df] px-[18px] py-7 text-center opacity-25"
               >
                 <div className="font-mono text-[0.6rem] text-[var(--color-gold)]">{stage.id}</div>
                 <div className="mt-[10px] font-display text-[0.95rem] font-normal leading-[1.25] text-[var(--color-white)]">

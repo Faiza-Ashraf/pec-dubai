@@ -4,7 +4,7 @@ import { Container } from "./container";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-[var(--color-gold-border)] bg-[var(--color-obsidian)] py-14">
+    <footer className="border-t border-[var(--color-gold-border)] bg-[var(--color-surface)] py-14">
       <Container className="grid gap-10 lg:grid-cols-[2fr_1fr_1fr_1fr]">
         <div>
           <p className="font-display text-[1.35rem] tracking-[0.15em] text-[var(--color-white)]">
@@ -21,22 +21,22 @@ export function SiteFooter() {
             Services
           </p>
           <div className="mt-4 flex flex-col gap-2.5">
-            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-white">
+            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
               Architectural Design
             </Link>
-            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-white">
+            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
               Structural Engineering
             </Link>
-            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-white">
+            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
               MEP Engineering
             </Link>
-            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-white">
+            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
               Project Management
             </Link>
-            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-white">
+            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
               Green Building
             </Link>
-            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-white">
+            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
               Interior & Fit-Out
             </Link>
           </div>
@@ -51,12 +51,12 @@ export function SiteFooter() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-white"
+                className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]"
               >
                 {link.label === "About" ? "About PEC" : link.label}
               </Link>
             ))}
-            <Link href="#testimonials" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-white">
+            <Link href="#testimonials" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
               Client Stories
             </Link>
           </div>
@@ -67,19 +67,19 @@ export function SiteFooter() {
             Get In Touch
           </p>
           <div className="mt-4 flex flex-col gap-2.5">
-            <a href={`tel:${siteMeta.phone}`} className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-white">
+            <a href={`tel:${siteMeta.phone}`} className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
               {siteMeta.phone}
             </a>
-            <a href={`mailto:${siteMeta.email}`} className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-white">
+            <a href={`mailto:${siteMeta.email}`} className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
               {siteMeta.email}
             </a>
-            <a href={siteMeta.whatsapp} target="_blank" rel="noreferrer" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-white">
+            <a href={siteMeta.whatsapp} target="_blank" rel="noreferrer" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
               WhatsApp
             </a>
-            <a href="#" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-white">
+            <a href="#" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
               LinkedIn
             </a>
-            <a href="#" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-white">
+            <a href="#" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
               Instagram
             </a>
           </div>

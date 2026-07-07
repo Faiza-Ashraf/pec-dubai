@@ -9,7 +9,7 @@ export function HeroSection() {
       className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden"
     >
       <HeroBlueprintCanvas />
-      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(8,10,12,0.32)_0%,rgba(8,10,12,0.12)_40%,rgba(8,10,12,0.68)_80%,rgba(8,10,12,1)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,253,248,0.58)_0%,rgba(255,253,248,0.24)_42%,rgba(247,245,239,0.7)_78%,rgba(247,245,239,1)_100%)]" />
       <div className="relative z-10 mx-auto flex w-full max-w-[900px] flex-col items-center px-5 pt-28 text-center sm:px-8 lg:px-10">
         <p className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-gold)]">
           Dubai&apos;s Premier Engineering Consultancy
@@ -20,7 +20,7 @@ export function HeroSection() {
           to{" "}
           <span className="text-[var(--color-gold-light)] italic">Masterpiece.</span>
         </h1>
-        <p className="mt-5 max-w-[560px] text-[clamp(0.92rem,2vw,1.05rem)] font-light leading-[1.65] text-[#c4c8ce]">
+        <p className="mt-5 max-w-[560px] text-[clamp(0.92rem,2vw,1.05rem)] font-light leading-[1.65] text-[var(--color-ink-soft)]">
           We transform architectural visions into engineered realities —
           delivering structural, MEP, and architectural excellence across the UAE
           since 2002.
@@ -35,7 +35,7 @@ export function HeroSection() {
           </Button>
         </div>
 
-        <div className="mt-8 inline-flex rounded-full bg-[rgba(184,151,106,0.12)] px-5 py-3 text-sm text-[var(--color-gold-light)] shadow-[0_10px_30px_rgba(184,151,106,0.12)] backdrop-blur-md">
+        <div className="mt-8 inline-flex rounded-full border border-[rgba(159,123,78,0.18)] bg-white/70 px-5 py-3 text-sm text-[var(--color-gold)] shadow-[0_10px_30px_rgba(54,63,69,0.08)] backdrop-blur-md">
           <span>Free consultation and response within 24 hours</span>
         </div>
 
@@ -47,14 +47,14 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 z-10 hidden border-t border-[var(--color-gold-border)] bg-[rgba(8,10,12,0.75)] backdrop-blur-[14px] sm:flex">
+      <div className="absolute inset-x-0 bottom-0 z-10 hidden border-t border-[var(--color-gold-border)] bg-[rgba(255,253,248,0.78)] shadow-[0_-18px_45px_rgba(23,32,39,0.06)] backdrop-blur-[14px] sm:flex">
         {heroStats.map((stat, index) => (
           <div
             key={stat.label}
             className="flex-1 px-6 py-5 text-center"
             style={{
               borderRight:
-                index === heroStats.length - 1 ? "none" : "1px solid rgba(184,151,106,0.18)",
+                index === heroStats.length - 1 ? "none" : "1px solid rgba(54,63,69,0.14)",
             }}
           >
             <div className="font-display text-[clamp(1.6rem,3.5vw,2.6rem)] font-light leading-none text-[var(--color-gold)]">

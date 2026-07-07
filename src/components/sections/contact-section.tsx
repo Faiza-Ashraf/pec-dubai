@@ -5,8 +5,8 @@ import { InquiryForm } from "./inquiry-form";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="relative bg-[#0f1215] py-[clamp(70px,10vw,140px)]">
-      <div className="absolute left-1/2 top-0 h-[60px] w-px -translate-x-1/2 bg-[linear-gradient(to_bottom,transparent,#8a6e4a)]" />
+    <section id="contact" className="relative bg-[#eee9df] py-[clamp(70px,10vw,140px)]">
+      <div className="absolute left-1/2 top-0 h-[60px] w-px -translate-x-1/2 bg-[linear-gradient(to_bottom,transparent,var(--color-gold))]" />
       <Container>
         <div className="mx-auto mb-[72px] max-w-[680px] text-center">
           <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-gold)]">
@@ -24,7 +24,7 @@ export function ContactSection() {
         </div>
 
         <div className="mx-auto grid max-w-[1060px] gap-[52px] lg:grid-cols-[1.2fr_1fr] lg:items-start">
-          <div className="border border-[var(--color-gold-border)] bg-[#171b20] p-[28px_20px] sm:p-11">
+          <div className="border border-[var(--color-gold-border)] bg-[var(--color-surface)] p-[28px_20px] shadow-[0_24px_70px_rgba(23,32,39,0.08)] sm:p-11">
             <InquiryForm />
           </div>
 
@@ -84,7 +84,7 @@ export function ContactSection() {
               </div>
               <div className="mt-3 flex flex-col gap-[9px]">
                 {trustBullets.map((item) => (
-                  <div key={item} className="flex items-start gap-[10px] text-[0.78rem] text-[#c4c8ce]">
+                  <div key={item} className="flex items-start gap-[10px] text-[0.78rem] text-[var(--color-ink-soft)]">
                     <ShieldCheck className="mt-0.5 size-4 shrink-0 text-[var(--color-gold)]" />
                     <span>{item}</span>
                   </div>

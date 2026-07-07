@@ -83,7 +83,7 @@ export function ProcessSection() {
         timeline.to(
           title,
           {
-            color: "#f2f0ec",
+            color: "#172027",
             duration: 0.12,
           },
           startAt,
@@ -105,7 +105,7 @@ export function ProcessSection() {
   }, []);
 
   return (
-    <section id="process" className="bg-[#0f1215] py-[clamp(70px,10vw,140px)]">
+    <section id="process" className="bg-[#eee9df] py-[clamp(70px,10vw,140px)]">
       <Container>
         <div ref={rootRef}>
           <div className="text-center">
@@ -141,7 +141,7 @@ export function ProcessSection() {
                     ref={(element) => {
                       dotRefs.current[index] = element;
                     }}
-                    className="absolute left-0 top-6 size-4 rounded-full border-2 border-[#1e2328] bg-[#0f1215] lg:left-1/2 lg:top-3 lg:-translate-x-1/2"
+                    className="absolute left-0 top-6 size-4 rounded-full border-2 border-[#d7d0c4] bg-[#eee9df] lg:left-1/2 lg:top-3 lg:-translate-x-1/2"
                   />
                   <p
                     ref={(element) => {
@@ -155,7 +155,7 @@ export function ProcessSection() {
                     ref={(element) => {
                       titleRefs.current[index] = element;
                     }}
-                    className="pl-14 font-display text-[0.95rem] font-normal leading-[1.2] text-[#c4c8ce] lg:pl-0"
+                    className="pl-14 font-display text-[0.95rem] font-normal leading-[1.2] text-[var(--color-ink-soft)] lg:pl-0"
                   >
                     {step.title}
                   </h3>

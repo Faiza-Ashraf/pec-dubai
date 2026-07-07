@@ -21,7 +21,7 @@ export function WhyPecSection() {
                   key={item.title}
                   className="grid grid-cols-[44px_1fr] gap-[18px] border-b border-[var(--color-gold-border)] py-6 transition hover:pl-1.5"
                 >
-                  <span className="pt-[3px] font-mono text-[0.6rem] text-[#8a6e4a]">
+                  <span className="pt-[3px] font-mono text-[0.6rem] text-[var(--color-gold)]">
                     0{index + 1}
                   </span>
                   <div>
@@ -41,12 +41,12 @@ export function WhyPecSection() {
             {credentials.map((credential) => (
               <div
                 key={credential.id}
-                className="border border-[var(--color-gold-border)] p-[22px_16px] text-center transition hover:border-[#8a6e4a]"
+                className="border border-[var(--color-gold-border)] bg-white/45 p-[22px_16px] text-center transition hover:border-[rgba(159,123,78,0.4)] hover:bg-[var(--color-surface)]"
               >
                 <p className="font-mono text-[0.6rem] tracking-[0.15em] text-[var(--color-gold)]">
                   {credential.id}
                 </p>
-                <p className="mt-2 text-[0.78rem] leading-[1.35] text-[#c4c8ce]">
+                <p className="mt-2 text-[0.78rem] leading-[1.35] text-[var(--color-ink-soft)]">
                   {credential.name}
                 </p>
                 <p className="mt-1 text-[0.62rem] text-[var(--color-fog)]">{credential.status}</p>

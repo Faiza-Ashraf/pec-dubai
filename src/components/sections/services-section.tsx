@@ -44,8 +44,8 @@ const icons = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="relative overflow-hidden bg-[#171b20] py-[clamp(70px,10vw,140px)]">
-      <div className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 font-display text-[clamp(70px,14vw,160px)] font-light tracking-[0.1em] text-[rgba(184,151,106,0.025)] lg:block">
+    <section id="services" className="relative overflow-hidden bg-[var(--color-surface)] py-[clamp(70px,10vw,140px)]">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 font-display text-[clamp(70px,14vw,160px)] font-light tracking-[0.1em] text-[rgba(23,32,39,0.035)] lg:block">
         SERVICES
       </div>
       <Container>
@@ -70,11 +70,11 @@ export function ServicesSection() {
             return (
               <article
                 key={service.title}
-                className="group relative overflow-hidden bg-[#171b20] px-9 py-11 transition duration-500 hover:bg-[rgba(184,151,106,0.02)]"
+                className="group relative overflow-hidden bg-[var(--color-surface)] px-9 py-11 transition duration-500 hover:bg-[#f8f5ee]"
               >
                 <div className="absolute inset-x-0 top-0 h-0 bg-[linear-gradient(to_bottom,rgba(184,151,106,0.06),transparent)] transition-all duration-500 ease-out group-hover:h-full" />
                 <div className="relative">
-                  <span className="font-mono text-[0.6rem] tracking-[0.2em] text-[#8a6e4a]">
+                  <span className="font-mono text-[0.6rem] tracking-[0.2em] text-[var(--color-gold)]">
                     0{index + 1}
                   </span>
                   <div className="mt-7 h-12 w-12 text-[var(--color-gold)] [&_svg]:h-full [&_svg]:w-full">
@@ -90,7 +90,7 @@ export function ServicesSection() {
                     {service.tags?.map((tag) => (
                       <span
                         key={tag}
-                        className="border border-[var(--color-gold-border)] px-[11px] py-[5px] text-[0.58rem] uppercase tracking-[0.12em] text-[var(--color-fog)] transition group-hover:border-[#8a6e4a] group-hover:text-[var(--color-gold-light)]"
+                        className="border border-[var(--color-gold-border)] bg-white/45 px-[11px] py-[5px] text-[0.58rem] uppercase tracking-[0.12em] text-[var(--color-fog)] transition group-hover:border-[rgba(159,123,78,0.4)] group-hover:text-[var(--color-gold)]"
                       >
                         {tag}
                       </span>

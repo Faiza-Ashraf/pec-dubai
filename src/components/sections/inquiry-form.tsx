@@ -18,7 +18,7 @@ const inquirySchema = z.object({
 type InquiryValues = z.infer<typeof inquirySchema>;
 
 const fieldClassName =
-  "w-full border border-[var(--color-gold-border)] bg-[var(--color-obsidian)] px-[14px] py-[13px] text-[0.84rem] font-light text-[var(--color-white)] outline-none transition placeholder:text-white/35 focus:border-[#8a6e4a]";
+  "w-full border border-[var(--color-gold-border)] bg-white px-[14px] py-[13px] text-[0.84rem] font-light text-[var(--color-white)] outline-none transition placeholder:text-[rgba(23,32,39,0.35)] focus:border-[var(--color-gold)] focus:bg-[var(--color-surface)]";
 
 const labelClassName =
   "mb-[7px] block text-[0.58rem] uppercase tracking-[0.2em] text-[var(--color-fog)]";
@@ -55,19 +55,19 @@ export function InquiryForm() {
         <div>
           <label className={labelClassName}>Full Name</label>
           <input className={fieldClassName} placeholder="Full name" autoComplete="name" {...register("name")} />
-          <p className="mt-2 text-xs text-rose-300">{errors.name?.message}</p>
+          <p className="mt-2 text-xs text-rose-600">{errors.name?.message}</p>
         </div>
         <div>
           <label className={labelClassName}>Phone / WhatsApp</label>
           <input className={fieldClassName} placeholder="Phone" autoComplete="tel" inputMode="tel" {...register("phone")} />
-          <p className="mt-2 text-xs text-rose-300">{errors.phone?.message}</p>
+          <p className="mt-2 text-xs text-rose-600">{errors.phone?.message}</p>
         </div>
       </div>
 
       <div>
         <label className={labelClassName}>Email Address</label>
         <input className={fieldClassName} placeholder="your@email.com" autoComplete="email" inputMode="email" {...register("email")} />
-        <p className="mt-2 text-xs text-rose-300">{errors.email?.message}</p>
+        <p className="mt-2 text-xs text-rose-600">{errors.email?.message}</p>
       </div>
 
       <div>
@@ -83,7 +83,7 @@ export function InquiryForm() {
             <option>Interior Design & Fit-Out</option>
             <option>Full-Service Consultancy</option>
           </select>
-          <p className="mt-2 text-xs text-rose-300">{errors.service?.message}</p>
+          <p className="mt-2 text-xs text-rose-600">{errors.service?.message}</p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
@@ -99,7 +99,7 @@ export function InquiryForm() {
             <option>Hospitality</option>
             <option>Renovation / Upgrade</option>
           </select>
-          <p className="mt-2 text-xs text-rose-300">{errors.projectType?.message}</p>
+          <p className="mt-2 text-xs text-rose-600">{errors.projectType?.message}</p>
         </div>
         <div>
           <label className={labelClassName}>Budget Range</label>
@@ -110,7 +110,7 @@ export function InquiryForm() {
             <option>AED 10M – 50M</option>
             <option>AED 50M+</option>
           </select>
-          <p className="mt-2 text-xs text-rose-300">{errors.budget?.message}</p>
+          <p className="mt-2 text-xs text-rose-600">{errors.budget?.message}</p>
         </div>
       </div>
 
@@ -121,13 +121,13 @@ export function InquiryForm() {
           placeholder="Tell us about your project vision, location, timeline..."
           {...register("brief")}
         />
-        <p className="mt-2 text-xs text-rose-300">{errors.brief?.message}</p>
+        <p className="mt-2 text-xs text-rose-600">{errors.brief?.message}</p>
       </div>
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-1 w-full bg-[var(--color-gold)] px-4 py-4 text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-[var(--color-obsidian)] transition hover:-translate-y-0.5 hover:bg-[var(--color-gold-light)]"
+        className="mt-1 w-full bg-[var(--color-gold)] px-4 py-4 text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-white transition hover:-translate-y-0.5 hover:bg-[var(--color-white)]"
       >
         {isSubmitting ? "Sending..." : "Send Inquiry — It’s Free"}
       </button>

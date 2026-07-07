@@ -3,7 +3,7 @@ import { testimonials, trustStats } from "@/data/home";
 
 export function TestimonialsSection() {
   return (
-    <section id="testimonials" className="bg-[#171b20] py-[clamp(70px,10vw,140px)]">
+    <section id="testimonials" className="bg-[var(--color-surface)] py-[clamp(70px,10vw,140px)]">
       <Container>
         <div className="text-center">
           <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-gold)]">
@@ -18,19 +18,19 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial) => (
             <article
               key={testimonial.author}
-              className="relative border border-[var(--color-gold-border)] bg-[#0f1215] px-[30px] py-9 transition duration-300 hover:-translate-y-1 hover:border-[#8a6e4a]"
+              className="relative border border-[var(--color-gold-border)] bg-[var(--color-obsidian)] px-[30px] py-9 shadow-[0_18px_45px_rgba(23,32,39,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[rgba(159,123,78,0.4)]"
             >
-              <div className="mb-[18px] font-display text-[3rem] italic leading-[0.7] text-[#8a6e4a]">
+              <div className="mb-[18px] font-display text-[3rem] italic leading-[0.7] text-[var(--color-gold)]">
                 &ldquo;
               </div>
               <div className="absolute right-7 top-7 text-[0.6rem] tracking-[3px] text-[var(--color-gold)]">
                 ★★★★★
               </div>
-              <p className="font-display text-[0.97rem] italic leading-[1.75] text-[#c4c8ce]">
+              <p className="font-display text-[0.97rem] italic leading-[1.75] text-[var(--color-ink-soft)]">
                 {testimonial.quote}
               </p>
               <div className="mt-6 flex items-center gap-[14px]">
-                <div className="grid size-10 place-items-center rounded-full border border-[#8a6e4a] bg-[#1e2328] font-display text-[0.95rem] text-[var(--color-gold)]">
+                <div className="grid size-10 place-items-center rounded-full border border-[rgba(159,123,78,0.36)] bg-[var(--color-surface)] font-display text-[0.95rem] text-[var(--color-gold)]">
                   {testimonial.initials}
                 </div>
                 <div>

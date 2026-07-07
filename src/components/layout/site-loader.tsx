@@ -73,9 +73,9 @@ export function SiteLoader() {
       >
         Engineering Excellence. Architectural Vision.
       </div>
-      <div className="relative h-px w-full max-w-[280px] overflow-hidden bg-[#1e2328]">
+      <div className="relative h-px w-full max-w-[280px] overflow-hidden bg-[rgba(23,32,39,0.16)]">
         <div
-          className="absolute inset-y-0 left-0 bg-[linear-gradient(90deg,#8a6e4a,var(--color-gold),var(--color-gold-light))]"
+          className="absolute inset-y-0 left-0 bg-[linear-gradient(90deg,#7c5f3b,var(--color-gold),var(--color-gold-light))]"
           style={{
             width: `${progress}%`,
             transition: "width .08s linear",

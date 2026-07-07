@@ -11,11 +11,11 @@ type ButtonProps = {
 
 const variants = {
   primary:
-    "border border-[var(--color-gold)] bg-[var(--color-gold)] text-[var(--color-obsidian)] shadow-[0_18px_50px_rgba(184,151,106,0.18)] hover:bg-[var(--color-gold-light)] hover:border-[var(--color-gold-light)]",
+    "border border-[var(--color-gold)] bg-[var(--color-gold)] text-white shadow-[0_18px_45px_rgba(54,63,69,0.14)] hover:bg-[var(--color-white)] hover:border-[var(--color-white)]",
   secondary:
-    "border border-white/14 bg-transparent text-white hover:border-[var(--color-gold-border)] hover:bg-white/[0.04]",
+    "border border-[rgba(23,32,39,0.22)] bg-white/55 text-[var(--color-white)] hover:border-[var(--color-gold)] hover:bg-[var(--color-surface)]",
   ghost:
-    "text-[var(--color-gold-light)] hover:bg-white/5",
+    "text-[var(--color-gold)] hover:bg-[rgba(159,123,78,0.08)]",
 };
 
 const baseClassName =

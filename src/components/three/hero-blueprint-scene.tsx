@@ -92,24 +92,24 @@ export function HeroBlueprintScene({
 
   return (
     <group>
-      <color attach="background" args={["#070a0d"]} />
-      <fog attach="fog" args={["#070a0d", 6, 12]} />
+      <color attach="background" args={["#f7f5ef"]} />
+      <fog attach="fog" args={["#f7f5ef", 6, 12]} />
       <ambientLight intensity={1} />
-      <pointLight position={[2.8, 4, 2]} color="#d4b896" intensity={18} distance={14} />
-      <pointLight position={[-4, 2, 4]} color="#5d8fd8" intensity={12} distance={12} />
+      <pointLight position={[2.8, 4, 2]} color="#f4d7a4" intensity={15} distance={14} />
+      <pointLight position={[-4, 2, 4]} color="#8fb4cc" intensity={10} distance={12} />
 
       <mesh rotation-x={-Math.PI / 2} position={[0, -0.08, 0]}>
         <planeGeometry args={[18, 18]} />
-        <meshStandardMaterial color="#080a0c" />
+        <meshStandardMaterial color="#eee9df" />
       </mesh>
 
-      <gridHelper args={[12, 24, "#4b6f9a", "#19212a"]} position={[0, -0.07, 0]} />
+      <gridHelper args={[12, 24, "#8aa2ae", "#d5d0c5"]} position={[0, -0.07, 0]} />
 
       <Points positions={points} stride={3}>
         <PointMaterial
           transparent
-          color="#cce9ff"
-          opacity={reducedMotion ? 0.08 : 0.18}
+          color="#4f7183"
+          opacity={reducedMotion ? 0.08 : 0.16}
           size={0.026}
           sizeAttenuation
           depthWrite={false}
@@ -120,7 +120,7 @@ export function HeroBlueprintScene({
         <Line
           key={index}
           points={line}
-          color={index === 0 ? "#dff2ff" : "#7fc7ff"}
+          color={index === 0 ? "#172027" : "#52778d"}
           lineWidth={index === 0 ? 1.3 : 0.95}
           transparent
           opacity={0.88}
@@ -130,7 +130,7 @@ export function HeroBlueprintScene({
       <group ref={groupRef}>
         <mesh position={[0, 0.02, 0]}>
           <boxGeometry args={[4.95, 0.04, 3.65]} />
-          <meshStandardMaterial color="#0b1c28" metalness={0.08} roughness={0.92} />
+          <meshStandardMaterial color="#ded7ca" metalness={0.08} roughness={0.92} />
         </mesh>
 
         {walls.map((wall, index) => (

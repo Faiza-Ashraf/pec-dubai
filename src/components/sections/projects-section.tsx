@@ -33,10 +33,10 @@ export function ProjectsSection() {
               <div className="mt-[7px] font-display text-[clamp(1.3rem,2.5vw,1.9rem)] font-light leading-[1.2] text-[var(--color-white)]">
                 {featured.title}
               </div>
-              <div className="mt-[6px] flex items-center gap-2 text-[0.72rem] text-[var(--color-fog)] before:h-px before:w-[14px] before:bg-[#8a6e4a] before:content-['']">
+              <div className="mt-[6px] flex items-center gap-2 text-[#dce2e5] before:h-px before:w-[14px] before:bg-[var(--color-gold)] before:content-['']">
                 {featured.location}
               </div>
-              <div className="mt-[14px] border-t border-[var(--color-gold-border)] pt-[14px] text-[0.72rem] leading-[1.7] text-[#c4c8ce]">
+              <div className="mt-[14px] border-t border-white/18 pt-[14px] text-[0.72rem] leading-[1.7] text-[#edf1f2]">
                 {featured.summary}
               </div>
             </div>
@@ -56,10 +56,10 @@ export function ProjectsSection() {
                 <div className="mt-[7px] font-display text-[clamp(1rem,2.5vw,1.5rem)] font-light leading-[1.2] text-[var(--color-white)]">
                   {project.title}
                 </div>
-                <div className="mt-[6px] flex items-center gap-2 text-[0.72rem] text-[var(--color-fog)] before:h-px before:w-[14px] before:bg-[#8a6e4a] before:content-['']">
+                <div className="mt-[6px] flex items-center gap-2 text-[#dce2e5] before:h-px before:w-[14px] before:bg-[var(--color-gold)] before:content-['']">
                   {project.location}
                 </div>
-                <div className="mt-[14px] border-t border-[var(--color-gold-border)] pt-[14px] text-[0.72rem] leading-[1.7] text-[#c4c8ce] opacity-0 transition delay-100 duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="mt-[14px] border-t border-white/18 pt-[14px] text-[0.72rem] leading-[1.7] text-[#edf1f2] opacity-0 transition delay-100 duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                   {project.summary}
                 </div>
               </div>

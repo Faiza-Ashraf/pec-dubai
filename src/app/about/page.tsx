@@ -22,7 +22,7 @@ export default function AboutPage() {
       description="The brand promise is simple: one consultancy relationship that can protect concept quality, technical depth, authority readiness, and execution oversight."
     >
       <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="rounded-[1.8rem] border border-white/8 bg-white/[0.03] p-6">
+        <div className="rounded-lg border border-[var(--color-gold-border)] bg-[var(--color-surface)] p-6 shadow-[0_18px_45px_rgba(23,32,39,0.06)]">
           <div className="space-y-5 text-base leading-8 text-[var(--color-fog)]">
             <p>
               PEC Dubai is modeled around the market realities that matter in this region:
@@ -40,7 +40,7 @@ export default function AboutPage() {
           {proofCards.map((item) => (
             <div
               key={item.title}
-              className="rounded-[1.6rem] border border-[var(--color-gold-border)] bg-[linear-gradient(180deg,rgba(184,151,106,0.08),rgba(255,255,255,0.02))] p-5 text-[var(--color-white)]"
+              className="rounded-lg border border-[var(--color-gold-border)] bg-[linear-gradient(180deg,rgba(191,154,100,0.12),rgba(255,253,248,0.86))] p-5 text-[var(--color-white)]"
             >
               <div className="font-display text-xl">{item.title}</div>
               {item.detail ? (
