@@ -280,15 +280,17 @@ export function HeroCoverflowCarousel() {
         <div className="absolute inset-x-8 bottom-3 h-16 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(30,30,30,0.16),transparent_68%)] blur-xl" />
         {images.map((slide, index) => (
           <button
+  key={slide.src}
   ref={(el) => {
     slideRefs.current[index] = el;
   }}
-  key={slide.src}
   type="button"
   className={cn(
-    ...
+    "absolute left-1/2 top-5 h-[78%] w-[min(72vw,620px)] -translate-x-1/2 overflow-hidden rounded-[18px] border border-[var(--color-gold-border)] bg-[var(--color-surface)] shadow-[0_34px_80px_rgba(30,30,30,0.18)] outline-none transition-[box-shadow,border-color] duration-300 will-change-[transform,opacity,filter] focus-visible:border-[var(--color-gold)] focus-visible:shadow-[0_0_0_4px_rgba(184,151,106,0.22),0_34px_80px_rgba(30,30,30,0.18)]",
+    slide.abs > 3.4 && "pointer-events-none",
   )}
   aria-label={`View ${slide.alt}`}
+  aria-current={activeIndex === index}
   onClick={() => moveTo(index)}
 >
             <Image
