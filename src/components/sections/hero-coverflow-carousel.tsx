@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
+// @ts-ignore: next/image may not have type declarations in this environment
 import Image from "next/image";
 import type { CSSProperties, PointerEvent, WheelEvent } from "react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -39,6 +40,7 @@ function shortestOffset(index: number, position: number, total: number) {
 
 export function HeroCoverflowCarousel() {
   const total = images.length;
+  const [position, setPosition] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
@@ -47,7 +49,6 @@ export function HeroCoverflowCarousel() {
   const targetRef = useRef(0);
   const frameRef = useRef<number | null>(null);
   const lastTimeRef = useRef<number | null>(null);
-  const slideRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const dragRef = useRef<{
     active: boolean;
     startX: number;
@@ -77,9 +78,7 @@ export function HeroCoverflowCarousel() {
       window.removeEventListener("resize", updateViewport);
     };
   }, []);
-   useEffect(() => {
-    updateSlides();
-}, [updateSlides]);
+
   useEffect(() => {
     if (reducedMotion) {
       setPosition(Math.round(positionRef.current));
@@ -87,32 +86,21 @@ export function HeroCoverflowCarousel() {
     }
 
     const animate = (time: number) => {
-  const previous = lastTimeRef.current ?? time;
-  const delta = Math.min(time - previous, 48);
-  lastTimeRef.current = time;
+      const previous = lastTimeRef.current ?? time;
+      const delta = Math.min(time - previous, 48);
+      lastTimeRef.current = time;
 
-  // Faster autoplay
-  if (!paused && !dragRef.current.active) {
-    targetRef.current += delta * 0.00012;
-  }
+      if (!paused && !dragRef.current.active) {
+        targetRef.current += delta * 0.00012;
+      }
 
-  // Smoother interpolation
-  const distance = targetRef.current - positionRef.current;
-  positionRef.current += distance * 0.16;
+      const distance = targetRef.current - positionRef.current;
+      positionRef.current += distance * 0.16;
 
-  // Update transforms directly
-  updateSlides();
-
-  // Only update React state when the active slide changes
-  const next = wrapIndex(Math.round(positionRef.current), total);
-
-  if (next !== activeIndexRef.current) {
-    activeIndexRef.current = next;
-    setActiveIndex(next);
-  }
-
-  frameRef.current = window.requestAnimationFrame(animate);
-};
+      setPosition(positionRef.current);
+      setActiveIndex(wrapIndex(Math.round(positionRef.current), total));
+      frameRef.current = window.requestAnimationFrame(animate);
+    };
 
     frameRef.current = window.requestAnimationFrame(animate);
 
@@ -121,7 +109,7 @@ export function HeroCoverflowCarousel() {
       frameRef.current = null;
       lastTimeRef.current = null;
     };
-  }, [paused, reducedMotion, total, updateSlides]);
+  }, [paused, reducedMotion, total]);
 
   const moveTo = useCallback(
     (nextPosition: number) => {
@@ -142,63 +130,39 @@ export function HeroCoverflowCarousel() {
     [moveTo],
   );
 
-  const updateSlides = useCallback(() => {
-    slideRefs.current.forEach((slide, index) => {
-        if (!slide) return;
-
-        const offset = shortestOffset(
-            index,
-            positionRef.current,
-            total
-        );
-
+  const visibleSlides = useMemo(
+    () =>
+      images.map((image, index) => {
+        const offset = shortestOffset(index, position, total);
         const abs = Math.abs(offset);
         const clamped = Math.max(-3, Math.min(3, offset));
-
-        const spacing =
-            viewportWidth < 640
-                ? 155
-                : viewportWidth < 1024
-                ? 235
-                : 295;
-
-        const depth =
-            viewportWidth < 640
-                ? 70
-                : 130;
-
+        const spacing = viewportWidth < 640 ? 155 : viewportWidth < 1024 ? 235 : 295;
+        const depth = viewportWidth < 640 ? 70 : 130;
         const translateX = clamped * spacing;
         const translateZ = -abs * depth;
-
-        const rotateY =
-            clamped *
-            (viewportWidth < 640 ? -14 : -22);
-
-        const scale = Math.max(
-            viewportWidth < 640 ? 0.82 : 0.76,
-            1 - abs * 0.09
-        );
-
-        const opacity =
-            abs > 3.4
-                ? 0
-                : Math.max(0.3, 1 - abs * 0.18);
-
+        const rotateY = clamped * (viewportWidth < 640 ? -14 : -22);
+        const scale = Math.max(viewportWidth < 640 ? 0.82 : 0.76, 1 - abs * 0.09);
+        const opacity = abs > 3.4 ? 0 : Math.max(0.28, 1 - abs * 0.2);
         const blur = Math.min(abs * 0.45, 1.4);
 
-        slide.style.transform =
-            `translate3d(${translateX}px,0,${translateZ}px)
-             rotateY(${rotateY}deg)
-             scale(${scale})`;
+        const style: CSSProperties = {
+          opacity,
+          zIndex: Math.round(100 - abs * 10),
+          filter: `blur(${blur}px)`,
+          transform: `translate3d(${translateX}px, 0, ${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
+        };
 
-        slide.style.opacity = opacity.toString();
-
-        slide.style.filter = `blur(${blur}px)`;
-
-        slide.style.zIndex =
-            String(Math.round(100 - abs * 10));
-    });
-}, [viewportWidth, total]);
+        return {
+          ...image,
+          index,
+          offset,
+          abs,
+          isActive: wrapIndex(Math.round(position), total) === index,
+          style,
+        };
+      }),
+    [position, total, viewportWidth],
+  );
 
   const onPointerDown = (event: PointerEvent<HTMLDivElement>) => {
     setPaused(true);
@@ -278,21 +242,19 @@ export function HeroCoverflowCarousel() {
         onPointerCancel={onPointerEnd}
       >
         <div className="absolute inset-x-8 bottom-3 h-16 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(30,30,30,0.16),transparent_68%)] blur-xl" />
-        {images.map((slide, index) => (
+        {visibleSlides.map((slide) => (
           <button
-  key={slide.src}
-  ref={(el) => {
-    slideRefs.current[index] = el;
-  }}
-  type="button"
-  className={cn(
-    "absolute left-1/2 top-5 h-[78%] w-[min(72vw,620px)] -translate-x-1/2 overflow-hidden rounded-[18px] border border-[var(--color-gold-border)] bg-[var(--color-surface)] shadow-[0_34px_80px_rgba(30,30,30,0.18)] outline-none transition-[box-shadow,border-color] duration-300 will-change-[transform,opacity,filter] focus-visible:border-[var(--color-gold)] focus-visible:shadow-[0_0_0_4px_rgba(184,151,106,0.22),0_34px_80px_rgba(30,30,30,0.18)]",
-    slide.abs > 3.4 && "pointer-events-none",
-  )}
-  aria-label={`View ${slide.alt}`}
-  aria-current={activeIndex === index}
-  onClick={() => moveTo(index)}
->
+            key={slide.src}
+            type="button"
+            className={cn(
+              "absolute left-1/2 top-5 h-[78%] w-[min(72vw,620px)] -translate-x-1/2 overflow-hidden rounded-[18px] border border-[var(--color-gold-border)] bg-[var(--color-surface)] shadow-[0_34px_80px_rgba(30,30,30,0.18)] outline-none transition-[box-shadow,border-color] duration-300 will-change-[transform,opacity,filter] focus-visible:border-[var(--color-gold)] focus-visible:shadow-[0_0_0_4px_rgba(184,151,106,0.22),0_34px_80px_rgba(30,30,30,0.18)]",
+              slide.abs > 3.4 && "pointer-events-none",
+            )}
+            style={slide.style}
+            aria-label={`View ${slide.alt}`}
+            aria-current={slide.isActive}
+            onClick={() => moveTo(position + slide.offset)}
+          >
             <Image
               src={slide.src}
               alt={slide.alt}
