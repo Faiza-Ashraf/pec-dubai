@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --color-obsidian: #f7f5ef;
-  --color-gold: #9f7b4e;
-  --color-gold-light: #bf9a64;
-  --color-gold-border: rgba(54, 63, 69, 0.14);
-  --color-fog: #667179;
-  --color-white: #172027;
-  --color-surface: #fffdf8;
-  --color-surface-muted: #ece8df;
-  --color-ink-soft: #35424b;
+  --color-obsidian: #F6F3EE;
+  --color-gold: #B8976A;
+  --color-gold-light: #B8976A;
+  --color-bronze: #9D7C4E;
+  --color-gold-border: #E8E1D8;
+  --color-fog: #6B7280;
+  --color-white: #1E1E1E;
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #F8F5F0;
+  --color-ink-soft: #1E1E1E;
 }
 
 @theme inline {
@@ -19,6 +20,7 @@
   --color-obsidian: var(--color-obsidian);
   --color-gold: var(--color-gold);
   --color-gold-light: var(--color-gold-light);
+  --color-bronze: var(--color-bronze);
   --color-fog: var(--color-fog);
   --color-white: var(--color-white);
   --color-surface: var(--color-surface);
@@ -38,10 +40,9 @@ html {
 body {
   min-height: 100vh;
   background:
-    linear-gradient(rgba(23, 32, 39, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(23, 32, 39, 0.035) 1px, transparent 1px),
-    radial-gradient(circle at 78% 0%, rgba(191, 154, 100, 0.16), transparent 28%),
-    linear-gradient(180deg, #fbfaf6 0%, #f7f5ef 100%);
+    linear-gradient(rgba(30, 30, 30, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 30, 30, 0.025) 1px, transparent 1px),
+    linear-gradient(180deg, #F6F3EE 0%, #F6F3EE 100%);
   background-size: 72px 72px, 72px 72px, auto, auto;
   color: var(--color-white);
   font-family: var(--font-sans), sans-serif;
@@ -57,8 +58,8 @@ textarea {
 }
 
 ::selection {
-  background: rgba(159, 123, 78, 0.22);
-  color: #111820;
+  background: rgba(184, 151, 106, 0.24);
+  color: #1E1E1E;
 }
 
 .font-display {

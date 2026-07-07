@@ -65,9 +65,9 @@ export function ProcessSection() {
         timeline.to(
           dot,
           {
-            borderColor: "#b8976a",
-            backgroundColor: "#b8976a",
-            boxShadow: "0 0 28px rgba(184,151,106,0.4)",
+            borderColor: "#B8976A",
+            backgroundColor: "#B8976A",
+            boxShadow: "0 0 28px rgba(184,151,106,0.28)",
             duration: 0.15,
           },
           startAt,
@@ -83,7 +83,7 @@ export function ProcessSection() {
         timeline.to(
           title,
           {
-            color: "#172027",
+            color: "#1E1E1E",
             duration: 0.12,
           },
           startAt,
@@ -105,7 +105,7 @@ export function ProcessSection() {
   }, []);
 
   return (
-    <section id="process" className="bg-[#eee9df] py-[clamp(70px,10vw,140px)]">
+    <section id="process" className="bg-[var(--color-surface-muted)] py-[clamp(70px,10vw,140px)]">
       <Container>
         <div ref={rootRef}>
           <div className="text-center">
@@ -141,7 +141,7 @@ export function ProcessSection() {
                     ref={(element) => {
                       dotRefs.current[index] = element;
                     }}
-                    className="absolute left-0 top-6 size-4 rounded-full border-2 border-[#d7d0c4] bg-[#eee9df] lg:left-1/2 lg:top-3 lg:-translate-x-1/2"
+                    className="absolute left-0 top-6 size-4 rounded-full border-2 border-[var(--color-gold-border)] bg-[var(--color-surface-muted)] lg:left-1/2 lg:top-3 lg:-translate-x-1/2"
                   />
                   <p
                     ref={(element) => {

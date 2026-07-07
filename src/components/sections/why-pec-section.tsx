@@ -41,7 +41,7 @@ export function WhyPecSection() {
             {credentials.map((credential) => (
               <div
                 key={credential.id}
-                className="border border-[var(--color-gold-border)] bg-white/45 p-[22px_16px] text-center transition hover:border-[rgba(159,123,78,0.4)] hover:bg-[var(--color-surface)]"
+                className="border border-[var(--color-gold-border)] bg-[var(--color-surface)] p-[22px_16px] text-center transition hover:border-[var(--color-bronze)] hover:bg-[var(--color-surface)]"
               >
                 <p className="font-mono text-[0.6rem] tracking-[0.15em] text-[var(--color-gold)]">
                   {credential.id}

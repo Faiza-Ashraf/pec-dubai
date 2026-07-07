@@ -4,7 +4,7 @@ import { Container } from "./container";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-[var(--color-gold-border)] bg-[var(--color-surface)] py-14">
+    <footer className="border-t border-[var(--color-gold-border)] bg-[var(--color-obsidian)] py-14">
       <Container className="grid gap-10 lg:grid-cols-[2fr_1fr_1fr_1fr]">
         <div>
           <p className="font-display text-[1.35rem] tracking-[0.15em] text-[var(--color-white)]">
@@ -21,22 +21,22 @@ export function SiteFooter() {
             Services
           </p>
           <div className="mt-4 flex flex-col gap-2.5">
-            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
+            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-bronze)]">
               Architectural Design
             </Link>
-            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
+            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-bronze)]">
               Structural Engineering
             </Link>
-            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
+            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-bronze)]">
               MEP Engineering
             </Link>
-            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
+            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-bronze)]">
               Project Management
             </Link>
-            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
+            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-bronze)]">
               Green Building
             </Link>
-            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
+            <Link href="#services" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-bronze)]">
               Interior & Fit-Out
             </Link>
           </div>
@@ -51,12 +51,12 @@ export function SiteFooter() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]"
+                className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-bronze)]"
               >
                 {link.label === "About" ? "About PEC" : link.label}
               </Link>
             ))}
-            <Link href="#testimonials" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
+            <Link href="#testimonials" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-bronze)]">
               Client Stories
             </Link>
           </div>
@@ -67,19 +67,19 @@ export function SiteFooter() {
             Get In Touch
           </p>
           <div className="mt-4 flex flex-col gap-2.5">
-            <a href={`tel:${siteMeta.phone}`} className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
+            <a href={`tel:${siteMeta.phone}`} className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-bronze)]">
               {siteMeta.phone}
             </a>
-            <a href={`mailto:${siteMeta.email}`} className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
+            <a href={`mailto:${siteMeta.email}`} className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-bronze)]">
               {siteMeta.email}
             </a>
-            <a href={siteMeta.whatsapp} target="_blank" rel="noreferrer" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
+            <a href={siteMeta.whatsapp} target="_blank" rel="noreferrer" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-bronze)]">
               WhatsApp
             </a>
-            <a href="#" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
+            <a href="#" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-bronze)]">
               LinkedIn
             </a>
-            <a href="#" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-white)]">
+            <a href="#" className="text-[0.8rem] text-[var(--color-fog)] transition hover:text-[var(--color-bronze)]">
               Instagram
             </a>
           </div>
@@ -91,10 +91,10 @@ export function SiteFooter() {
           © 2025 PEC Dubai. All rights reserved. | ISO 9001 Certified Engineering Consultancy
         </p>
         <div className="flex items-center justify-center gap-5 sm:justify-end">
-          <a href="#" className="text-[0.68rem] text-[var(--color-fog)] transition hover:text-[var(--color-gold)]">
+          <a href="#" className="text-[0.68rem] text-[var(--color-fog)] transition hover:text-[var(--color-bronze)]">
             Privacy Policy
           </a>
-          <a href="#" className="text-[0.68rem] text-[var(--color-fog)] transition hover:text-[var(--color-gold)]">
+          <a href="#" className="text-[0.68rem] text-[var(--color-fog)] transition hover:text-[var(--color-bronze)]">
             Terms of Service
           </a>
         </div>

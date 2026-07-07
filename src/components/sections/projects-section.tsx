@@ -25,7 +25,7 @@ export function ProjectsSection() {
         <div className="grid gap-[10px] lg:grid-cols-[2fr_1fr_1fr] lg:grid-rows-[380px_280px]">
           <article className="group relative overflow-hidden max-lg:min-h-[360px] lg:row-[1/3]">
             <div className={`absolute inset-0 bg-gradient-to-br ${featured.palette} transition duration-700 group-hover:scale-105`} />
-            <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(8,10,12,0.95)_0%,rgba(8,10,12,0.3)_60%,transparent_100%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.34)_60%,transparent_100%)]" />
             <div className="absolute inset-x-0 bottom-0 p-7 transition duration-500 group-hover:translate-y-0">
               <div className="font-mono text-[0.58rem] uppercase tracking-[0.22em] text-[var(--color-gold)]">
                 {featured.metrics}
@@ -33,10 +33,10 @@ export function ProjectsSection() {
               <div className="mt-[7px] font-display text-[clamp(1.3rem,2.5vw,1.9rem)] font-light leading-[1.2] text-[var(--color-white)]">
                 {featured.title}
               </div>
-              <div className="mt-[6px] flex items-center gap-2 text-[#dce2e5] before:h-px before:w-[14px] before:bg-[var(--color-gold)] before:content-['']">
+              <div className="mt-[6px] flex items-center gap-2 text-[var(--color-fog)] before:h-px before:w-[14px] before:bg-[var(--color-gold)] before:content-['']">
                 {featured.location}
               </div>
-              <div className="mt-[14px] border-t border-white/18 pt-[14px] text-[0.72rem] leading-[1.7] text-[#edf1f2]">
+              <div className="mt-[14px] border-t border-[var(--color-gold-border)] pt-[14px] text-[0.72rem] leading-[1.7] text-[var(--color-ink-soft)]">
                 {featured.summary}
               </div>
             </div>
@@ -48,7 +48,7 @@ export function ProjectsSection() {
               className="group relative overflow-hidden max-lg:min-h-[240px]"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${project.palette} transition duration-700 group-hover:scale-105`} />
-              <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(8,10,12,0.95)_0%,rgba(8,10,12,0.3)_60%,transparent_100%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.34)_60%,transparent_100%)]" />
               <div className="absolute inset-x-0 bottom-0 p-7 transition duration-500 group-hover:translate-y-0">
                 <div className="font-mono text-[0.58rem] uppercase tracking-[0.22em] text-[var(--color-gold)]">
                   {project.metrics}
@@ -56,10 +56,10 @@ export function ProjectsSection() {
                 <div className="mt-[7px] font-display text-[clamp(1rem,2.5vw,1.5rem)] font-light leading-[1.2] text-[var(--color-white)]">
                   {project.title}
                 </div>
-                <div className="mt-[6px] flex items-center gap-2 text-[#dce2e5] before:h-px before:w-[14px] before:bg-[var(--color-gold)] before:content-['']">
+                <div className="mt-[6px] flex items-center gap-2 text-[var(--color-fog)] before:h-px before:w-[14px] before:bg-[var(--color-gold)] before:content-['']">
                   {project.location}
                 </div>
-                <div className="mt-[14px] border-t border-white/18 pt-[14px] text-[0.72rem] leading-[1.7] text-[#edf1f2] opacity-0 transition delay-100 duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="mt-[14px] border-t border-[var(--color-gold-border)] pt-[14px] text-[0.72rem] leading-[1.7] text-[var(--color-ink-soft)] opacity-0 transition delay-100 duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                   {project.summary}
                 </div>
               </div>

@@ -9,7 +9,7 @@ export function HeroSection() {
       className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden"
     >
       <HeroBlueprintCanvas />
-      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,253,248,0.58)_0%,rgba(255,253,248,0.24)_42%,rgba(247,245,239,0.7)_78%,rgba(247,245,239,1)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(246,243,238,0.58)_0%,rgba(246,243,238,0.24)_42%,rgba(246,243,238,0.7)_78%,rgba(246,243,238,1)_100%)]" />
       <div className="relative z-10 mx-auto flex w-full max-w-[900px] flex-col items-center px-5 pt-28 text-center sm:px-8 lg:px-10">
         <p className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-gold)]">
           Dubai&apos;s Premier Engineering Consultancy
@@ -35,7 +35,7 @@ export function HeroSection() {
           </Button>
         </div>
 
-        <div className="mt-8 inline-flex rounded-full border border-[rgba(159,123,78,0.18)] bg-white/70 px-5 py-3 text-sm text-[var(--color-gold)] shadow-[0_10px_30px_rgba(54,63,69,0.08)] backdrop-blur-md">
+        <div className="mt-8 inline-flex rounded-full border border-[var(--color-gold-border)] bg-[var(--color-surface)] px-5 py-3 text-sm text-[var(--color-gold)] shadow-[0_10px_30px_rgba(30,30,30,0.08)] backdrop-blur-md">
           <span>Free consultation and response within 24 hours</span>
         </div>
 
@@ -47,14 +47,14 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 z-10 hidden border-t border-[var(--color-gold-border)] bg-[rgba(255,253,248,0.78)] shadow-[0_-18px_45px_rgba(23,32,39,0.06)] backdrop-blur-[14px] sm:flex">
+      <div className="absolute inset-x-0 bottom-0 z-10 hidden border-t border-[var(--color-gold-border)] bg-[rgba(255,255,255,0.78)] shadow-[0_-18px_45px_rgba(30,30,30,0.06)] backdrop-blur-[14px] sm:flex">
         {heroStats.map((stat, index) => (
           <div
             key={stat.label}
             className="flex-1 px-6 py-5 text-center"
             style={{
               borderRight:
-                index === heroStats.length - 1 ? "none" : "1px solid rgba(54,63,69,0.14)",
+                index === heroStats.length - 1 ? "none" : "1px solid #E8E1D8",
             }}
           >
             <div className="font-display text-[clamp(1.6rem,3.5vw,2.6rem)] font-light leading-none text-[var(--color-gold)]">

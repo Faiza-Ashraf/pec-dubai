@@ -8,8 +8,8 @@ export function AboutSection() {
       <Container>
         <div className="grid gap-[72px] lg:grid-cols-2 lg:items-center">
           <div className="relative">
-            <div className="relative aspect-[3/4] overflow-hidden bg-[var(--color-surface-muted)] shadow-[0_24px_70px_rgba(23,32,39,0.12)]">
-              <div className="absolute inset-0 bg-[linear-gradient(135deg,#f8f6f0,#e7e1d5)]" />
+            <div className="relative aspect-[3/4] overflow-hidden bg-[var(--color-surface-muted)] shadow-[0_24px_70px_rgba(30,30,30,0.12)]">
+              <div className="absolute inset-0 bg-[linear-gradient(135deg,#FFFFFF,#F8F5F0)]" />
               <div className="absolute inset-0 grid place-items-center">
                 <svg viewBox="0 0 360 480" className="h-[85%] w-[85%] opacity-55">
                   <rect x="30" y="60" width="300" height="380" fill="none" stroke="rgba(184,151,106,0.2)" strokeWidth="1" />
@@ -36,7 +36,7 @@ export function AboutSection() {
                 </div>
               </div>
             </div>
-            <div className="pointer-events-none absolute bottom-[-20px] left-[20px] right-[-20px] top-[20px] -z-10 border border-[rgba(159,123,78,0.36)] max-[860px]:hidden" />
+            <div className="pointer-events-none absolute bottom-[-20px] left-[20px] right-[-20px] top-[20px] -z-10 border border-[var(--color-gold-border)] max-[860px]:hidden" />
           </div>
 
           <div>
@@ -63,7 +63,7 @@ export function AboutSection() {
               {aboutBadges.map((badge) => (
                 <div
                   key={badge}
-                  className="border border-[var(--color-gold-border)] bg-white/45 p-[18px] transition hover:border-[rgba(159,123,78,0.4)] hover:bg-[var(--color-surface)]"
+                  className="border border-[var(--color-gold-border)] bg-[var(--color-surface)] p-[18px] transition hover:border-[var(--color-bronze)] hover:bg-[var(--color-surface)]"
                 >
                   <div className="mb-[10px] h-[2px] w-7 bg-[var(--color-gold)]" />
                   <div className="mb-1 text-[0.6rem] uppercase tracking-[0.18em] text-[var(--color-gold)]">

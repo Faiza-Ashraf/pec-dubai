@@ -103,7 +103,7 @@ export const projects = [
       "32-storey luxury residential tower featuring 180 premium units. Full structural, MEP, and architectural design services delivered under one roof.",
     metrics: "Residential Tower",
     featured: true,
-    palette: "from-[#1a2a3a] to-[#0d1520]",
+    palette: "from-[#E8E1D8] to-[#B8976A]",
   },
   {
     title: "Al Barari Signature Villa",
@@ -111,7 +111,7 @@ export const projects = [
     summary:
       "10,000 sqft ultra-luxury villa with smart home integration, outdoor entertainment and infinity pool.",
     metrics: "Private Villa",
-    palette: "from-[#1e1810] to-[#0f0c08]",
+    palette: "from-[#E8E1D8] to-[#B8976A]",
   },
   {
     title: "GENESIS Experience Center",
@@ -119,7 +119,7 @@ export const projects = [
     summary:
       "Luxury automotive brand experience center with specialized MEP, climate control, and AV systems.",
     metrics: "Commercial",
-    palette: "from-[#1a1a2e] to-[#0d0d1a]",
+    palette: "from-[#F8F5F0] to-[#E8E1D8]",
   },
   {
     title: "Creek Harbour Plaza",
@@ -127,7 +127,7 @@ export const projects = [
     summary:
       "Mixed-use retail, F&B and office complex with structural peer review and MEP coordination.",
     metrics: "Mixed-Use",
-    palette: "from-[#0f1a15] to-[#0a0f0c]",
+    palette: "from-[#FFFFFF] to-[#E8E1D8]",
   },
   {
     title: "MedCity Specialist Clinic",
@@ -135,7 +135,7 @@ export const projects = [
     summary:
       "Medical specialist clinic with compliant MEP, medical gas systems, and DHA-ready design logic.",
     metrics: "Healthcare",
-    palette: "from-[#1f1520] to-[#0f0a10]",
+    palette: "from-[#F6F3EE] to-[#E8E1D8]",
   },
 ];
 

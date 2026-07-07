@@ -5,7 +5,7 @@ import { InquiryForm } from "./inquiry-form";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="relative bg-[#eee9df] py-[clamp(70px,10vw,140px)]">
+    <section id="contact" className="relative bg-[var(--color-surface-muted)] py-[clamp(70px,10vw,140px)]">
       <div className="absolute left-1/2 top-0 h-[60px] w-px -translate-x-1/2 bg-[linear-gradient(to_bottom,transparent,var(--color-gold))]" />
       <Container>
         <div className="mx-auto mb-[72px] max-w-[680px] text-center">
@@ -24,7 +24,7 @@ export function ContactSection() {
         </div>
 
         <div className="mx-auto grid max-w-[1060px] gap-[52px] lg:grid-cols-[1.2fr_1fr] lg:items-start">
-          <div className="border border-[var(--color-gold-border)] bg-[var(--color-surface)] p-[28px_20px] shadow-[0_24px_70px_rgba(23,32,39,0.08)] sm:p-11">
+          <div className="border border-[var(--color-gold-border)] bg-[var(--color-surface)] p-[28px_20px] shadow-[0_24px_70px_rgba(30,30,30,0.08)] sm:p-11">
             <InquiryForm />
           </div>
 
@@ -33,12 +33,12 @@ export function ContactSection() {
               href={siteMeta.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-[14px] border border-[rgba(37,211,102,0.2)] bg-[rgba(37,211,102,0.08)] px-5 py-[18px] text-[#25D366] transition hover:border-[rgba(37,211,102,0.4)] hover:bg-[rgba(37,211,102,0.13)]"
+              className="flex items-center gap-[14px] border border-[var(--color-gold-border)] bg-[var(--color-surface)] px-5 py-[18px] text-[var(--color-gold)] transition hover:border-[var(--color-bronze)] hover:bg-[var(--color-surface-muted)]"
             >
-              <MessageCircle className="size-[26px] text-[#25D366]" />
+              <MessageCircle className="size-[26px] text-[var(--color-gold)]" />
               <div>
-                <div className="text-[0.88rem] font-medium text-[#25D366]">WhatsApp Us Now</div>
-                <div className="mt-0.5 text-[0.7rem] text-[rgba(37,211,102,0.7)]">
+                <div className="text-[0.88rem] font-medium text-[var(--color-white)]">WhatsApp Us Now</div>
+                <div className="mt-0.5 text-[0.7rem] text-[var(--color-fog)]">
                   Typically replies within 1 hour
                 </div>
               </div>

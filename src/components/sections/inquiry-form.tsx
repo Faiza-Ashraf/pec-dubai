@@ -18,7 +18,7 @@ const inquirySchema = z.object({
 type InquiryValues = z.infer<typeof inquirySchema>;
 
 const fieldClassName =
-  "w-full border border-[var(--color-gold-border)] bg-white px-[14px] py-[13px] text-[0.84rem] font-light text-[var(--color-white)] outline-none transition placeholder:text-[rgba(23,32,39,0.35)] focus:border-[var(--color-gold)] focus:bg-[var(--color-surface)]";
+  "w-full border border-[var(--color-gold-border)] bg-[var(--color-surface)] px-[14px] py-[13px] text-[0.84rem] font-light text-[var(--color-white)] outline-none transition placeholder:text-[var(--color-fog)] focus:border-[var(--color-gold)] focus:bg-[var(--color-surface)]";
 
 const labelClassName =
   "mb-[7px] block text-[0.58rem] uppercase tracking-[0.2em] text-[var(--color-fog)]";
@@ -127,7 +127,7 @@ export function InquiryForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-1 w-full bg-[var(--color-gold)] px-4 py-4 text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-white transition hover:-translate-y-0.5 hover:bg-[var(--color-white)]"
+        className="mt-1 w-full bg-[var(--color-gold)] px-4 py-4 text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-white transition hover:-translate-y-0.5 hover:bg-[var(--color-bronze)]"
       >
         {isSubmitting ? "Sending..." : "Send Inquiry — It’s Free"}
       </button>

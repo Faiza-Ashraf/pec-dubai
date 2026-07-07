@@ -45,7 +45,7 @@ const icons = [
 export function ServicesSection() {
   return (
     <section id="services" className="relative overflow-hidden bg-[var(--color-surface)] py-[clamp(70px,10vw,140px)]">
-      <div className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 font-display text-[clamp(70px,14vw,160px)] font-light tracking-[0.1em] text-[rgba(23,32,39,0.035)] lg:block">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 font-display text-[clamp(70px,14vw,160px)] font-light tracking-[0.1em] text-[rgba(30,30,30,0.035)] lg:block">
         SERVICES
       </div>
       <Container>
@@ -70,7 +70,7 @@ export function ServicesSection() {
             return (
               <article
                 key={service.title}
-                className="group relative overflow-hidden bg-[var(--color-surface)] px-9 py-11 transition duration-500 hover:bg-[#f8f5ee]"
+                className="group relative overflow-hidden bg-[var(--color-surface)] px-9 py-11 transition duration-500 hover:bg-[var(--color-surface-muted)]"
               >
                 <div className="absolute inset-x-0 top-0 h-0 bg-[linear-gradient(to_bottom,rgba(184,151,106,0.06),transparent)] transition-all duration-500 ease-out group-hover:h-full" />
                 <div className="relative">
@@ -90,7 +90,7 @@ export function ServicesSection() {
                     {service.tags?.map((tag) => (
                       <span
                         key={tag}
-                        className="border border-[var(--color-gold-border)] bg-white/45 px-[11px] py-[5px] text-[0.58rem] uppercase tracking-[0.12em] text-[var(--color-fog)] transition group-hover:border-[rgba(159,123,78,0.4)] group-hover:text-[var(--color-gold)]"
+                        className="border border-[var(--color-gold-border)] bg-[var(--color-surface)] px-[11px] py-[5px] text-[0.58rem] uppercase tracking-[0.12em] text-[var(--color-fog)] transition group-hover:border-[var(--color-bronze)] group-hover:text-[var(--color-bronze)]"
                       >
                         {tag}
                       </span>

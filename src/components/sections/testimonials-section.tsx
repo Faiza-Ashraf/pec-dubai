@@ -18,7 +18,7 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial) => (
             <article
               key={testimonial.author}
-              className="relative border border-[var(--color-gold-border)] bg-[var(--color-obsidian)] px-[30px] py-9 shadow-[0_18px_45px_rgba(23,32,39,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[rgba(159,123,78,0.4)]"
+              className="relative border border-[var(--color-gold-border)] bg-[var(--color-surface)] px-[30px] py-9 shadow-[0_18px_45px_rgba(30,30,30,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[var(--color-bronze)]"
             >
               <div className="mb-[18px] font-display text-[3rem] italic leading-[0.7] text-[var(--color-gold)]">
                 &ldquo;
@@ -30,7 +30,7 @@ export function TestimonialsSection() {
                 {testimonial.quote}
               </p>
               <div className="mt-6 flex items-center gap-[14px]">
-                <div className="grid size-10 place-items-center rounded-full border border-[rgba(159,123,78,0.36)] bg-[var(--color-surface)] font-display text-[0.95rem] text-[var(--color-gold)]">
+                <div className="grid size-10 place-items-center rounded-full border border-[var(--color-gold-border)] bg-[var(--color-surface-muted)] font-display text-[0.95rem] text-[var(--color-gold)]">
                   {testimonial.initials}
                 </div>
                 <div>
