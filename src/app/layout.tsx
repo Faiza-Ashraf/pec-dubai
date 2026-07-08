@@ -40,7 +40,7 @@ export default function RootLayout({
       lang="en"
       className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full bg-[var(--color-obsidian)] pb-24 font-sans text-[var(--color-white)] lg:pb-0">
+      <body className="min-h-full bg-[var(--color-obsidian)] font-sans text-[var(--color-white)]">
         <SiteLoader />
         <SiteHeader />
         {children}
