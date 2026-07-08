@@ -5,10 +5,7 @@ const inquirySchema = z.object({
   name: z.string().min(2),
   phone: z.string().min(7),
   email: z.email(),
-  service: z.string().min(1),
-  projectType: z.string().min(1),
-  budget: z.string().min(1),
-  brief: z.string().min(12),
+  brief: z.string().optional(),
 });
 
 export async function POST(request: Request) {

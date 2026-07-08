@@ -12,11 +12,11 @@ export const siteMeta = {
 };
 
 export const navItems = [
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#projects", label: "Projects" },
-  { href: "#process", label: "Process" },
-  { href: "#contact", label: "Contact" },
+  { href: "/about", label: "About" },
+  { href: "/#services", label: "Services" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#process", label: "Process" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export const heroStats = [
@@ -60,38 +60,42 @@ export const services = [
   {
     title: "Architectural Design",
     description:
-      "From concept to construction drawings, we create spaces that are functionally brilliant and architecturally iconic for villas, towers, and mixed-use developments.",
-    tags: ["Concept Design", "Schematic", "Construction Docs", "3D Visualisation"],
+      "From concept development to authority submissions, we create functional, elegant, and fully compliant architectural solutions tailored to Dubai's evolving urban landscape. Our designs balance aesthetics, practicality, and regulatory requirements for residential and commercial developments.",
+    tags: [
+      "Concept Design",
+      "Architectural Drawings",
+      "Municipality Submission",
+      "Permit Documentation",
+    ],
   },
   {
     title: "Structural Engineering",
     description:
-      "Detailed structural analysis, design, and peer review ensuring every structure meets safety codes and endures the test of time.",
-    tags: ["Foundation Design", "Peer Review", "Retrofitting", "BIM"],
+      "Comprehensive structural design and detailed structural drawings that ensure safety, efficiency, and long-term durability. Our engineering solutions are developed in accordance with Dubai Municipality requirements and international engineering standards.",
+    tags: ["Structural Drawings", "Structural Analysis", "RC Design", "Authority Compliance"],
   },
   {
-    title: "MEP Engineering",
+    title: "Authority Approvals & NOCs",
     description:
-      "Integrated mechanical, electrical, and plumbing design optimized for Dubai's climate and authority standards.",
-    tags: ["HVAC", "Electrical", "Plumbing", "Fire Protection"],
+      "We manage the complete approval process, coordinating with government authorities and master developers to secure permits, NOCs, and project clearances efficiently.",
+    tags: ["Dubai Municipality", "Trakhees", "DDA", "DEWA NOC", "RTA NOC", "Nakheel", "Emaar"],
   },
   {
-    title: "Project Management",
+    title: "Site Supervision",
     description:
-      "Comprehensive oversight from permit acquisition to handover, on time, within budget, and to the highest quality standards.",
-    tags: ["Cost Control", "Scheduling", "Authority Approvals"],
+      "Our supervision team ensures construction is executed according to approved drawings, engineering standards, and authority requirements. We monitor quality, progress, and compliance throughout the construction phase.",
+    tags: ["Site Inspections", "Quality Control", "Construction Monitoring", "Compliance Checks"],
   },
   {
-    title: "Green Building & Sustainability",
+    title: "Project Consultancy",
     description:
-      "LEED and Estidama expertise, sustainable material sourcing, and energy-efficient design practices built into the project from day one.",
-    tags: ["LEED", "Estidama", "Net Zero"],
-  },
-  {
-    title: "Interior Design & Fit-Out",
-    description:
-      "Luxury interior design and technical fit-out coordination for residential, corporate, retail, and hospitality environments.",
-    tags: ["Residential", "Commercial", "Hospitality"],
+      "End-to-end engineering support from initial feasibility through design, approvals, construction, and project completion. We act as a trusted technical partner throughout the development lifecycle.",
+    tags: [
+      "Project Coordination",
+      "Technical Consultation",
+      "Regulatory Guidance",
+      "Design Management",
+    ],
   },
 ];
 
@@ -104,6 +108,8 @@ export const projects = [
     metrics: "Residential Tower",
     featured: true,
     palette: "from-[#E8E1D8] to-[#B8976A]",
+    image: "/hero/villa-12.jpeg",
+    href: "/projects#burj-al-noor-residences",
   },
   {
     title: "Al Barari Signature Villa",
@@ -112,6 +118,8 @@ export const projects = [
       "10,000 sqft ultra-luxury villa with smart home integration, outdoor entertainment and infinity pool.",
     metrics: "Private Villa",
     palette: "from-[#E8E1D8] to-[#B8976A]",
+    image: "/hero/villa-08.jpg",
+    href: "/projects#al-barari-signature-villa",
   },
   {
     title: "GENESIS Experience Center",
@@ -120,6 +128,8 @@ export const projects = [
       "Luxury automotive brand experience center with specialized MEP, climate control, and AV systems.",
     metrics: "Commercial",
     palette: "from-[#F8F5F0] to-[#E8E1D8]",
+    image: "/hero/villa-10.jpg",
+    href: "/projects#genesis-experience-center",
   },
   {
     title: "Creek Harbour Plaza",
@@ -128,6 +138,8 @@ export const projects = [
       "Mixed-use retail, F&B and office complex with structural peer review and MEP coordination.",
     metrics: "Mixed-Use",
     palette: "from-[#FFFFFF] to-[#E8E1D8]",
+    image: "/hero/villa-11.jpg",
+    href: "/projects#creek-harbour-plaza",
   },
   {
     title: "MedCity Specialist Clinic",
@@ -136,6 +148,8 @@ export const projects = [
       "Medical specialist clinic with compliant MEP, medical gas systems, and DHA-ready design logic.",
     metrics: "Healthcare",
     palette: "from-[#F6F3EE] to-[#E8E1D8]",
+    image: "/hero/villa-06.jpg",
+    href: "/projects#medcity-specialist-clinic",
   },
 ];
 
@@ -236,15 +250,14 @@ export const trustStats = [
 ];
 
 export const trustBullets = [
-  "Free 30-minute initial consultation",
   "No-obligation quote and feasibility review",
   "Senior partner involvement from day one",
   "Full confidentiality and NDA available",
 ];
 
 export const footerLinks = [
-  { label: "Projects", href: "#projects" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Services", href: "/#services" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/#contact" },
 ];

@@ -1,4 +1,4 @@
-import { MessageCircle, ShieldCheck } from "lucide-react";
+import { Mail, MessageCircle, Phone, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { siteMeta, trustBullets } from "@/data/home";
 import { InquiryForm } from "./inquiry-form";
@@ -23,66 +23,71 @@ export function ContactSection() {
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-[1060px] gap-[52px] lg:grid-cols-[1.2fr_1fr] lg:items-start">
+        <div className="mx-auto grid max-w-[1180px] gap-[52px] lg:grid-cols-2 lg:items-start">
           <div className="border border-[var(--color-gold-border)] bg-[var(--color-surface)] p-[28px_20px] shadow-[0_24px_70px_rgba(30,30,30,0.08)] sm:p-11">
             <InquiryForm />
           </div>
 
-          <div className="grid gap-4">
-            <a
-              href={siteMeta.whatsapp}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-[14px] border border-[var(--color-gold-border)] bg-[var(--color-surface)] px-5 py-[18px] text-[var(--color-gold)] transition hover:border-[var(--color-bronze)] hover:bg-[var(--color-surface-muted)]"
-            >
-              <MessageCircle className="size-[26px] text-[var(--color-gold)]" />
-              <div>
-                <div className="text-[0.88rem] font-medium text-[var(--color-white)]">WhatsApp Us Now</div>
-                <div className="mt-0.5 text-[0.7rem] text-[var(--color-fog)]">
-                  Typically replies within 1 hour
-                </div>
-              </div>
-            </a>
-
-            <div className="border-b border-[var(--color-gold-border)] pb-7">
+          <div className="flex flex-col justify-between">
+            <div>
               <div className="mb-[10px] font-mono text-[0.58rem] uppercase tracking-[0.22em] text-[var(--color-gold)]">
                 Office Address
               </div>
-              <div className="font-display text-[1rem] leading-[1.5] text-[var(--color-white)]">
-                PEC Dubai
-                <br />
-                Business Bay, Dubai
-                <br />
-                United Arab Emirates
+              <div className="overflow-hidden rounded-[8px] border border-[var(--color-gold-border)] bg-[var(--color-surface-muted)]">
+                <iframe
+                  src="https://share.google/Vn5LVI3BM586fY2Gh"
+                  title="PEC Dubai office location"
+                  className="h-[250px] w-full sm:h-[280px]"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
+
+              <div className="mt-5 grid grid-cols-3 divide-x divide-[var(--color-gold-border)] border-y border-[var(--color-gold-border)]">
+                <a
+                  href={`mailto:${siteMeta.email}`}
+                  className="group flex min-h-16 flex-col items-center justify-center gap-1.5 text-center text-[var(--color-gold)] transition hover:bg-[var(--color-surface-muted)]"
+                  aria-label={`Email ${siteMeta.email}`}
+                >
+                  <Mail className="size-5 transition group-hover:text-[var(--color-bronze)]" />
+                  <span className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-white)]">
+                    Email
+                  </span>
+                </a>
+                <a
+                  href={`tel:${siteMeta.phone}`}
+                  className="group flex min-h-16 flex-col items-center justify-center gap-1.5 text-center text-[var(--color-gold)] transition hover:bg-[var(--color-surface-muted)]"
+                  aria-label={`Call ${siteMeta.phone}`}
+                >
+                  <Phone className="size-5 transition group-hover:text-[var(--color-bronze)]" />
+                  <span className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-white)]">
+                    Phone
+                  </span>
+                </a>
+                <a
+                  href={siteMeta.whatsapp}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex min-h-16 flex-col items-center justify-center gap-1.5 text-center text-[var(--color-gold)] transition hover:bg-[var(--color-surface-muted)]"
+                  aria-label="Message PEC Dubai on WhatsApp"
+                >
+                  <MessageCircle className="size-5 transition group-hover:text-[var(--color-bronze)]" />
+                  <span className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-white)]">
+                    WhatsApp
+                  </span>
+                </a>
+              </div>
+
+              <p className="mt-4 text-center font-display text-[1rem] text-[var(--color-white)]">
+                Monday – Friday, 9:00 AM – 6:00 PM
+              </p>
             </div>
-            <div className="border-b border-[var(--color-gold-border)] pb-7">
-              <div className="mb-[10px] font-mono text-[0.58rem] uppercase tracking-[0.22em] text-[var(--color-gold)]">
-                Email
-              </div>
-              <div className="font-display text-[1rem] leading-[1.5] text-[var(--color-white)]">
-                {siteMeta.email}
-              </div>
-              <div className="mt-[5px] text-[0.75rem] text-[var(--color-fog)]">
-                We respond to all inquiries within 24 hours
-              </div>
-            </div>
-            <div className="border-b border-[var(--color-gold-border)] pb-7">
-              <div className="mb-[10px] font-mono text-[0.58rem] uppercase tracking-[0.22em] text-[var(--color-gold)]">
-                Phone
-              </div>
-              <div className="font-display text-[1rem] leading-[1.5] text-[var(--color-white)]">
-                {siteMeta.phone}
-              </div>
-              <div className="mt-[5px] text-[0.75rem] text-[var(--color-fog)]">
-                Sunday – Thursday, 8:00 AM – 6:00 PM GST
-              </div>
-            </div>
-            <div>
+
+            <div className="mt-5 border-t border-[var(--color-gold-border)] pt-5">
               <div className="mb-[10px] font-mono text-[0.58rem] uppercase tracking-[0.22em] text-[var(--color-gold)]">
                 Why consult with us?
               </div>
-              <div className="mt-3 flex flex-col gap-[9px]">
+              <div className="mt-3 flex flex-col gap-[7px]">
                 {trustBullets.map((item) => (
                   <div key={item} className="flex items-start gap-[10px] text-[0.78rem] text-[var(--color-ink-soft)]">
                     <ShieldCheck className="mt-0.5 size-4 shrink-0 text-[var(--color-gold)]" />

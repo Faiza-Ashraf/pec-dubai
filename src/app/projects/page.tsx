@@ -20,6 +20,7 @@ export default function ProjectsPage() {
         {projects.map((project) => (
           <article
             key={project.title}
+            id={project.href.split("#")[1]}
             className="rounded-lg border border-[var(--color-gold-border)] bg-[var(--color-surface)] p-6 shadow-[0_18px_45px_rgba(30,30,30,0.06)]"
           >
             <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-[var(--color-gold-light)]">

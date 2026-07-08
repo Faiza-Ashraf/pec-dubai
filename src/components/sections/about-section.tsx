@@ -80,7 +80,7 @@ export function AboutSection() {
               ))}
             </div>
             <div className="mt-8">
-              <Button href="#contact">
+              <Button href="/#contact">
                 Begin Your Project
               </Button>
             </div>

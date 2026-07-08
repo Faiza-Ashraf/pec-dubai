@@ -1,7 +1,6 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
-// @ts-ignore: next/image may not have type declarations in this environment
 import Image from "next/image";
 import type { CSSProperties, PointerEvent, WheelEvent } from "react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
