@@ -17,7 +17,7 @@ const serviceItems = [
       "Municipality Submission",
       "Permit Documentation",
     ],
-    image: "/hero/villa-01.jpg",
+    image: "/Services/Architectural design.jpeg",
     replacementImage: "/images/services/architectural-design.jpg",
   },
   {
@@ -26,7 +26,7 @@ const serviceItems = [
     description:
       "Safe, efficient, and durable structural solutions developed with technical precision and code compliance.",
     tags: ["Structural Drawings", "Structural Analysis", "RC Design", "Authority Compliance"],
-    image: "/hero/villa-06.jpg",
+    image: "/Services/Steel_beam_structure_under_const…_202607091745.jpeg",
     replacementImage: "/images/services/structural-engineering.jpg",
   },
   {
@@ -35,7 +35,7 @@ const serviceItems = [
     description:
       "End-to-end coordination with authorities and developers to secure permits and NOCs efficiently.",
     tags: ["Dubai Municipality", "Trakhees", "DDA", "DEWA NOC", "RTA NOC", "Nakheel", "Emaar"],
-    image: "/hero/villa-10.jpg",
+    image: "/Services/Authority_Approvals_Government_D…_202607091744.jpeg",
     replacementImage: "/images/services/authority-approvals.jpg",
   },
   {
@@ -44,7 +44,7 @@ const serviceItems = [
     description:
       "On-site supervision to ensure quality construction, safety, and compliance at every stage.",
     tags: ["Site Inspections", "Quality Control", "Construction Monitoring", "Compliance Checks"],
-    image: "/hero/villa-08.jpg",
+    image: "/Services/Site_supervisor.jpeg",
     replacementImage: "/images/services/site-supervision.jpg",
   },
   {
@@ -57,7 +57,7 @@ const serviceItems = [
       "Regulatory Guidance",
       "Design Management",
     ],
-    image: "/hero/villa-12.jpeg",
+    image: "/Services/Project.jpeg",
     replacementImage: "/images/services/project-consultancy.jpg",
   },
 ];
