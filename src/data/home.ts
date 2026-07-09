@@ -4,10 +4,10 @@ export const siteMeta = {
   description:
     "Architecture, structural, MEP, approvals, and project supervision for luxury villas and ambitious developments across Dubai.",
   url: "https://www.pecdubai.com",
-  phone: "+971 4 XXX XXXX",
+  phone: "+971 504561329",
   whatsapp:
-    "https://wa.me/971500000000?text=Hello%20PEC%20Dubai%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.",
-  email: "info@pecdubai.com",
+    "https://wa.me/971504561329?text=Hello%20PEC%20Dubai%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.",
+  email: "zainahmed0506@gmail.com",
   address: "Business Bay, Dubai, United Arab Emirates",
 };
 

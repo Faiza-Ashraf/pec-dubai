@@ -39,7 +39,7 @@ export function SiteFooter() {
                 <Mail className="size-4" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/pecdubai?igsh=NThnY212bDNmdGMy"
                 className="flex size-9 items-center justify-center rounded-full bg-transparent text-[var(--color-bronze)] transition hover:text-[var(--color-gold)]"
                 aria-label="PEC Dubai on Instagram"
               >
@@ -60,7 +60,9 @@ export function SiteFooter() {
               Email
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/pecdubai?igsh=NThnY212bDNmdGMy"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[0.78rem] uppercase tracking-[0.2em] text-[var(--color-fog)] transition hover:text-[var(--color-bronze)]"
               aria-label="PEC Dubai on Instagram"
             >
