@@ -1,89 +1,132 @@
 "use client";
 
-import { forwardRef, useCallback, useEffect, useRef, type VideoHTMLAttributes } from "react";
+import {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useRef,
+  type ForwardedRef,
+  type SyntheticEvent,
+  type VideoHTMLAttributes,
+} from "react";
 
 type SafariVideoProps = VideoHTMLAttributes<HTMLVideoElement> & {
   src: string;
 };
 
+function applyForwardedRef<T>(ref: ForwardedRef<T>, value: T | null) {
+  if (typeof ref === "function") {
+    ref(value);
+    return;
+  }
+
+  if (ref) {
+    ref.current = value;
+  }
+}
+
 export const SafariVideo = forwardRef<HTMLVideoElement, SafariVideoProps>(function SafariVideo(
-  { src, muted = true, preload = "auto", onLoadedMetadata, onCanPlay, ...props },
+  {
+    src,
+    autoPlay = true,
+    loop = true,
+    muted = true,
+    preload = "auto",
+    onLoadedMetadata,
+    onCanPlay,
+    ...props
+  },
   ref,
 ) {
   const internalRef = useRef<HTMLVideoElement>(null);
-  const videoRef = ref || internalRef;
+  const retryTimeoutRef = useRef<number | null>(null);
+
+  const setVideoRef = useCallback(
+    (video: HTMLVideoElement | null) => {
+      internalRef.current = video;
+      applyForwardedRef(ref, video);
+    },
+    [ref],
+  );
+
+  const prepareForAutoplay = useCallback(() => {
+    const video = internalRef.current;
+    if (!video) return null;
+
+    video.playsInline = true;
+    video.setAttribute("playsinline", "true");
+    video.setAttribute("webkit-playsinline", "true");
+
+    if (muted) {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.setAttribute("muted", "");
+    }
+
+    return video;
+  }, [muted]);
 
   const attemptPlay = useCallback(() => {
-    const video = typeof videoRef === "object" && videoRef ? videoRef.current : null;
-    if (video) {
-      console.debug("[SafariVideo] Attempting autoplay", {
-        readyState: video.readyState,
-        networkState: video.networkState,
-        paused: video.paused,
-        currentTime: video.currentTime,
-      });
+    const video = prepareForAutoplay();
+    if (!video || !autoPlay) return;
 
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            console.debug("[SafariVideo] Autoplay succeeded");
-          })
-          .catch((error) => {
-            console.debug("[SafariVideo] Autoplay failed", error.name, error.message);
-            // Retry once after a short delay if autoplay fails
-            setTimeout(() => {
-              const retryVideo = typeof videoRef === "object" && videoRef ? videoRef.current : null;
-              if (retryVideo) {
-                console.debug("[SafariVideo] Retrying autoplay");
-                retryVideo.play().catch((err) => {
-                  console.debug("[SafariVideo] Retry failed", err.name);
-                });
-              }
-            }, 100);
-          });
+    const playPromise = video.play();
+    if (playPromise === undefined) return;
+
+    playPromise.catch(() => {
+      if (retryTimeoutRef.current !== null) {
+        window.clearTimeout(retryTimeoutRef.current);
       }
-    }
-  }, [videoRef]);
+
+      retryTimeoutRef.current = window.setTimeout(() => {
+        const retryVideo = prepareForAutoplay();
+        retryVideo?.play().catch(() => {
+          // Autoplay can still be blocked by iOS Low Power Mode or user browser settings.
+        });
+      }, 150);
+    });
+  }, [autoPlay, prepareForAutoplay]);
 
   useEffect(() => {
-    // Attempt playback on mount
-    console.debug("[SafariVideo] Component mounted");
     attemptPlay();
+
+    return () => {
+      if (retryTimeoutRef.current !== null) {
+        window.clearTimeout(retryTimeoutRef.current);
+        retryTimeoutRef.current = null;
+      }
+    };
   }, [attemptPlay]);
 
   const handleLoadedMetadata = useCallback(
-    (e: React.SyntheticEvent<HTMLVideoElement>) => {
-      console.debug("[SafariVideo] Metadata loaded");
-      // Trigger play when metadata is loaded
+    (event: SyntheticEvent<HTMLVideoElement>) => {
       attemptPlay();
-      onLoadedMetadata?.(e);
+      onLoadedMetadata?.(event);
     },
     [attemptPlay, onLoadedMetadata],
   );
 
   const handleCanPlay = useCallback(
-    (e: React.SyntheticEvent<HTMLVideoElement>) => {
-      console.debug("[SafariVideo] Can play event fired");
-      // Trigger play when video is ready to play
+    (event: SyntheticEvent<HTMLVideoElement>) => {
       attemptPlay();
-      onCanPlay?.(e);
+      onCanPlay?.(event);
     },
     [attemptPlay, onCanPlay],
   );
 
   return (
     <video
-      ref={videoRef}
+      {...props}
+      ref={setVideoRef}
       src={src}
-      autoPlay
-      loop
+      autoPlay={autoPlay}
+      loop={loop}
       muted={muted}
       playsInline
+      webkit-playsinline="true"
       preload={preload}
       onLoadedMetadata={handleLoadedMetadata}
       onCanPlay={handleCanPlay}
-      {...props}
     />
   );
 });
