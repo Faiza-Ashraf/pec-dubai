@@ -1,27 +1,49 @@
 "use client";
 
-import { forwardRef, useEffect, type VideoHTMLAttributes } from "react";
+import { forwardRef, useCallback, useEffect, type VideoHTMLAttributes } from "react";
 
 type SafariVideoProps = VideoHTMLAttributes<HTMLVideoElement> & {
   src: string;
 };
 
 export const SafariVideo = forwardRef<HTMLVideoElement, SafariVideoProps>(function SafariVideo(
-  { src, muted = true, preload = "auto", ...props },
+  { src, muted = true, preload = "auto", onLoadedMetadata, onCanPlay, ...props },
   ref,
 ) {
-  useEffect(() => {
-    // Attempt to play video on component mount for Safari compatibility
+  const attemptPlay = useCallback(() => {
     if (ref && typeof ref === "object" && ref.current) {
-      const playAttempt = ref.current.play();
-      if (playAttempt !== undefined) {
-        playAttempt.catch(() => {
-          // Autoplay prevented, Safari requires user interaction or proper attributes
-          console.debug("Autoplay prevented, video will play on user interaction");
+      const playPromise = ref.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Retry once after a short delay if autoplay fails
+          setTimeout(() => {
+            if (ref && typeof ref === "object" && ref.current) {
+              ref.current.play().catch(() => {
+                console.debug("Video autoplay deferred");
+              });
+            }
+          }, 100);
         });
       }
     }
   }, [ref]);
+
+  useEffect(() => {
+    // Attempt playback on mount
+    attemptPlay();
+  }, [attemptPlay]);
+
+  const handleLoadedMetadata = useCallback((e: React.SyntheticEvent<HTMLVideoElement>) => {
+    // Trigger play when metadata is loaded
+    attemptPlay();
+    onLoadedMetadata?.(e);
+  }, [attemptPlay, onLoadedMetadata]);
+
+  const handleCanPlay = useCallback((e: React.SyntheticEvent<HTMLVideoElement>) => {
+    // Trigger play when video is ready to play
+    attemptPlay();
+    onCanPlay?.(e);
+  }, [attemptPlay, onCanPlay]);
 
   return (
     <video
@@ -32,6 +54,8 @@ export const SafariVideo = forwardRef<HTMLVideoElement, SafariVideoProps>(functi
       muted={muted}
       playsInline
       preload={preload}
+      onLoadedMetadata={handleLoadedMetadata}
+      onCanPlay={handleCanPlay}
       {...props}
     />
   );
