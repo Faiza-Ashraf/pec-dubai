@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { SafariVideo } from "@/components/ui/safari-video";
 
-const heroVideoSrc = "/videos/blueprint-folding-building.mp4";
+const heroVideoSrc = "/videos/blueprint-folding-building-no-audio.mp4";
 
 export function HeroSection() {
   return (
