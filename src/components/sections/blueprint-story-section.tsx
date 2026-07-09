@@ -30,7 +30,7 @@ export function BlueprintStorySection() {
           <SafariVideo
             className="h-full w-full object-cover"
             src="/videos/blueprint-folding-building.mp4"
-            preload="metadata"
+            preload="auto"
             aria-label="Blueprint folding into a 3D building"
           />
         </div>

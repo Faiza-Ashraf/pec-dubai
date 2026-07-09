@@ -13,7 +13,7 @@ export function HeroSection() {
         <SafariVideo
           className="h-full w-full object-contain"
           src={heroVideoSrc}
-          preload="metadata"
+          preload="auto"
           aria-label="Blueprint folding into a 3D architectural building"
         />
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(246,243,238,0.28),rgba(184,151,106,0.16),rgba(30,30,30,0.05))] lg:bg-[linear-gradient(90deg,var(--color-obsidian)_0%,rgba(246,243,238,0.98)_10%,rgba(246,243,238,0.82)_24%,rgba(246,243,238,0.46)_42%,rgba(246,243,238,0.16)_64%,rgba(246,243,238,0.06)_100%)]" />
