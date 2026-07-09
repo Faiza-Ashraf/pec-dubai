@@ -9,21 +9,35 @@ const inquirySchema = z.object({
 });
 
 const RECIPIENT_EMAIL = "zainahmed0506@gmail.com";
-const SENDER_EMAIL = "inquiries@pecdubai.com";
+// Use default Resend sender or verified custom domain
+const SENDER_EMAIL = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
 
 export async function POST(request: Request) {
-  const payload = await request.json();
-  const parsed = inquirySchema.safeParse(payload);
-
-  if (!parsed.success) {
-    return NextResponse.json(
-      { success: false, message: "Please complete all required fields." },
-      { status: 400 },
-    );
-  }
-
-  // Send email via Resend
   try {
+    const payload = await request.json();
+    const parsed = inquirySchema.safeParse(payload);
+
+    if (!parsed.success) {
+      console.error("Validation error:", parsed.error);
+      return NextResponse.json(
+        { success: false, message: "Please complete all required fields." },
+        { status: 400 },
+      );
+    }
+
+    // Check if API key exists
+    if (!process.env.RESEND_API_KEY) {
+      console.error("RESEND_API_KEY is not set in environment variables");
+      return NextResponse.json(
+        { success: false, message: "Email service not configured. Please try again later." },
+        { status: 500 },
+      );
+    }
+
+    console.log("Sending email to:", RECIPIENT_EMAIL);
+    console.log("Sending from:", SENDER_EMAIL);
+
+    // Send email via Resend
     const emailResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -70,25 +84,28 @@ export async function POST(request: Request) {
       }),
     });
 
+    const responseText = await emailResponse.text();
+    console.log("Resend API response status:", emailResponse.status);
+    console.log("Resend API response:", responseText);
+
     if (!emailResponse.ok) {
-      console.error("Failed to send email via Resend:", await emailResponse.text());
-      // Still return success to user to avoid frustrating them
-      return NextResponse.json({
-        success: true,
-        message: "Your consultation request has been received. PEC Dubai will reply shortly.",
-      });
+      console.error("Failed to send email via Resend:", responseText);
+      return NextResponse.json(
+        { success: false, message: `Email service error: ${emailResponse.status}. Please try again.` },
+        { status: emailResponse.status },
+      );
     }
 
+    console.log("Email sent successfully");
     return NextResponse.json({
       success: true,
       message: "Your consultation request has been received. PEC Dubai will reply shortly.",
     });
   } catch (error) {
-    console.error("Error sending email:", error);
-    // Still return success to user
-    return NextResponse.json({
-      success: true,
-      message: "Your consultation request has been received. PEC Dubai will reply shortly.",
-    });
+    console.error("Error in inquiry route:", error);
+    return NextResponse.json(
+      { success: false, message: "An error occurred. Please try again later." },
+      { status: 500 },
+    );
   }
 }
