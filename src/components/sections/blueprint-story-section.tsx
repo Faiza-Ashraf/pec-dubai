@@ -29,7 +29,7 @@ export function BlueprintStorySection() {
         <div className="mx-auto mt-7 aspect-video max-h-[min(54svh,520px)] w-full max-w-[920px] overflow-hidden rounded-[8px] border border-[var(--color-gold-border)] bg-[var(--color-surface)] shadow-[0_22px_70px_rgba(30,30,30,0.08)]">
           <SafariVideo
             className="h-full w-full object-cover"
-            src="/videos/blueprint-folding-building.mp4"
+            src="/videos/blueprint-folding-building-no-audio.mp4"
             preload="auto"
             aria-label="Blueprint folding into a 3D building"
           />

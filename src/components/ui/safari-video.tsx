@@ -33,26 +33,24 @@ export const SafariVideo = forwardRef<HTMLVideoElement, SafariVideoProps>(functi
     muted = true,
     preload = "auto",
     onLoadedMetadata,
+    onLoadedData,
     onCanPlay,
+    onCanPlayThrough,
     ...props
   },
   ref,
 ) {
   const internalRef = useRef<HTMLVideoElement>(null);
   const retryTimeoutRef = useRef<number | null>(null);
-
-  const setVideoRef = useCallback(
-    (video: HTMLVideoElement | null) => {
-      internalRef.current = video;
-      applyForwardedRef(ref, video);
-    },
-    [ref],
-  );
+  const startupIntervalRef = useRef<number | null>(null);
+  const startupStopTimeoutRef = useRef<number | null>(null);
 
   const prepareForAutoplay = useCallback(() => {
     const video = internalRef.current;
     if (!video) return null;
 
+    video.autoplay = autoPlay;
+    video.loop = loop;
     video.playsInline = true;
     video.setAttribute("playsinline", "true");
     video.setAttribute("webkit-playsinline", "true");
@@ -64,11 +62,15 @@ export const SafariVideo = forwardRef<HTMLVideoElement, SafariVideoProps>(functi
     }
 
     return video;
-  }, [muted]);
+  }, [autoPlay, loop, muted]);
 
   const attemptPlay = useCallback(() => {
     const video = prepareForAutoplay();
-    if (!video || !autoPlay) return;
+    if (!video || !autoPlay || document.visibilityState === "hidden") return;
+
+    if (video.paused && video.readyState === HTMLMediaElement.HAVE_NOTHING) {
+      video.load();
+    }
 
     const playPromise = video.play();
     if (playPromise === undefined) return;
@@ -87,16 +89,61 @@ export const SafariVideo = forwardRef<HTMLVideoElement, SafariVideoProps>(functi
     });
   }, [autoPlay, prepareForAutoplay]);
 
+  const setVideoRef = useCallback(
+    (video: HTMLVideoElement | null) => {
+      internalRef.current = video;
+      applyForwardedRef(ref, video);
+      prepareForAutoplay();
+
+      if (video && autoPlay) {
+        window.requestAnimationFrame(attemptPlay);
+      }
+    },
+    [attemptPlay, autoPlay, prepareForAutoplay, ref],
+  );
+
   useEffect(() => {
+    const stopStartupAttempts = () => {
+      if (startupIntervalRef.current !== null) {
+        window.clearInterval(startupIntervalRef.current);
+        startupIntervalRef.current = null;
+      }
+      if (startupStopTimeoutRef.current !== null) {
+        window.clearTimeout(startupStopTimeoutRef.current);
+        startupStopTimeoutRef.current = null;
+      }
+    };
+
+    const keepStartingUntilPlaying = () => {
+      const video = internalRef.current;
+      if (!video || !autoPlay) return;
+
+      attemptPlay();
+
+      if (!video.paused && video.currentTime > 0) {
+        stopStartupAttempts();
+      }
+    };
+
     attemptPlay();
+    startupIntervalRef.current = window.setInterval(keepStartingUntilPlaying, 300);
+    startupStopTimeoutRef.current = window.setTimeout(stopStartupAttempts, 8000);
+
+    window.addEventListener("pageshow", keepStartingUntilPlaying);
+    window.addEventListener("focus", keepStartingUntilPlaying);
+    document.addEventListener("visibilitychange", keepStartingUntilPlaying);
 
     return () => {
       if (retryTimeoutRef.current !== null) {
         window.clearTimeout(retryTimeoutRef.current);
         retryTimeoutRef.current = null;
       }
+      stopStartupAttempts();
+      window.removeEventListener("pageshow", keepStartingUntilPlaying);
+      window.removeEventListener("focus", keepStartingUntilPlaying);
+      document.removeEventListener("visibilitychange", keepStartingUntilPlaying);
     };
-  }, [attemptPlay]);
+  }, [attemptPlay, autoPlay]);
 
   const handleLoadedMetadata = useCallback(
     (event: SyntheticEvent<HTMLVideoElement>) => {
@@ -106,12 +153,28 @@ export const SafariVideo = forwardRef<HTMLVideoElement, SafariVideoProps>(functi
     [attemptPlay, onLoadedMetadata],
   );
 
+  const handleLoadedData = useCallback(
+    (event: SyntheticEvent<HTMLVideoElement>) => {
+      attemptPlay();
+      onLoadedData?.(event);
+    },
+    [attemptPlay, onLoadedData],
+  );
+
   const handleCanPlay = useCallback(
     (event: SyntheticEvent<HTMLVideoElement>) => {
       attemptPlay();
       onCanPlay?.(event);
     },
     [attemptPlay, onCanPlay],
+  );
+
+  const handleCanPlayThrough = useCallback(
+    (event: SyntheticEvent<HTMLVideoElement>) => {
+      attemptPlay();
+      onCanPlayThrough?.(event);
+    },
+    [attemptPlay, onCanPlayThrough],
   );
 
   return (
@@ -126,7 +189,9 @@ export const SafariVideo = forwardRef<HTMLVideoElement, SafariVideoProps>(functi
       webkit-playsinline="true"
       preload={preload}
       onLoadedMetadata={handleLoadedMetadata}
+      onLoadedData={handleLoadedData}
       onCanPlay={handleCanPlay}
+      onCanPlayThrough={handleCanPlayThrough}
     />
   );
 });
