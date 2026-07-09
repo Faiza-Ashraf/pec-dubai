@@ -64,7 +64,7 @@ export function SiteHeader() {
     >
       <Container
         className={cn(
-          "flex items-center justify-between gap-4 transition-all duration-300",
+          "flex items-center justify-between gap-4 transition-all duration-300 max-md:px-4",
           scrolled ? "h-14" : "h-16",
         )}
       >

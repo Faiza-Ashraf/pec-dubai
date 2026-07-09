@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { SafariVideo } from "@/components/ui/safari-video";
 
 const heroVideoSrc = "/videos/blueprint-folding-building.mp4";
 
@@ -6,16 +7,12 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden bg-[var(--color-obsidian)] lg:min-h-[100svh]"
+      className="relative overflow-hidden bg-[var(--color-obsidian)] max-md:pt-16 lg:min-h-[100svh]"
     >
-      <div className="relative z-10 mx-5 mb-6 mt-20 aspect-video overflow-hidden rounded-[8px] border border-[var(--color-gold-border)] bg-[var(--color-surface)] sm:mx-8 sm:mt-24 lg:pointer-events-none lg:absolute lg:inset-y-0 lg:right-0 lg:z-0 lg:mx-0 lg:mb-0 lg:mt-0 lg:h-full lg:w-[56vw] lg:rounded-none lg:border-0">
-        <video
-          className="h-full w-full object-cover"
+      <div className="relative z-10 mx-5 mb-6 mt-20 aspect-video overflow-hidden rounded-[8px] border border-[var(--color-gold-border)] bg-[var(--color-surface)] max-md:mx-0 max-md:mb-0 max-md:mt-0 max-md:w-[100vw] max-md:max-w-none max-md:rounded-none max-md:border-0 max-md:relative max-md:left-1/2 max-md:-translate-x-1/2 sm:mx-8 sm:mt-24 lg:pointer-events-none lg:absolute lg:inset-y-0 lg:right-0 lg:z-0 lg:mx-0 lg:mb-0 lg:mt-0 lg:h-full lg:w-[56vw] lg:rounded-none lg:border-0">
+        <SafariVideo
+          className="h-full w-full object-contain"
           src={heroVideoSrc}
-          autoPlay
-          muted
-          loop
-          playsInline
           preload="metadata"
           aria-label="Blueprint folding into a 3D architectural building"
         />
@@ -29,7 +26,7 @@ export function HeroSection() {
           <p className="hidden font-mono text-[0.58rem] uppercase tracking-[0.35em] text-[var(--color-gold)] lg:block">
             Luxury Architecture & Engineering
           </p>
-          <h1 className="mt-0 max-w-[580px] font-display text-[clamp(3rem,5.4vw,5.9rem)] font-light leading-[0.98] text-[var(--color-white)] lg:mt-6">
+          <h1 className="mt-0 max-w-[580px] pt-4 font-display text-[clamp(3rem,5.4vw,5.9rem)] font-light leading-[0.98] text-[var(--color-white)] max-md:pt-4 lg:mt-6 lg:pt-0">
             Design-led spaces, engineered to endure.
           </h1>
           <p className="mt-6 max-w-[520px] text-[clamp(0.98rem,1.35vw,1.06rem)] font-light leading-[1.75] text-[var(--color-fog)]">
