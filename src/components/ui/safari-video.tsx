@@ -131,6 +131,10 @@ export const SafariVideo = forwardRef<HTMLVideoElement, SafariVideoProps>(functi
 
     window.addEventListener("pageshow", keepStartingUntilPlaying);
     window.addEventListener("focus", keepStartingUntilPlaying);
+    window.addEventListener("scroll", keepStartingUntilPlaying, { passive: true });
+    window.addEventListener("resize", keepStartingUntilPlaying);
+    window.addEventListener("orientationchange", keepStartingUntilPlaying);
+    window.addEventListener("pec:site-loader-hidden", keepStartingUntilPlaying);
     document.addEventListener("visibilitychange", keepStartingUntilPlaying);
 
     return () => {
@@ -141,6 +145,10 @@ export const SafariVideo = forwardRef<HTMLVideoElement, SafariVideoProps>(functi
       stopStartupAttempts();
       window.removeEventListener("pageshow", keepStartingUntilPlaying);
       window.removeEventListener("focus", keepStartingUntilPlaying);
+      window.removeEventListener("scroll", keepStartingUntilPlaying);
+      window.removeEventListener("resize", keepStartingUntilPlaying);
+      window.removeEventListener("orientationchange", keepStartingUntilPlaying);
+      window.removeEventListener("pec:site-loader-hidden", keepStartingUntilPlaying);
       document.removeEventListener("visibilitychange", keepStartingUntilPlaying);
     };
   }, [attemptPlay, autoPlay]);

@@ -10,6 +10,12 @@ export function SiteLoader() {
   const percentage = useMemo(() => `${Math.floor(progress)}%`, [progress]);
 
   useEffect(() => {
+    if (!hidden) return;
+
+    window.dispatchEvent(new Event("pec:site-loader-hidden"));
+  }, [hidden]);
+
+  useEffect(() => {
     const timeouts: number[] = [];
 
     const revealTimer = window.setTimeout(() => {
