@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 
 export function SiteLoader() {
@@ -61,17 +62,24 @@ export function SiteLoader() {
       }}
     >
       <div
-        className="max-w-full px-2 font-display text-[clamp(2rem,5vw,3.2rem)] font-light tracking-[0.3em] text-[var(--color-charcoal)]"
+        className="max-w-full px-2"
         style={{
           opacity: contentVisible ? 1 : 0,
           transform: contentVisible ? "translateY(0)" : "translateY(16px)",
           transition: "opacity .6s, transform .6s",
         }}
       >
-        PEC<span className="text-[var(--color-steel-blue)]">.</span>DUBAI
+        <Image
+          src="/PEC_CORRECTED_logo_package/PEC_logo_APPROVED_transparent_clean.png"
+          alt="PEC Dubai"
+          width={1880}
+          height={1096}
+          priority
+          className="h-24 w-auto object-contain sm:h-28 md:h-32"
+        />
       </div>
       <div
-        className="max-w-[min(92vw,32rem)] px-2 font-display text-[0.82rem] italic tracking-[0.22em] text-[var(--color-cool-gray)] sm:text-[0.9rem] sm:tracking-[0.3em]"
+        className="max-w-[min(92vw,38rem)] px-2 font-display text-[1rem] italic tracking-[0.18em] text-[var(--color-cool-gray)] sm:text-[1.08rem] sm:tracking-[0.26em] md:text-[1.18rem]"
         style={{
           opacity: contentVisible ? 1 : 0,
           transition: "opacity .6s .4s",
@@ -88,7 +96,7 @@ export function SiteLoader() {
           }}
         />
       </div>
-      <div className="font-mono text-[0.65rem] tracking-[0.2em] text-[var(--color-cool-gray)]">
+      <div className="font-mono text-[0.78rem] tracking-[0.24em] text-[var(--color-cool-gray)] sm:text-[0.86rem]">
         {percentage}
       </div>
     </div>
