@@ -122,6 +122,56 @@ export const projects = [
     href: "/projects#al-barari-signature-villa",
   },
   {
+    title: "Palm Jumeirah Garden Villa",
+    location: "Palm Jumeirah, Dubai",
+    summary:
+      "Contemporary villa concept with refined glazing, shaded outdoor living, and integrated architectural and structural detailing.",
+    metrics: "Luxury Villa",
+    palette: "from-[#989DA3] to-[#567287]",
+    image: "/hero/villa-01.jpg",
+    href: "/projects#palm-jumeirah-garden-villa",
+  },
+  {
+    title: "Emirates Hills Residence",
+    location: "Emirates Hills, Dubai",
+    summary:
+      "Private residence shaped around calm proportions, premium facade treatments, and coordinated engineering documentation.",
+    metrics: "Private Residence",
+    palette: "from-[#989DA3] to-[#567287]",
+    image: "/hero/villa-02.jpg",
+    href: "/projects#emirates-hills-residence",
+  },
+  {
+    title: "Jumeirah Contemporary Villa",
+    location: "Jumeirah, Dubai",
+    summary:
+      "Modern family villa with clean massing, warm night lighting, and authority-ready architectural design packages.",
+    metrics: "Residential",
+    palette: "from-[#FFFFFF] to-[#989DA3]",
+    image: "/hero/villa-03.jpg",
+    href: "/projects#jumeirah-contemporary-villa",
+  },
+  {
+    title: "Meydan Minimal Residence",
+    location: "Meydan, Dubai",
+    summary:
+      "Minimal villa elevation with generous glass, precise structural coordination, and a restrained luxury material language.",
+    metrics: "Villa Concept",
+    palette: "from-[#FFFFFF] to-[#989DA3]",
+    image: "/hero/villa-04.jpg",
+    href: "/projects#meydan-minimal-residence",
+  },
+  {
+    title: "Dubai Hills Courtyard Villa",
+    location: "Dubai Hills Estate",
+    summary:
+      "Premium residential concept arranged around landscape views, privacy, and seamless indoor-outdoor family living.",
+    metrics: "Premium Villa",
+    palette: "from-[#989DA3] to-[#567287]",
+    image: "/hero/villa-05.jpg",
+    href: "/projects#dubai-hills-courtyard-villa",
+  },
+  {
     title: "GENESIS Experience Center",
     location: "Jumeirah 1, Dubai",
     summary:
@@ -130,6 +180,26 @@ export const projects = [
     palette: "from-[#FFFFFF] to-[#989DA3]",
     image: "/hero/villa-10.jpg",
     href: "/projects#genesis-experience-center",
+  },
+  {
+    title: "Nad Al Sheba Villa",
+    location: "Nad Al Sheba, Dubai",
+    summary:
+      "Elegant residential facade with layered privacy, technical coordination, and refined architectural supervision.",
+    metrics: "Residential Villa",
+    palette: "from-[#989DA3] to-[#567287]",
+    image: "/hero/villa-07.jpg",
+    href: "/projects#nad-al-sheba-villa",
+  },
+  {
+    title: "District One Villa Concept",
+    location: "Mohammed Bin Rashid City",
+    summary:
+      "Large villa concept with broad glazing, balanced proportions, and integrated design development for approvals.",
+    metrics: "Villa Development",
+    palette: "from-[#FFFFFF] to-[#989DA3]",
+    image: "/hero/villa-09.jpg",
+    href: "/projects#district-one-villa-concept",
   },
   {
     title: "Creek Harbour Plaza",

@@ -23,15 +23,17 @@ export function ProcessSection() {
     if (reducedMotion) return;
 
     const context = gsap.context(() => {
+      const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+
       gsap.set(fillRef.current, { width: "0%" });
       gsap.set(stepRefs.current, { y: 10 });
 
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: rootRef.current,
-          start: "top 72%",
-          end: "bottom 42%",
-          scrub: 1,
+          start: isDesktop ? "top 78%" : "top 72%",
+          end: isDesktop ? "bottom 65%" : "bottom 42%",
+          scrub: isDesktop ? 0.35 : 1,
         },
       });
 

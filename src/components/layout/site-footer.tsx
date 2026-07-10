@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Instagram, Mail } from "lucide-react";
 import { siteMeta } from "@/data/home";
 import { Container } from "./container";
@@ -26,9 +27,16 @@ export function SiteFooter() {
           <div className="order-1 md:order-none">
             <Link
               href="/"
-              className="font-display text-[1.25rem] tracking-[0.16em] text-[var(--color-charcoal)] md:text-[1.4rem]"
+              className="mx-auto flex w-fit items-center justify-center"
+              aria-label="PEC Dubai home"
             >
-              PEC<span className="text-[var(--color-steel-blue)]">.</span> Dubai
+              <Image
+                src="/PEC_CORRECTED_logo_package/PEC_logo_APPROVED_transparent_clean.png"
+                alt="PEC Dubai"
+                width={1880}
+                height={1096}
+                className="h-12 w-auto object-contain md:h-14"
+              />
             </Link>
             <div className="mt-2 flex items-center justify-center gap-3 md:hidden">
               <a

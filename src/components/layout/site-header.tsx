@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { navItems } from "@/data/home";
@@ -70,11 +71,17 @@ export function SiteHeader() {
         {/* LOGO */}
         <Link
           href="/"
-          className="relative z-[120] flex items-center gap-3 text-[#fff]"
+          className="relative z-[120] flex items-center"
+          aria-label="PEC Dubai home"
         >
-          <p className="font-display text-[1.35rem] font-normal tracking-[0.15em]">
-            PEC<span className="text-[#FFFFFF]">.</span>
-          </p>
+          <Image
+            src="/PEC_CORRECTED_logo_package/PEC_mark_only_one_color_white_transparent.png"
+            alt="PEC Dubai"
+            width={1880}
+            height={1096}
+            priority
+            className="h-6 w-auto object-contain sm:h-7"
+          />
         </Link>
 
         {/* DESKTOP NAV */}

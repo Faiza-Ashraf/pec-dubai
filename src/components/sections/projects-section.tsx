@@ -3,134 +3,54 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import type { CSSProperties, PointerEvent } from "react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/data/home";
 import { cn } from "@/lib/cn";
 
-function wrapIndex(value: number, total: number) {
-  return ((value % total) + total) % total;
-}
-
-function shortestOffset(index: number, position: number, total: number) {
-  const active = ((position % total) + total) % total;
-  let offset = index - active;
-  if (offset > total / 2) offset -= total;
-  if (offset < -total / 2) offset += total;
-  return offset;
-}
-
 export function ProjectsSection() {
-  const [position, setPosition] = useState(0);
-  const positionRef = useRef(0);
-  const targetRef = useRef(0);
-  const frameRef = useRef<number | null>(null);
-  const lastTimeRef = useRef<number | null>(null);
-  const dragRef = useRef({
-    active: false,
-    startX: 0,
-    startY: 0,
-    startPosition: 0,
-    moved: false,
-  });
-  const total = projects.length;
-  const activeIndex = wrapIndex(Math.round(position), total);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+
   const activeProject = projects[activeIndex];
 
-  const slides = useMemo(
-    () =>
-      projects.map((project, index) => {
-        const offset = shortestOffset(index, position, total);
-        const abs = Math.abs(offset);
-        const clamped = Math.max(-2.4, Math.min(2.4, offset));
-
-        const style: CSSProperties = {
-          opacity: abs > 2.4 ? 0 : Math.max(0.3, 1 - abs * 0.22),
-          zIndex: Math.round(30 - abs * 10),
-          filter: `blur(${Math.min(abs * 0.18, 0.4)}px)`,
-          transform: `translate3d(${clamped * 32}%, 0, ${-abs * 120}px) rotateY(${clamped * -18}deg) scale(${Math.max(0.8, 1 - abs * 0.085)})`,
-        };
-
-        return { ...project, index, offset, abs, style };
-      }),
-    [position, total],
-  );
-
-  const move = (direction: number) => {
-    targetRef.current = Math.round(targetRef.current) + direction;
+  const scrollToProject = (index: number) => {
+    const nextIndex = (index + projects.length) % projects.length;
+    setActiveIndex(nextIndex);
+    cardRefs.current[nextIndex]?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
   };
 
-  useEffect(() => {
-    const animate = (time: number) => {
-      const previous = lastTimeRef.current ?? time;
-      const delta = Math.min(time - previous, 48);
-      lastTimeRef.current = time;
+  const updateActiveFromScroll = () => {
+    const viewport = viewportRef.current;
+    if (!viewport) return;
 
-      const distance = targetRef.current - positionRef.current;
-      const ease = dragRef.current.active ? 1 : Math.min(0.2, 0.08 + delta * 0.002);
-      positionRef.current += distance * ease;
-      setPosition(positionRef.current);
+    const viewportCenter = viewport.getBoundingClientRect().left + viewport.clientWidth / 2;
+    const closestIndex = cardRefs.current.reduce((closest, card, index) => {
+      if (!card) return closest;
 
-      frameRef.current = window.requestAnimationFrame(animate);
-    };
+      const rect = card.getBoundingClientRect();
+      const distance = Math.abs(rect.left + rect.width / 2 - viewportCenter);
+      return distance < closest.distance ? { index, distance } : closest;
+    }, { index: activeIndex, distance: Number.POSITIVE_INFINITY }).index;
 
-    frameRef.current = window.requestAnimationFrame(animate);
-
-    return () => {
-      if (frameRef.current) window.cancelAnimationFrame(frameRef.current);
-      frameRef.current = null;
-      lastTimeRef.current = null;
-    };
-  }, [total]);
-
-  const onPointerDown = (event: PointerEvent<HTMLDivElement>) => {
-    dragRef.current = {
-      active: true,
-      startX: event.clientX,
-      startY: event.clientY,
-      startPosition: targetRef.current,
-      moved: false,
-    };
-    event.currentTarget.setPointerCapture(event.pointerId);
-  };
-
-  const onPointerMove = (event: PointerEvent<HTMLDivElement>) => {
-    const drag = dragRef.current;
-    if (!drag.active) return;
-
-    const deltaX = event.clientX - drag.startX;
-    const deltaY = event.clientY - drag.startY;
-    if (Math.abs(deltaX) < 4 || Math.abs(deltaX) < Math.abs(deltaY) * 0.65) return;
-
-    event.preventDefault();
-    drag.moved = true;
-    const nextPosition = drag.startPosition - deltaX / 190;
-    targetRef.current = nextPosition;
-    positionRef.current = nextPosition;
-    setPosition(nextPosition);
-  };
-
-  const onPointerEnd = (event: PointerEvent<HTMLDivElement>) => {
-    if (!dragRef.current.active) return;
-    dragRef.current.active = false;
-    targetRef.current = Math.round(targetRef.current);
-
-    try {
-      event.currentTarget.releasePointerCapture(event.pointerId);
-    } catch {
-      // Pointer capture may already be released on some browsers.
+    if (closestIndex !== activeIndex) {
+      setActiveIndex(closestIndex);
     }
   };
 
   return (
     <section
       id="projects"
-      className="flex min-h-[100svh] items-center overflow-hidden bg-[var(--color-canvas)] py-[clamp(42px,6vw,72px)] max-md:min-h-0 max-md:py-12"
+      className="overflow-hidden bg-[var(--color-canvas)] py-[clamp(36px,5vw,60px)] max-md:py-10"
     >
       <Container>
-        <div className="flex flex-col items-start justify-between gap-3 md:mb-5 md:flex-row md:items-end">
+        <div className="flex flex-col items-start justify-between gap-4 md:mb-7 md:flex-row md:items-end">
           <div>
             <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-steel-blue)]">
               Selected Work
@@ -144,88 +64,100 @@ export function ProjectsSection() {
           </Button>
         </div>
 
-        <div className="relative mx-auto max-w-[1180px]">
+        <div className="mt-5 lg:mt-7">
           <div
-            className="relative h-[min(46vw,360px)] min-h-[250px] cursor-grab [perspective:1400px] [touch-action:pan-y] active:cursor-grabbing sm:min-h-[300px]"
-            onPointerDown={onPointerDown}
-            onPointerMove={onPointerMove}
-            onPointerUp={onPointerEnd}
-            onPointerCancel={onPointerEnd}
+            ref={viewportRef}
+            className="overflow-x-auto pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            aria-label="Featured project gallery"
+            onScroll={updateActiveFromScroll}
           >
-            <div className="absolute inset-x-[12%] bottom-5 h-20 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(44,51,60,0.16),transparent_68%)] blur-2xl" />
-            {slides.map((slide) => (
-              <Link
-                key={slide.title}
-                href={slide.href}
-                className={cn(
-                  "absolute left-1/2 top-4 h-[82%] w-[min(76vw,680px)] -translate-x-1/2 overflow-hidden rounded-[8px] border border-[var(--color-divider)] bg-[var(--color-surface)] shadow-[0_34px_80px_rgba(44,51,60,0.15)] outline-none transition-[border-color,box-shadow] duration-300 will-change-[transform,opacity,filter] focus-visible:border-[var(--color-steel-blue)] focus-visible:shadow-[0_0_0_4px_rgba(86,114,135,0.24),0_34px_80px_rgba(44,51,60,0.15)]",
-                  slide.abs > 2.4 && "pointer-events-none",
-                )}
-                style={slide.style}
-                aria-label={`Open ${slide.title}`}
-                draggable={false}
-                onDragStart={(event) => event.preventDefault()}
-                onClick={(event) => {
-                  if (dragRef.current.moved) {
-                    event.preventDefault();
-                    dragRef.current.moved = false;
-                    return;
-                  }
-                  if (slide.index !== activeIndex) {
-                    event.preventDefault();
-                    targetRef.current = position + slide.offset;
-                  }
-                }}
-              >
-                <Image
-                  src={slide.image}
-                  alt={`${slide.title} in ${slide.location}`}
-                  fill
-                  sizes="(max-width: 640px) 76vw, (max-width: 1024px) 70vw, 680px"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(255,255,255,0.48),rgba(255,255,255,0.08)_48%,transparent)]" />
-                <div className="absolute bottom-5 left-5 font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--color-deep-charcoal)]">
-                  {slide.location}
-                </div>
-              </Link>
-            ))}
+            <div className="flex w-max snap-x snap-mandatory gap-4 lg:gap-6">
+              {projects.map((project, index) => (
+                <Link
+                  key={project.title}
+                  href={project.href}
+                  ref={(element) => {
+                    cardRefs.current[index] = element;
+                  }}
+                  className={cn(
+                    "group relative isolate h-[230px] w-[min(84vw,440px)] snap-center overflow-hidden rounded-[8px] border border-[var(--color-divider)] bg-[var(--color-surface-muted)] shadow-[0_22px_62px_rgba(44,51,60,0.1)] outline-none transition duration-300 hover:-translate-y-1 hover:border-[rgba(86,114,135,0.58)] hover:shadow-[0_28px_76px_rgba(44,51,60,0.15)] focus-visible:border-[var(--color-steel-blue)] focus-visible:shadow-[0_0_0_4px_rgba(86,114,135,0.22),0_28px_76px_rgba(44,51,60,0.15)] sm:h-[270px] sm:w-[min(72vw,480px)] lg:h-[min(34svh,350px)] lg:min-h-[270px] lg:w-[min(46vw,620px)]",
+                    index === activeIndex && "border-[rgba(86,114,135,0.62)]",
+                  )}
+                  aria-label={`Open ${project.title}`}
+                  onMouseEnter={() => setActiveIndex(index)}
+                  onFocus={() => setActiveIndex(index)}
+                >
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} in ${project.location}`}
+                    fill
+                    sizes="(max-width: 1024px) 84vw, 54vw"
+                    priority={index === 0}
+                    className="object-cover transition duration-500 ease-out group-hover:scale-[1.025]"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(44,51,60,0.02)_0%,rgba(44,51,60,0.18)_42%,rgba(44,51,60,0.74)_100%)]" />
+                  <div className="absolute inset-x-0 bottom-0 p-4 text-white sm:p-5">
+                    <div className="flex flex-wrap items-center gap-2 font-mono text-[0.58rem] uppercase tracking-[0.22em] text-[rgba(255,255,255,0.76)]">
+                      <span>{project.metrics}</span>
+                      <span className="h-px w-7 bg-[rgba(255,255,255,0.45)]" aria-hidden="true" />
+                      <span>{project.location}</span>
+                    </div>
+                    <h3 className="mt-2 max-w-[680px] font-display text-[clamp(1.25rem,2.4vw,2rem)] font-light leading-[1.04]">
+                      {project.title}
+                    </h3>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
 
           <Link
             href={activeProject.href}
-            className="mx-auto mt-4 block max-w-[760px] border-y border-[var(--color-divider)] py-4 text-center transition hover:border-[var(--color-steel-blue)]"
+            className="relative mx-auto mt-1 block h-[136px] max-w-[840px] overflow-hidden border-y border-[var(--color-steel-blue)] text-center transition hover:border-[var(--color-deep-charcoal)] sm:h-[148px] lg:h-[152px]"
           >
-            <p className="font-mono text-[0.62rem] uppercase tracking-[0.28em] text-[var(--color-steel-blue)]">
-              {activeProject.location}
-            </p>
-            <h3 className="mt-2 font-display text-[clamp(1.7rem,3vw,2.6rem)] font-light leading-[1.05] text-[var(--color-charcoal)]">
-              {activeProject.title}
-            </h3>
-            <p className="mx-auto mt-3 max-w-[620px] text-[0.82rem] leading-[1.55] text-[var(--color-cool-gray)]">
-              {activeProject.summary}
-            </p>
-            <p className="mt-3 font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--color-deep-charcoal)]">
-              {activeProject.metrics}
-            </p>
+            {projects.map((project, index) => (
+              <div
+                key={project.title}
+                aria-hidden={index !== activeIndex}
+                className={cn(
+                  "absolute inset-0 flex flex-col items-center justify-center px-2 py-3 transition-all duration-500 ease-out sm:py-4",
+                  index === activeIndex
+                    ? "translate-y-0 opacity-100 blur-0"
+                    : "pointer-events-none translate-y-2 opacity-0 blur-[2px]",
+                )}
+              >
+                <p className="font-mono text-[0.54rem] uppercase tracking-[0.3em] text-[var(--color-steel-blue)]">
+                  {project.location}
+                </p>
+                <h3 className="mt-1 font-display text-[clamp(1.45rem,2.8vw,2.35rem)] font-light leading-[1.02] text-[var(--color-charcoal)]">
+                  {project.title}
+                </h3>
+                <p className="mx-auto mt-2 line-clamp-2 max-w-[700px] text-[clamp(0.78rem,1vw,0.9rem)] leading-[1.45] text-[var(--color-cool-gray)]">
+                  {project.summary}
+                </p>
+                <p className="mt-2 font-mono text-[0.54rem] uppercase tracking-[0.3em] text-[var(--color-deep-charcoal)]">
+                  {project.metrics}
+                </p>
+              </div>
+            ))}
           </Link>
 
-          <div className="mt-5 flex items-center justify-center gap-4">
+          <div className="mt-3 flex items-center justify-center gap-4">
             <button
               type="button"
               className="grid size-10 place-items-center rounded-full border border-[var(--color-divider)] bg-[var(--color-surface)] text-[var(--color-charcoal)] transition hover:border-[var(--color-deep-charcoal)] hover:text-[var(--color-deep-charcoal)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-steel-blue)]"
-              onClick={() => move(-1)}
+              onClick={() => scrollToProject(activeIndex - 1)}
               aria-label="Previous project"
             >
               <ChevronLeft className="size-4" aria-hidden="true" />
             </button>
-            <div className="font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--color-cool-gray)]">
-              {String(activeIndex + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+            <div className="font-mono text-[0.62rem] uppercase tracking-[0.28em] text-[var(--color-cool-gray)]">
+              {String(activeIndex + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
             </div>
             <button
               type="button"
               className="grid size-10 place-items-center rounded-full border border-[var(--color-divider)] bg-[var(--color-surface)] text-[var(--color-charcoal)] transition hover:border-[var(--color-deep-charcoal)] hover:text-[var(--color-deep-charcoal)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-steel-blue)]"
-              onClick={() => move(1)}
+              onClick={() => scrollToProject(activeIndex + 1)}
               aria-label="Next project"
             >
               <ChevronRight className="size-4" aria-hidden="true" />
@@ -236,5 +168,3 @@ export function ProjectsSection() {
     </section>
   );
 }
-
-
