@@ -21,19 +21,20 @@ export default function ProjectsPage() {
           <article
             key={project.title}
             id={project.href.split("#")[1]}
-            className="rounded-lg border border-[var(--color-gold-border)] bg-[var(--color-surface)] p-6 shadow-[0_18px_45px_rgba(30,30,30,0.06)]"
+            className="rounded-lg border border-[var(--color-divider)] bg-[var(--color-surface)] p-6 shadow-[0_18px_45px_rgba(44,51,60,0.06)]"
           >
-            <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-[var(--color-gold-light)]">
+            <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-[var(--color-light-gray)]">
               {project.location}
             </p>
-            <h2 className="mt-4 font-display text-4xl text-[var(--color-white)]">
+            <h2 className="mt-4 font-display text-4xl text-[var(--color-charcoal)]">
               {project.title}
             </h2>
-            <p className="mt-4 text-base leading-8 text-[var(--color-fog)]">{project.summary}</p>
-            <p className="mt-6 text-sm text-[var(--color-white)]">{project.metrics}</p>
+            <p className="mt-4 text-base leading-8 text-[var(--color-cool-gray)]">{project.summary}</p>
+            <p className="mt-6 text-sm text-[var(--color-charcoal)]">{project.metrics}</p>
           </article>
         ))}
       </div>
     </PageShell>
   );
 }
+

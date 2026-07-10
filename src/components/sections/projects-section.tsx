@@ -125,15 +125,18 @@ export function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="flex min-h-[100svh] items-center overflow-hidden bg-[var(--color-obsidian)] py-[clamp(42px,6vw,72px)]">
+    <section
+      id="projects"
+      className="flex min-h-[100svh] items-center overflow-hidden bg-[var(--color-canvas)] py-[clamp(42px,6vw,72px)] max-md:min-h-0 max-md:py-12"
+    >
       <Container>
         <div className="flex flex-col items-start justify-between gap-3 md:mb-5 md:flex-row md:items-end">
           <div>
-            <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-gold)]">
+            <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-steel-blue)]">
               Selected Work
             </span>
-            <h2 className="mt-3 font-display text-[clamp(2rem,4vw,3.6rem)] font-light leading-[1.05] text-[var(--color-white)]">
-              Featured <span className="text-[var(--color-gold-light)] italic">Projects</span>
+            <h2 className="mt-3 font-display text-[clamp(2rem,4vw,3.6rem)] font-light leading-[1.05] text-[var(--color-charcoal)]">
+              Featured <span className="text-[var(--color-light-gray)] italic">Projects</span>
             </h2>
           </div>
           <Button href="/projects" variant="secondary" className="min-h-12 px-6 py-3">
@@ -149,13 +152,13 @@ export function ProjectsSection() {
             onPointerUp={onPointerEnd}
             onPointerCancel={onPointerEnd}
           >
-            <div className="absolute inset-x-[12%] bottom-5 h-20 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(30,30,30,0.16),transparent_68%)] blur-2xl" />
+            <div className="absolute inset-x-[12%] bottom-5 h-20 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(44,51,60,0.16),transparent_68%)] blur-2xl" />
             {slides.map((slide) => (
               <Link
                 key={slide.title}
                 href={slide.href}
                 className={cn(
-                  "absolute left-1/2 top-4 h-[82%] w-[min(76vw,680px)] -translate-x-1/2 overflow-hidden rounded-[8px] border border-[var(--color-gold-border)] bg-[var(--color-surface)] shadow-[0_34px_80px_rgba(30,30,30,0.15)] outline-none transition-[border-color,box-shadow] duration-300 will-change-[transform,opacity,filter] focus-visible:border-[var(--color-gold)] focus-visible:shadow-[0_0_0_4px_rgba(184,151,106,0.24),0_34px_80px_rgba(30,30,30,0.15)]",
+                  "absolute left-1/2 top-4 h-[82%] w-[min(76vw,680px)] -translate-x-1/2 overflow-hidden rounded-[8px] border border-[var(--color-divider)] bg-[var(--color-surface)] shadow-[0_34px_80px_rgba(44,51,60,0.15)] outline-none transition-[border-color,box-shadow] duration-300 will-change-[transform,opacity,filter] focus-visible:border-[var(--color-steel-blue)] focus-visible:shadow-[0_0_0_4px_rgba(86,114,135,0.24),0_34px_80px_rgba(44,51,60,0.15)]",
                   slide.abs > 2.4 && "pointer-events-none",
                 )}
                 style={slide.style}
@@ -181,8 +184,8 @@ export function ProjectsSection() {
                   sizes="(max-width: 640px) 76vw, (max-width: 1024px) 70vw, 680px"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(246,243,238,0.48),rgba(246,243,238,0.08)_48%,transparent)]" />
-                <div className="absolute bottom-5 left-5 font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(255,255,255,0.48),rgba(255,255,255,0.08)_48%,transparent)]" />
+                <div className="absolute bottom-5 left-5 font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--color-deep-charcoal)]">
                   {slide.location}
                 </div>
               </Link>
@@ -192,18 +195,18 @@ export function ProjectsSection() {
           <div className="mt-1 flex items-center justify-center gap-4">
             <button
               type="button"
-              className="grid size-10 place-items-center rounded-full border border-[var(--color-gold-border)] bg-[var(--color-surface)] text-[var(--color-white)] transition hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-gold)]"
+              className="grid size-10 place-items-center rounded-full border border-[var(--color-divider)] bg-[var(--color-surface)] text-[var(--color-charcoal)] transition hover:border-[var(--color-deep-charcoal)] hover:text-[var(--color-deep-charcoal)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-steel-blue)]"
               onClick={() => move(-1)}
               aria-label="Previous project"
             >
               <ChevronLeft className="size-4" aria-hidden="true" />
             </button>
-            <div className="font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--color-fog)]">
+            <div className="font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--color-cool-gray)]">
               {String(activeIndex + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
             </div>
             <button
               type="button"
-              className="grid size-10 place-items-center rounded-full border border-[var(--color-gold-border)] bg-[var(--color-surface)] text-[var(--color-white)] transition hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-gold)]"
+              className="grid size-10 place-items-center rounded-full border border-[var(--color-divider)] bg-[var(--color-surface)] text-[var(--color-charcoal)] transition hover:border-[var(--color-deep-charcoal)] hover:text-[var(--color-deep-charcoal)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-steel-blue)]"
               onClick={() => move(1)}
               aria-label="Next project"
             >
@@ -213,18 +216,18 @@ export function ProjectsSection() {
 
           <Link
             href={activeProject.href}
-            className="mx-auto mt-4 block max-w-[760px] border-y border-[var(--color-gold-border)] py-4 text-center transition hover:border-[var(--color-gold)]"
+            className="mx-auto mt-4 block max-w-[760px] border-y border-[var(--color-divider)] py-4 text-center transition hover:border-[var(--color-steel-blue)]"
           >
-            <p className="font-mono text-[0.62rem] uppercase tracking-[0.28em] text-[var(--color-gold)]">
+            <p className="font-mono text-[0.62rem] uppercase tracking-[0.28em] text-[var(--color-steel-blue)]">
               {activeProject.location}
             </p>
-            <h3 className="mt-2 font-display text-[clamp(1.7rem,3vw,2.6rem)] font-light leading-[1.05] text-[var(--color-white)]">
+            <h3 className="mt-2 font-display text-[clamp(1.7rem,3vw,2.6rem)] font-light leading-[1.05] text-[var(--color-charcoal)]">
               {activeProject.title}
             </h3>
-            <p className="mx-auto mt-3 max-w-[620px] text-[0.82rem] leading-[1.55] text-[var(--color-fog)]">
+            <p className="mx-auto mt-3 max-w-[620px] text-[0.82rem] leading-[1.55] text-[var(--color-cool-gray)]">
               {activeProject.summary}
             </p>
-            <p className="mt-3 font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+            <p className="mt-3 font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--color-deep-charcoal)]">
               {activeProject.metrics}
             </p>
           </Link>
@@ -233,3 +236,5 @@ export function ProjectsSection() {
     </section>
   );
 }
+
+

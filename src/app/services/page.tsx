@@ -20,15 +20,16 @@ export default function ServicesPage() {
         {services.map((service) => (
           <article
             key={service.title}
-            className="rounded-lg border border-[var(--color-gold-border)] bg-[var(--color-surface)] p-6 shadow-[0_18px_45px_rgba(30,30,30,0.06)]"
+            className="rounded-lg border border-[var(--color-divider)] bg-[var(--color-surface)] p-6 shadow-[0_18px_45px_rgba(44,51,60,0.06)]"
           >
-            <h2 className="font-display text-4xl text-[var(--color-white)]">
+            <h2 className="font-display text-4xl text-[var(--color-charcoal)]">
               {service.title}
             </h2>
-            <p className="mt-4 text-base leading-8 text-[var(--color-fog)]">{service.description}</p>
+            <p className="mt-4 text-base leading-8 text-[var(--color-cool-gray)]">{service.description}</p>
           </article>
         ))}
       </div>
     </PageShell>
   );
 }
+

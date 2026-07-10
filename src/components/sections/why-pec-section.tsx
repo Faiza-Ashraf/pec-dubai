@@ -3,32 +3,32 @@ import { credentials, whyPec } from "@/data/home";
 
 export function WhyPecSection() {
   return (
-    <section id="why" className="bg-[var(--color-obsidian)] py-[clamp(70px,10vw,140px)]">
+    <section id="why" className="bg-[var(--color-canvas)] py-[clamp(70px,10vw,140px)]">
       <Container>
         <div className="grid gap-[72px] lg:grid-cols-2 lg:items-start">
           <div>
-            <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-gold)]">
+            <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-steel-blue)]">
               Why Choose Us
             </span>
-            <h2 className="mt-4 font-display text-[clamp(2rem,5vw,3.8rem)] font-light leading-[1.1] text-[var(--color-white)]">
+            <h2 className="mt-4 font-display text-[clamp(2rem,5vw,3.8rem)] font-light leading-[1.1] text-[var(--color-charcoal)]">
               Why the UAE&apos;s Best
               <br />
-              Choose <span className="text-[var(--color-gold-light)] italic">PEC</span>
+              Choose <span className="text-[var(--color-light-gray)] italic">PEC</span>
             </h2>
             <div className="mt-9 flex flex-col">
               {whyPec.map((item, index) => (
                 <div
                   key={item.title}
-                  className="grid grid-cols-[44px_1fr] gap-[18px] border-b border-[var(--color-gold-border)] py-6 transition hover:pl-1.5"
+                  className="grid grid-cols-[44px_1fr] gap-[18px] border-b border-[var(--color-divider)] py-6 transition hover:pl-1.5"
                 >
-                  <span className="pt-[3px] font-mono text-[0.6rem] text-[var(--color-gold)]">
+                  <span className="pt-[3px] font-mono text-[0.6rem] text-[var(--color-steel-blue)]">
                     0{index + 1}
                   </span>
                   <div>
-                    <div className="mb-[7px] font-display text-[1.05rem] font-normal text-[var(--color-white)]">
+                    <div className="mb-[7px] font-display text-[1.05rem] font-normal text-[var(--color-charcoal)]">
                       {item.title}
                     </div>
-                    <p className="text-[0.8rem] leading-[1.65] text-[var(--color-fog)]">
+                    <p className="text-[0.8rem] leading-[1.65] text-[var(--color-cool-gray)]">
                       {item.detail}
                     </p>
                   </div>
@@ -41,15 +41,15 @@ export function WhyPecSection() {
             {credentials.map((credential) => (
               <div
                 key={credential.id}
-                className="border border-[var(--color-gold-border)] bg-[var(--color-surface)] p-[22px_16px] text-center transition hover:border-[var(--color-bronze)] hover:bg-[var(--color-surface)]"
+                className="border border-[var(--color-divider)] bg-[var(--color-surface)] p-[22px_16px] text-center transition hover:border-[var(--color-deep-charcoal)] hover:bg-[var(--color-surface)]"
               >
-                <p className="font-mono text-[0.6rem] tracking-[0.15em] text-[var(--color-gold)]">
+                <p className="font-mono text-[0.6rem] tracking-[0.15em] text-[var(--color-steel-blue)]">
                   {credential.id}
                 </p>
-                <p className="mt-2 text-[0.78rem] leading-[1.35] text-[var(--color-ink-soft)]">
+                <p className="mt-2 text-[0.78rem] leading-[1.35] text-[var(--color-deep-charcoal)]">
                   {credential.name}
                 </p>
-                <p className="mt-1 text-[0.62rem] text-[var(--color-fog)]">{credential.status}</p>
+                <p className="mt-1 text-[0.62rem] text-[var(--color-cool-gray)]">{credential.status}</p>
               </div>
             ))}
           </div>
@@ -58,3 +58,5 @@ export function WhyPecSection() {
     </section>
   );
 }
+
+

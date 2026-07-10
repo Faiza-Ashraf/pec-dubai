@@ -6,7 +6,7 @@ import { navItems } from "@/data/home";
 import { cn } from "@/lib/cn";
 import { Container } from "./container";
 
-const mobileNavItems = navItems.filter((item) => item.label !== "About");
+const mobileNavItems = navItems;
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -56,16 +56,15 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-[100] transition-all duration-300 min-[1051px]:z-50",
-        scrolled
-          ? "border-b border-[rgba(255,255,255,0.2)] bg-[rgba(184,151,106,0.94)] shadow-[0_12px_35px_rgba(30,30,30,0.08)] backdrop-blur-[14px]"
-          : "border-b border-[rgba(255,255,255,0.16)] bg-[rgba(184,151,106,0.92)] backdrop-blur-[14px]",
+        "fixed inset-x-0 top-0 z-[100] border-b border-[rgba(255,255,255,0.16)] bg-[rgba(50,56,66,0.94)] backdrop-blur-[14px] transition-all duration-300 min-[1051px]:z-50",
+        scrolled &&
+          "min-[1051px]:border-[rgba(255,255,255,0.2)] min-[1051px]:shadow-[0_12px_35px_rgba(44,51,60,0.08)]",
       )}
     >
       <Container
         className={cn(
-          "flex items-center justify-between gap-4 transition-all duration-300 max-md:px-4",
-          scrolled ? "h-14" : "h-16",
+          "flex h-16 items-center justify-between gap-4 transition-all duration-300 max-md:px-4",
+          scrolled && "min-[1051px]:h-14",
         )}
       >
         {/* LOGO */}
@@ -74,7 +73,7 @@ export function SiteHeader() {
           className="relative z-[120] flex items-center gap-3 text-[#fff]"
         >
           <p className="font-display text-[1.35rem] font-normal tracking-[0.15em]">
-            PEC<span className="text-[#F6F3EE]">.</span>
+            PEC<span className="text-[#FFFFFF]">.</span>
           </p>
         </Link>
 
@@ -84,7 +83,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="relative text-[0.8rem] uppercase tracking-[0.22em] text-[#fff] transition hover:text-[var(--color-white)] after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-[var(--color-white)] after:transition-all after:duration-300 hover:after:w-full"
+              className="relative text-[0.8rem] uppercase tracking-[0.22em] text-[#fff] transition hover:text-[var(--color-light-gray)] after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-[var(--color-light-gray)] after:transition-all after:duration-300 hover:after:w-full"
             >
               {item.label}
             </Link>
@@ -125,7 +124,7 @@ export function SiteHeader() {
       {/* MOBILE MENU */}
       <div
         className={cn(
-          "fixed inset-0 z-[105] bg-[rgba(30,30,30,0.12)] backdrop-blur-[12px] transition-opacity duration-500 min-[1051px]:hidden",
+          "fixed inset-x-0 bottom-0 top-16 z-[105] bg-[rgba(44,51,60,0.62)] backdrop-blur-[6px] transition-opacity duration-500 min-[1051px]:hidden",
           open ? "opacity-100" : "pointer-events-none opacity-0",
         )}
         aria-hidden="true"
@@ -133,19 +132,19 @@ export function SiteHeader() {
 
       <div
         className={cn(
-          "fixed inset-y-0 right-0 z-[110] flex h-[100dvh] min-h-screen w-1/2 flex-col justify-center border-l border-[rgba(255,255,255,0.42)] bg-[rgba(255,255,255,0.85)] px-4 py-24 shadow-[-18px_0_55px_rgba(30,30,30,0.18)] backdrop-blur-[98px] ring-1 ring-[rgba(255,255,255,0.35)] transition-all duration-500 ease-[cubic-bezier(.16,1,.3,1)] min-[1051px]:hidden",
+          "fixed right-0 top-16 z-[110] flex h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] w-[40vw] flex-col border-l border-t border-[rgba(255,255,255,0.65)] bg-[rgba(255,255,255,0.95)] px-4 py-8 shadow-[-18px_0_55px_rgba(18,24,31,0.18)] backdrop-blur-[18px] transition-all duration-500 ease-[cubic-bezier(.16,1,.3,1)] min-[1051px]:hidden",
           open
             ? "translate-x-0 opacity-100"
             : "pointer-events-none translate-x-full opacity-0",
         )}
       >
         {/* NAV LINKS */}
-        <div className="flex flex-col items-center justify-center gap-3">
+        <div className="flex flex-col items-center justify-center gap-4">
           {mobileNavItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="flex min-h-[52px] w-full items-center justify-center px-4 text-center font-display text-[clamp(1.35rem,6vw,1.9rem)] font-medium text-[var(--color-bronze)] opacity-100 transition-all duration-500 hover:text-[var(--color-gold)]"
+              className="flex min-h-[52px] w-full items-center justify-center border-b border-[rgba(44,51,60,0.14)] px-4 text-center font-display text-[clamp(1.25rem,5.5vw,1.75rem)] font-medium text-[var(--color-deep-charcoal)] transition-all duration-300 last:border-b-0 hover:text-[var(--color-charcoal)]"
               onClick={() => setOpen(false)}
             >
               {item.label}
@@ -156,3 +155,5 @@ export function SiteHeader() {
     </header>
   );
 }
+
+
