@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter, Space_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { MobileStickyCta } from "@/components/layout/mobile-sticky-cta";
+import { PullToRefresh } from "@/components/layout/pull-to-refresh";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteLoader } from "@/components/layout/site-loader";
@@ -43,6 +44,7 @@ export default function RootLayout({
       <body className="min-h-full bg-[var(--color-canvas)] font-sans text-[var(--color-charcoal)]">
         <SiteLoader />
         <SiteHeader />
+        <PullToRefresh />
         {children}
         <SiteFooter />
         <MobileStickyCta />
