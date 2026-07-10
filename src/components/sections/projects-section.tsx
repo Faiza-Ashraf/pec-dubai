@@ -192,7 +192,25 @@ export function ProjectsSection() {
             ))}
           </div>
 
-          <div className="mt-1 flex items-center justify-center gap-4">
+          <Link
+            href={activeProject.href}
+            className="mx-auto mt-4 block max-w-[760px] border-y border-[var(--color-divider)] py-4 text-center transition hover:border-[var(--color-steel-blue)]"
+          >
+            <p className="font-mono text-[0.62rem] uppercase tracking-[0.28em] text-[var(--color-steel-blue)]">
+              {activeProject.location}
+            </p>
+            <h3 className="mt-2 font-display text-[clamp(1.7rem,3vw,2.6rem)] font-light leading-[1.05] text-[var(--color-charcoal)]">
+              {activeProject.title}
+            </h3>
+            <p className="mx-auto mt-3 max-w-[620px] text-[0.82rem] leading-[1.55] text-[var(--color-cool-gray)]">
+              {activeProject.summary}
+            </p>
+            <p className="mt-3 font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--color-deep-charcoal)]">
+              {activeProject.metrics}
+            </p>
+          </Link>
+
+          <div className="mt-5 flex items-center justify-center gap-4">
             <button
               type="button"
               className="grid size-10 place-items-center rounded-full border border-[var(--color-divider)] bg-[var(--color-surface)] text-[var(--color-charcoal)] transition hover:border-[var(--color-deep-charcoal)] hover:text-[var(--color-deep-charcoal)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-steel-blue)]"
@@ -213,24 +231,6 @@ export function ProjectsSection() {
               <ChevronRight className="size-4" aria-hidden="true" />
             </button>
           </div>
-
-          <Link
-            href={activeProject.href}
-            className="mx-auto mt-4 block max-w-[760px] border-y border-[var(--color-divider)] py-4 text-center transition hover:border-[var(--color-steel-blue)]"
-          >
-            <p className="font-mono text-[0.62rem] uppercase tracking-[0.28em] text-[var(--color-steel-blue)]">
-              {activeProject.location}
-            </p>
-            <h3 className="mt-2 font-display text-[clamp(1.7rem,3vw,2.6rem)] font-light leading-[1.05] text-[var(--color-charcoal)]">
-              {activeProject.title}
-            </h3>
-            <p className="mx-auto mt-3 max-w-[620px] text-[0.82rem] leading-[1.55] text-[var(--color-cool-gray)]">
-              {activeProject.summary}
-            </p>
-            <p className="mt-3 font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--color-deep-charcoal)]">
-              {activeProject.metrics}
-            </p>
-          </Link>
         </div>
       </Container>
     </section>
