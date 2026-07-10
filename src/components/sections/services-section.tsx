@@ -70,15 +70,15 @@ export function ServicesSection() {
     <section id="services" className="relative overflow-hidden bg-[var(--color-surface)] py-[clamp(48px,7vw,88px)]">
       <Container>
         <div className="mx-auto max-w-[700px] text-center">
-          <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-gold)]">
+          <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-steel-blue)]">
             Our Services
           </span>
-          <h2 className="mt-3 font-display text-[clamp(1.9rem,3.8vw,3.35rem)] font-light leading-[1.06] text-[var(--color-white)]">
+          <h2 className="mt-3 font-display text-[clamp(1.9rem,3.8vw,3.35rem)] font-light leading-[1.06] text-[var(--color-charcoal)]">
             End-to-end expertise.
             <br />
             Every step, seamlessly delivered.
           </h2>
-          <p className="mx-auto mt-4 max-w-[620px] text-[0.92rem] leading-[1.65] text-[var(--color-fog)]">
+          <p className="mx-auto mt-4 max-w-[620px] text-[0.92rem] leading-[1.65] text-[var(--color-cool-gray)]">
             From initial concept to final handover, PEC Dubai provides integrated design,
             engineering, approval, and supervision services with precision and purpose.
           </p>
@@ -86,7 +86,7 @@ export function ServicesSection() {
 
         <div className="mt-[clamp(28px,4.5vw,52px)] grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(440px,1.1fr)] lg:items-stretch xl:gap-12">
           <div
-            className="divide-y divide-[var(--color-gold-border)] border-y border-[var(--color-gold-border)]"
+            className="divide-y divide-[var(--color-divider)] border-y border-[var(--color-divider)]"
             role="tablist"
             aria-label="PEC Dubai services"
           >
@@ -103,7 +103,7 @@ export function ServicesSection() {
                   aria-selected={active}
                   className={cn(
                     "group block w-full px-0 py-4 text-left outline-none transition duration-300 focus-visible:bg-[var(--color-surface-muted)] sm:py-5",
-                    active && "bg-[linear-gradient(90deg,rgba(184,151,106,0.08),transparent)]",
+                    active && "bg-[linear-gradient(90deg,rgba(86,114,135,0.08),transparent)]",
                   )}
                   onClick={() => setActiveIndex(index)}
                   onMouseEnter={() => setActiveIndex(index)}
@@ -112,7 +112,7 @@ export function ServicesSection() {
                     <span
                       className={cn(
                         "pt-1 font-mono text-[0.78rem] tracking-[0.18em] transition",
-                        active ? "text-[var(--color-gold)]" : "text-[var(--color-fog)]",
+                        active ? "text-[var(--color-steel-blue)]" : "text-[var(--color-cool-gray)]",
                       )}
                     >
                       {String(index + 1).padStart(2, "0")}
@@ -121,7 +121,7 @@ export function ServicesSection() {
                       <h3
                         className={cn(
                           "font-display text-[clamp(1.45rem,3vw,2.25rem)] font-light leading-[1.05] transition",
-                          active ? "text-[var(--color-white)]" : "text-[var(--color-ink-soft)]",
+                          active ? "text-[var(--color-charcoal)]" : "text-[var(--color-deep-charcoal)]",
                         )}
                       >
                         {service.title}
@@ -134,13 +134,13 @@ export function ServicesSection() {
                       >
                         <ul
                           className={cn(
-                            "grid gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-bronze)]",
+                            "grid gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-deep-charcoal)]",
                             service.tags.length <= 4 && "sm:grid-cols-2",
                           )}
                         >
                           {service.tags.map((tag) => (
                             <li key={tag} className="flex items-start gap-2">
-                              <span className="mt-[0.45em] size-1.5 shrink-0 rounded-full bg-[var(--color-gold)]" />
+                              <span className="mt-[0.45em] size-1.5 shrink-0 rounded-full bg-[var(--color-steel-blue)]" />
                               <span>{tag}</span>
                             </li>
                           ))}
@@ -157,7 +157,7 @@ export function ServicesSection() {
             id="service-visual-panel"
             role="tabpanel"
             aria-labelledby={`service-tab-${activeService.id}`}
-            className="relative min-h-[320px] overflow-hidden rounded-[8px] border border-[var(--color-gold-border)] bg-[var(--color-surface-muted)] sm:min-h-[380px] lg:min-h-full"
+            className="relative min-h-[320px] overflow-hidden rounded-[8px] border border-[var(--color-divider)] bg-[var(--color-surface-muted)] sm:min-h-[380px] lg:min-h-full"
           >
             {serviceItems.map((service, index) => (
               <Image
@@ -173,12 +173,12 @@ export function ServicesSection() {
                 )}
               />
             ))}
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(246,243,238,0.22),rgba(184,151,106,0.14),rgba(30,30,30,0.08))]" />
-            <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(to_top,rgba(246,243,238,0.86),transparent)] p-5 sm:p-6">
-              <p className="font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.22),rgba(86,114,135,0.14),rgba(44,51,60,0.08))]" />
+            <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(to_top,rgba(255,255,255,0.86),transparent)] p-5 sm:p-6">
+              <p className="font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--color-deep-charcoal)]">
                 {String(activeIndex + 1).padStart(2, "0")} / PEC Dubai Service
               </p>
-              <p className="mt-2 max-w-[520px] font-display text-[clamp(1.55rem,3vw,2.35rem)] font-light leading-[1.05] text-[var(--color-white)]">
+              <p className="mt-2 max-w-[520px] font-display text-[clamp(1.55rem,3vw,2.35rem)] font-light leading-[1.05] text-[var(--color-charcoal)]">
                 {activeService.title}
               </p>
             </div>
@@ -188,3 +188,5 @@ export function ServicesSection() {
     </section>
   );
 }
+
+

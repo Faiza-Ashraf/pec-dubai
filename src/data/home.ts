@@ -107,7 +107,7 @@ export const projects = [
       "32-storey luxury residential tower featuring 180 premium units. Full structural, MEP, and architectural design services delivered under one roof.",
     metrics: "Residential Tower",
     featured: true,
-    palette: "from-[#E8E1D8] to-[#B8976A]",
+    palette: "from-[#989DA3] to-[#567287]",
     image: "/hero/villa-12.jpeg",
     href: "/projects#burj-al-noor-residences",
   },
@@ -117,7 +117,7 @@ export const projects = [
     summary:
       "10,000 sqft ultra-luxury villa with smart home integration, outdoor entertainment and infinity pool.",
     metrics: "Private Villa",
-    palette: "from-[#E8E1D8] to-[#B8976A]",
+    palette: "from-[#989DA3] to-[#567287]",
     image: "/hero/villa-08.jpg",
     href: "/projects#al-barari-signature-villa",
   },
@@ -127,7 +127,7 @@ export const projects = [
     summary:
       "Luxury automotive brand experience center with specialized MEP, climate control, and AV systems.",
     metrics: "Commercial",
-    palette: "from-[#F8F5F0] to-[#E8E1D8]",
+    palette: "from-[#FFFFFF] to-[#989DA3]",
     image: "/hero/villa-10.jpg",
     href: "/projects#genesis-experience-center",
   },
@@ -137,7 +137,7 @@ export const projects = [
     summary:
       "Mixed-use retail, F&B and office complex with structural peer review and MEP coordination.",
     metrics: "Mixed-Use",
-    palette: "from-[#FFFFFF] to-[#E8E1D8]",
+    palette: "from-[#FFFFFF] to-[#989DA3]",
     image: "/hero/villa-11.jpg",
     href: "/projects#creek-harbour-plaza",
   },
@@ -147,7 +147,7 @@ export const projects = [
     summary:
       "Medical specialist clinic with compliant MEP, medical gas systems, and DHA-ready design logic.",
     metrics: "Healthcare",
-    palette: "from-[#F6F3EE] to-[#E8E1D8]",
+    palette: "from-[#FFFFFF] to-[#989DA3]",
     image: "/hero/villa-06.jpg",
     href: "/projects#medcity-specialist-clinic",
   },
@@ -261,3 +261,4 @@ export const footerLinks = [
   { label: "About", href: "/about" },
   { label: "Contact", href: "/#contact" },
 ];
+

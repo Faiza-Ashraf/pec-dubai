@@ -16,15 +16,15 @@ export function PageShell({
 }: PageShellProps) {
   return (
     <main className="flex-1">
-      <section className="border-b border-[var(--color-gold-border)] bg-[var(--color-obsidian)] py-20 sm:py-24">
+      <section className="border-b border-[var(--color-divider)] bg-[var(--color-canvas)] py-20 sm:py-24">
         <Container>
-          <p className="font-mono text-[11px] uppercase tracking-[0.26em] text-[var(--color-gold-light)]">
+          <p className="font-mono text-[11px] uppercase tracking-[0.26em] text-[var(--color-light-gray)]">
             {eyebrow}
           </p>
-          <h1 className="mt-5 max-w-4xl font-display text-5xl leading-[0.92] text-[var(--color-white)] sm:text-6xl lg:text-7xl">
+          <h1 className="mt-5 max-w-4xl font-display text-5xl leading-[0.92] text-[var(--color-charcoal)] sm:text-6xl lg:text-7xl">
             {title}
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--color-fog)]">
+          <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--color-cool-gray)]">
             {description}
           </p>
         </Container>
@@ -35,3 +35,4 @@ export function PageShell({
     </main>
   );
 }
+

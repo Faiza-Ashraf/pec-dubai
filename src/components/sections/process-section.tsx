@@ -65,9 +65,9 @@ export function ProcessSection() {
         timeline.to(
           dot,
           {
-            borderColor: "#B8976A",
-            backgroundColor: "#B8976A",
-            boxShadow: "0 0 28px rgba(184,151,106,0.28)",
+            borderColor: "#567287",
+            backgroundColor: "#567287",
+            boxShadow: "0 0 28px rgba(86,114,135,0.28)",
             duration: 0.15,
           },
           startAt,
@@ -83,7 +83,7 @@ export function ProcessSection() {
         timeline.to(
           title,
           {
-            color: "#1E1E1E",
+            color: "#2C333C",
             duration: 0.12,
           },
           startAt,
@@ -109,23 +109,23 @@ export function ProcessSection() {
       <Container>
         <div ref={rootRef}>
           <div className="text-center">
-            <p className="font-mono text-[0.72rem] uppercase tracking-[0.35em] text-[var(--color-gold)]">
+            <p className="font-mono text-[0.72rem] uppercase tracking-[0.35em] text-[var(--color-steel-blue)]">
               How We Work
             </p>
-            <h2 className="mt-4 font-display text-[clamp(2rem,5vw,3.8rem)] font-light leading-[1.1] text-[var(--color-white)]">
+            <h2 className="mt-4 font-display text-[clamp(2rem,5vw,3.8rem)] font-light leading-[1.1] text-[var(--color-charcoal)]">
               A Process Built for{" "}
-              <span className="text-[var(--color-gold-light)] italic">Perfection</span>
+              <span className="text-[var(--color-light-gray)] italic">Perfection</span>
             </h2>
-            <p className="mx-auto mt-5 max-w-[540px] text-[1.04rem] leading-[1.75] text-[var(--color-fog)]">
+            <p className="mx-auto mt-5 max-w-[540px] text-[1.04rem] leading-[1.75] text-[var(--color-cool-gray)]">
               Every great building follows a disciplined path. Here&apos;s ours.
             </p>
           </div>
 
           <div className="relative mt-[86px]">
-            <div className="absolute left-[10%] right-[10%] top-5 hidden h-px bg-[var(--color-gold-border)] lg:block" />
+            <div className="absolute left-[10%] right-[10%] top-5 hidden h-px bg-[var(--color-divider)] lg:block" />
             <div
               ref={fillRef}
-              className="absolute left-[10%] top-5 hidden h-px bg-[linear-gradient(90deg,var(--color-gold),var(--color-gold-light))] lg:block"
+              className="absolute left-[10%] top-5 hidden h-px bg-[linear-gradient(90deg,var(--color-steel-blue),var(--color-light-gray))] lg:block"
             />
 
             <div className="grid gap-4 lg:grid-cols-5 lg:gap-0">
@@ -135,19 +135,19 @@ export function ProcessSection() {
                   ref={(element) => {
                     stepRefs.current[index] = element;
                   }}
-                  className="relative border-b border-[var(--color-gold-border)] pt-0 text-left lg:border-b-0 lg:px-2 lg:pt-[52px] lg:text-center"
+                  className="relative border-b border-[var(--color-divider)] pt-0 text-left lg:border-b-0 lg:px-2 lg:pt-[52px] lg:text-center"
                 >
                   <div
                     ref={(element) => {
                       dotRefs.current[index] = element;
                     }}
-                    className="absolute left-0 top-6 size-4 rounded-full border-2 border-[var(--color-gold-border)] bg-[var(--color-surface)] lg:left-1/2 lg:top-3 lg:-translate-x-1/2"
+                    className="absolute left-0 top-6 size-4 rounded-full border-2 border-[var(--color-divider)] bg-[var(--color-surface)] lg:left-1/2 lg:top-3 lg:-translate-x-1/2"
                   />
                   <p
                     ref={(element) => {
                       phaseRefs.current[index] = element;
                     }}
-                    className="pb-2 pl-14 pt-5 font-mono text-[0.72rem] uppercase tracking-[0.18em] text-[var(--color-gold)] opacity-45 lg:pb-[12px] lg:pl-0 lg:pt-0"
+                    className="pb-2 pl-14 pt-5 font-mono text-[0.72rem] uppercase tracking-[0.18em] text-[var(--color-steel-blue)] opacity-45 lg:pb-[12px] lg:pl-0 lg:pt-0"
                   >
                     {step.phase}
                   </p>
@@ -155,7 +155,7 @@ export function ProcessSection() {
                     ref={(element) => {
                       titleRefs.current[index] = element;
                     }}
-                    className="pl-14 font-display text-[1.15rem] font-normal leading-[1.2] text-[var(--color-ink-soft)] lg:pl-0"
+                    className="pl-14 font-display text-[1.15rem] font-normal leading-[1.2] text-[var(--color-deep-charcoal)] lg:pl-0"
                   >
                     {step.title}
                   </h3>
@@ -163,7 +163,7 @@ export function ProcessSection() {
                     ref={(element) => {
                       detailRefs.current[index] = element;
                     }}
-                    className="pb-6 pl-14 pt-[10px] text-[0.9rem] leading-[1.65] text-[var(--color-fog)] opacity-0 lg:pl-0"
+                    className="pb-6 pl-14 pt-[10px] text-[0.9rem] leading-[1.65] text-[var(--color-cool-gray)] opacity-0 lg:pl-0"
                   >
                     {step.detail}
                   </p>
@@ -176,3 +176,5 @@ export function ProcessSection() {
     </section>
   );
 }
+
+

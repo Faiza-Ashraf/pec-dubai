@@ -47,7 +47,7 @@ export function SiteLoader() {
 
   return (
     <div
-      className="fixed inset-0 z-[9000] flex flex-col items-center justify-center gap-8 bg-[var(--color-obsidian)] px-6 text-center"
+      className="fixed inset-0 z-[9000] flex flex-col items-center justify-center gap-8 bg-[var(--color-canvas)] px-6 text-center"
       style={{
         opacity: fading ? 0 : 1,
         transition: "opacity .7s",
@@ -55,17 +55,17 @@ export function SiteLoader() {
       }}
     >
       <div
-        className="max-w-full px-2 font-display text-[clamp(2rem,5vw,3.2rem)] font-light tracking-[0.3em] text-[var(--color-white)]"
+        className="max-w-full px-2 font-display text-[clamp(2rem,5vw,3.2rem)] font-light tracking-[0.3em] text-[var(--color-charcoal)]"
         style={{
           opacity: contentVisible ? 1 : 0,
           transform: contentVisible ? "translateY(0)" : "translateY(16px)",
           transition: "opacity .6s, transform .6s",
         }}
       >
-        PEC<span className="text-[var(--color-gold)]">.</span>DUBAI
+        PEC<span className="text-[var(--color-steel-blue)]">.</span>DUBAI
       </div>
       <div
-        className="max-w-[min(92vw,32rem)] px-2 font-display text-[0.82rem] italic tracking-[0.22em] text-[var(--color-fog)] sm:text-[0.9rem] sm:tracking-[0.3em]"
+        className="max-w-[min(92vw,32rem)] px-2 font-display text-[0.82rem] italic tracking-[0.22em] text-[var(--color-cool-gray)] sm:text-[0.9rem] sm:tracking-[0.3em]"
         style={{
           opacity: contentVisible ? 1 : 0,
           transition: "opacity .6s .4s",
@@ -73,18 +73,20 @@ export function SiteLoader() {
       >
         Engineering Excellence. Architectural Vision.
       </div>
-      <div className="relative h-px w-full max-w-[280px] overflow-hidden bg-[var(--color-gold-border)]">
+      <div className="relative h-px w-full max-w-[280px] overflow-hidden bg-[var(--color-divider)]">
         <div
-          className="absolute inset-y-0 left-0 bg-[linear-gradient(90deg,var(--color-bronze),var(--color-gold),var(--color-gold-light))]"
+          className="absolute inset-y-0 left-0 bg-[linear-gradient(90deg,var(--color-deep-charcoal),var(--color-steel-blue),var(--color-light-gray))]"
           style={{
             width: `${progress}%`,
             transition: "width .08s linear",
           }}
         />
       </div>
-      <div className="font-mono text-[0.65rem] tracking-[0.2em] text-[var(--color-fog)]">
+      <div className="font-mono text-[0.65rem] tracking-[0.2em] text-[var(--color-cool-gray)]">
         {percentage}
       </div>
     </div>
   );
 }
+
+

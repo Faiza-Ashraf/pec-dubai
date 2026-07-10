@@ -40,7 +40,7 @@ export default function RootLayout({
       lang="en"
       className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full bg-[var(--color-obsidian)] font-sans text-[var(--color-white)]">
+      <body className="min-h-full bg-[var(--color-canvas)] font-sans text-[var(--color-charcoal)]">
         <SiteLoader />
         <SiteHeader />
         {children}
@@ -51,3 +51,4 @@ export default function RootLayout({
     </html>
   );
 }
+
