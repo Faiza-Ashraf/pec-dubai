@@ -3,7 +3,10 @@ import { testimonials, trustStats } from "@/data/home";
 
 export function TestimonialsSection() {
   return (
-    <section id="testimonials" className="bg-[var(--color-surface)] py-[clamp(70px,10vw,140px)]">
+    <section
+      id="testimonials"
+      className="bg-[var(--color-surface)] py-[clamp(70px,10vw,140px)] max-md:py-12"
+    >
       <Container>
         <div className="text-center">
           <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-steel-blue)]">

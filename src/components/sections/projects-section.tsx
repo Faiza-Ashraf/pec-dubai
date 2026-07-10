@@ -125,7 +125,10 @@ export function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="flex min-h-[100svh] items-center overflow-hidden bg-[var(--color-canvas)] py-[clamp(42px,6vw,72px)]">
+    <section
+      id="projects"
+      className="flex min-h-[100svh] items-center overflow-hidden bg-[var(--color-canvas)] py-[clamp(42px,6vw,72px)] max-md:min-h-0 max-md:py-12"
+    >
       <Container>
         <div className="flex flex-col items-start justify-between gap-3 md:mb-5 md:flex-row md:items-end">
           <div>

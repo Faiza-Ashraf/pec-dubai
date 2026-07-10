@@ -105,7 +105,10 @@ export function ProcessSection() {
   }, []);
 
   return (
-    <section id="process" className="flex min-h-[100svh] items-center bg-[var(--color-surface)] py-[clamp(80px,10vw,150px)]">
+    <section
+      id="process"
+      className="flex min-h-[100svh] items-center bg-[var(--color-surface)] py-[clamp(80px,10vw,150px)] max-md:min-h-0 max-md:py-12"
+    >
       <Container>
         <div ref={rootRef}>
           <div className="text-center">

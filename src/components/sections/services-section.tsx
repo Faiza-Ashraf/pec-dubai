@@ -67,7 +67,10 @@ export function ServicesSection() {
   const activeService = serviceItems[activeIndex];
 
   return (
-    <section id="services" className="relative overflow-hidden bg-[var(--color-surface)] py-[clamp(48px,7vw,88px)]">
+    <section
+      id="services"
+      className="relative overflow-hidden bg-[var(--color-surface)] py-[clamp(48px,7vw,88px)] max-md:py-12"
+    >
       <Container>
         <div className="mx-auto max-w-[700px] text-center">
           <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-steel-blue)]">
@@ -86,7 +89,7 @@ export function ServicesSection() {
 
         <div className="mt-[clamp(28px,4.5vw,52px)] grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(440px,1.1fr)] lg:items-stretch xl:gap-12">
           <div
-            className="divide-y divide-[var(--color-divider)] border-y border-[var(--color-divider)]"
+            className="order-2 divide-y divide-[var(--color-divider)] border-y border-[var(--color-divider)] lg:order-1"
             role="tablist"
             aria-label="PEC Dubai services"
           >
@@ -157,7 +160,7 @@ export function ServicesSection() {
             id="service-visual-panel"
             role="tabpanel"
             aria-labelledby={`service-tab-${activeService.id}`}
-            className="relative min-h-[320px] overflow-hidden rounded-[8px] border border-[var(--color-divider)] bg-[var(--color-surface-muted)] sm:min-h-[380px] lg:min-h-full"
+            className="relative order-1 min-h-[260px] overflow-hidden rounded-[8px] border border-[var(--color-divider)] bg-[var(--color-surface-muted)] sm:min-h-[380px] lg:order-2 lg:min-h-full"
           >
             {serviceItems.map((service, index) => (
               <Image
