@@ -80,7 +80,7 @@ export function ProjectsSection() {
                     cardRefs.current[index] = element;
                   }}
                   className={cn(
-                    "group relative isolate h-[230px] w-[min(84vw,440px)] snap-center overflow-hidden rounded-[8px] border border-[var(--color-divider)] bg-[var(--color-surface-muted)] shadow-[0_22px_62px_rgba(44,51,60,0.1)] outline-none transition duration-300 hover:-translate-y-1 hover:border-[rgba(86,114,135,0.58)] hover:shadow-[0_28px_76px_rgba(44,51,60,0.15)] focus-visible:border-[var(--color-steel-blue)] focus-visible:shadow-[0_0_0_4px_rgba(86,114,135,0.22),0_28px_76px_rgba(44,51,60,0.15)] sm:h-[270px] sm:w-[min(72vw,480px)] lg:h-[min(34svh,350px)] lg:min-h-[270px] lg:w-[min(46vw,620px)]",
+                    "group relative isolate h-[280px] w-[min(90vw,520px)] snap-center overflow-hidden rounded-[8px] border border-[var(--color-divider)] bg-[var(--color-surface-muted)] shadow-[0_22px_62px_rgba(44,51,60,0.1)] outline-none transition duration-300 hover:-translate-y-1 hover:border-[rgba(86,114,135,0.58)] hover:shadow-[0_28px_76px_rgba(44,51,60,0.15)] focus-visible:border-[var(--color-steel-blue)] focus-visible:shadow-[0_0_0_4px_rgba(86,114,135,0.22),0_28px_76px_rgba(44,51,60,0.15)] sm:h-[330px] sm:w-[min(80vw,620px)] lg:h-[min(46svh,500px)] lg:min-h-[390px] lg:w-[min(58vw,860px)]",
                     index === activeIndex && "border-[rgba(86,114,135,0.62)]",
                   )}
                   aria-label={`Open ${project.title}`}
@@ -91,7 +91,7 @@ export function ProjectsSection() {
                     src={project.image}
                     alt={`${project.title} in ${project.location}`}
                     fill
-                    sizes="(max-width: 1024px) 84vw, 54vw"
+                    sizes="(max-width: 640px) 90vw, (max-width: 1024px) 80vw, 58vw"
                     priority={index === 0}
                     className="object-cover transition duration-500 ease-out group-hover:scale-[1.025]"
                   />

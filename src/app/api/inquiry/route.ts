@@ -8,7 +8,7 @@ const inquirySchema = z.object({
   brief: z.string().optional(),
 });
 
-const RECIPIENT_EMAIL = "zainahmed0506@gmail.com";
+const RECIPIENT_EMAIL = "pioneer_consultants@yahoo.com";
 // Use default Resend sender or verified custom domain
 const SENDER_EMAIL = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
 

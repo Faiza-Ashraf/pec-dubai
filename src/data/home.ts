@@ -4,10 +4,12 @@ export const siteMeta = {
   description:
     "Architecture, structural, MEP, approvals, and project supervision for luxury villas and ambitious developments across Dubai.",
   url: "https://www.pecdubai.com",
-  phone: "+971 504561329",
+  phone: "04 2722402",
+  mobile: "+971 504561329",
   whatsapp:
     "https://wa.me/971504561329?text=Hello%20PEC%20Dubai%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.",
-  email: "zainahmed0506@gmail.com",
+  email: "pioneer_consultants@yahoo.com",
+  instagram: "https://www.instagram.com/pecdubai?igsh=NThnY212bDNmdGMy",
   address: "Business Bay, Dubai, United Arab Emirates",
 };
 
@@ -20,9 +22,8 @@ export const navItems = [
 ];
 
 export const heroStats = [
-  { value: "20+", label: "Years of Excellence" },
-  { value: "450+", label: "Projects Delivered" },
-  { value: "7", label: "Emirates Covered" },
+  { value: "25+", label: "Years of Excellence" },
+  { value: "2500+", label: "Projects Delivered" },
   { value: "98%", label: "Client Satisfaction" },
 ];
 
@@ -291,32 +292,32 @@ export const credentials = [
 export const testimonials = [
   {
     quote:
-      "PEC Dubai transformed our vision for a luxury villa into a masterpiece. Their structural team's attention to detail and proactive communication made what could have been a stressful project an absolute pleasure.",
-    author: "Khalid Al Mansouri",
-    role: "Private Developer — Palm Jumeirah Villa",
-    initials: "KA",
+      "A very professional and supportive team of engineers. They are understanding and innovative designers when it comes to design. It is a pleasure to collaborate with Pioneer Engineering Consultants.",
+    author: "Adeeb Askani",
+    role: "5/5 Google review - 9 months ago",
+    initials: "AA",
   },
   {
     quote:
-      "Their MEP team's knowledge of Dubai's regulatory framework saved us months. Permits we feared would take six months were approved in eight weeks. Exceptional technical expertise.",
-    author: "Sarah Mitchell",
-    role: "Director — International Property Group",
-    initials: "SM",
+      "They are very good. I have never found better consultancy and design services for my house.",
+    author: "Shakila Sherjan",
+    role: "5/5 Google review - a year ago",
+    initials: "SS",
   },
   {
     quote:
-      "What distinguishes PEC is the senior team's direct involvement. I always spoke to the partner, never a junior. That level of accountability is rare in this market and made all the difference.",
-    author: "Rami Abdallah",
-    role: "CEO — Al Noor Real Estate Development",
-    initials: "RA",
+      "The best place to get your work done. They deserve a million stars.",
+    author: "Fuzail Ahmad",
+    role: "5/5 Google review - a year ago",
+    initials: "FA",
   },
 ];
 
 export const trustStats = [
-  { value: "450+", label: "Projects Completed" },
-  { value: "20+", label: "Years in UAE Market" },
-  { value: "98%", label: "Client Retention" },
-  { value: "7", label: "Emirates Served" },
+  { value: "2500+", label: "Projects Completed" },
+  { value: "25+", label: "Years in UAE Market" },
+  { value: "98%", label: "Client Satisfaction" },
+  { value: "24/7", label: "Client Support" }
 ];
 
 export const trustBullets = [

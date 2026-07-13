@@ -177,14 +177,6 @@ export function ServicesSection() {
               />
             ))}
             <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.22),rgba(86,114,135,0.14),rgba(44,51,60,0.08))]" />
-            <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(to_top,rgba(255,255,255,0.86),transparent)] p-5 sm:p-6">
-              <p className="font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--color-deep-charcoal)]">
-                {String(activeIndex + 1).padStart(2, "0")} / PEC Dubai Service
-              </p>
-              <p className="mt-2 max-w-[520px] font-display text-[clamp(1.55rem,3vw,2.35rem)] font-light leading-[1.05] text-[var(--color-charcoal)]">
-                {activeService.title}
-              </p>
-            </div>
           </div>
         </div>
       </Container>

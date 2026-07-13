@@ -1,6 +1,6 @@
-import { Mail, MessageCircle, Phone, ShieldCheck } from "lucide-react";
+import { Instagram, Mail, MessageCircle, Phone } from "lucide-react";
 import { Container } from "@/components/layout/container";
-import { siteMeta, trustBullets } from "@/data/home";
+import { siteMeta } from "@/data/home";
 import { InquiryForm } from "./inquiry-form";
 
 export function ContactSection() {
@@ -48,7 +48,7 @@ export function ContactSection() {
                 />
               </div>
 
-              <div className="mt-5 grid grid-cols-3 divide-x divide-[var(--color-divider)] border-y border-[var(--color-divider)]">
+              <div className="mt-5 grid grid-cols-2 divide-x divide-y divide-[var(--color-divider)] border-y border-[var(--color-divider)] sm:grid-cols-4 sm:divide-y-0">
                 <a
                   href={`mailto:${siteMeta.email}`}
                   className="group flex min-h-16 flex-col items-center justify-center gap-1.5 text-center text-[var(--color-steel-blue)] transition hover:bg-[var(--color-surface-muted)]"
@@ -60,7 +60,7 @@ export function ContactSection() {
                   </span>
                 </a>
                 <a
-                  href={`tel:${siteMeta.phone}`}
+                  href={`tel:${siteMeta.phone.replace(/\s/g, "")}`}
                   className="group flex min-h-16 flex-col items-center justify-center gap-1.5 text-center text-[var(--color-steel-blue)] transition hover:bg-[var(--color-surface-muted)]"
                   aria-label={`Call ${siteMeta.phone}`}
                 >
@@ -81,26 +81,33 @@ export function ContactSection() {
                     WhatsApp
                   </span>
                 </a>
+                <a
+                  href={siteMeta.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex min-h-16 flex-col items-center justify-center gap-1.5 text-center text-[var(--color-steel-blue)] transition hover:bg-[var(--color-surface-muted)]"
+                  aria-label="PEC Dubai on Instagram"
+                >
+                  <Instagram className="size-5 transition group-hover:text-[var(--color-deep-charcoal)]" />
+                  <span className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-charcoal)]">
+                    Instagram
+                  </span>
+                </a>
               </div>
 
+              <p className="mt-5 text-center font-display text-[1rem] leading-7 text-[var(--color-charcoal)]">
+                Telephone: {siteMeta.phone}
+                <br />
+                Mobile / WhatsApp: {siteMeta.mobile}
+                <br />
+                Email: {siteMeta.email}
+              </p>
+
               <p className="mt-4 text-center font-display text-[1rem] text-[var(--color-charcoal)]">
-                Monday – Friday, 9:00 AM – 6:00 PM
+                Monday – Friday <br /> 9:00 AM – 6:00 PM
               </p>
             </div>
 
-            <div className="mt-5 border-t border-[var(--color-divider)] pt-5">
-              <div className="mb-[10px] font-mono text-[0.58rem] uppercase tracking-[0.22em] text-[var(--color-steel-blue)]">
-                Why consult with us?
-              </div>
-              <div className="mt-3 flex flex-col gap-[7px]">
-                {trustBullets.map((item) => (
-                  <div key={item} className="flex items-start gap-[10px] text-[0.78rem] text-[var(--color-deep-charcoal)]">
-                    <ShieldCheck className="mt-0.5 size-4 shrink-0 text-[var(--color-steel-blue)]" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </Container>

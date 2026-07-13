@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/schema";
 
 export const metadata: Metadata = buildMetadata(
   "About | PEC Dubai",
-  "PEC Dubai brings architecture, structural, approvals, and supervision into one integrated consultancy experience.",
+  "Pioneer Engineering Consultants is a Dubai consultancy delivering architectural, structural, supervision, and inspection services since 1998.",
   "/about",
 );
 
@@ -19,11 +19,11 @@ export default function AboutPage() {
             About PEC
           </p>
           <h1 className="mt-5 max-w-4xl font-display text-[clamp(3rem,7vw,6.5rem)] font-light leading-[0.94] text-[var(--color-charcoal)]">
-            Design ambition, technical discipline, and calm delivery.
+            Dubai consultancy experience, built since 1998.
           </h1>
           <p className="mt-6 max-w-2xl text-[1rem] leading-8 text-[var(--color-cool-gray)]">
-            Explore the PEC Dubai approach, credentials, and reasons clients choose our
-            integrated architecture and engineering consultancy.
+            Pioneer Engineering Consultants supports construction projects with practical
+            architectural, engineering, supervision, and inspection expertise.
           </p>
         </Container>
       </section>

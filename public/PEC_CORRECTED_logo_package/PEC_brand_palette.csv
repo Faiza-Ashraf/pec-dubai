@@ -1,7 +1,0 @@
-Name,HEX,RGB,CMYK,Use
-"Main Charcoal",#2C333C,"44 51 60","27 15 0 76","Primary PEC letters and main text"
-"Deep Charcoal",#323842,"50 56 66","24 15 0 74","Secondary dark variation/shadows"
-"Steel Blue Accent",#567287,"86 114 135","36 16 0 47","Middle bar of E / engineering accent"
-"Cool Grey",#7C838A,"124 131 138","10 5 0 46","Consultant line and secondary text"
-"Light Grey",#989DA3,"152 157 163","7 4 0 36","Fine lines / subtle hierarchy"
-"White",#FFFFFF,"255 255 255","0 0 0 0","Clean background / negative space"

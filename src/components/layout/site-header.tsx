@@ -75,7 +75,7 @@ export function SiteHeader() {
           aria-label="PEC Dubai home"
         >
           <Image
-            src="/PEC_CORRECTED_logo_package/PEC_mark_only_one_color_white_transparent.png"
+            src="/PEC_Pioneer_Engineering_Consultants_APPROVED_FINAL/White PEC with blue E.png"
             alt="PEC Dubai"
             width={1880}
             height={1096}

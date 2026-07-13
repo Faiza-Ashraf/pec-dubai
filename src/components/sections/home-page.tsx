@@ -9,8 +9,8 @@ export function HomePage() {
   return (
     <main className="flex-1">
       <HeroSection />
-      <ServicesSection />
       <ProjectsSection />
+      <ServicesSection />
       <ProcessSection />
       <ContactSection />
       <TestimonialsSection />

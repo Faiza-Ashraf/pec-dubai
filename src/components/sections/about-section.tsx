@@ -28,11 +28,11 @@ export function AboutSection() {
                 </svg>
               </div>
               <div className="absolute bottom-[-16px] right-[-16px] min-w-[100px] bg-[var(--color-steel-blue)] px-4 py-5 text-center text-white">
-                <div className="font-display text-[2rem] leading-none">20+</div>
+                <div className="font-display text-[2rem] leading-none">1998</div>
                 <div className="mt-1 text-[0.55rem] font-semibold uppercase tracking-[0.12em]">
-                  Years of
+                  Established
                   <br />
-                  Excellence
+                  in Dubai
                 </div>
               </div>
             </div>
@@ -44,20 +44,26 @@ export function AboutSection() {
               About PEC Dubai
             </span>
             <h2 className="mt-4 font-display text-[clamp(2rem,5vw,3.8rem)] font-light leading-[1.1] text-[var(--color-charcoal)]">
-              Built on Expertise,
+              Practical Design,
               <br />
-              <span className="text-[var(--color-light-gray)] italic">Driven by Vision</span>
+              <span className="text-[var(--color-light-gray)] italic">Measured Delivery</span>
             </h2>
             <p className="mt-6 text-[0.92rem] leading-[1.8] text-[var(--color-deep-charcoal)]">
-              PEC Dubai is a multidisciplinary engineering and architecture consultancy
-              delivering integrated design, structural engineering, MEP systems, and
-              project supervision services across the UAE and GCC.
+              Pioneer Engineering Consultants is a Dubai-based consultancy providing
+              architectural and engineering services since 1998. We support construction
+              projects through planning, design, supervision, inspection, and contract
+              administration.
             </p>
             <p className="mt-6 text-[0.92rem] leading-[1.8] text-[var(--color-deep-charcoal)]">
-              Founded on the principle that exceptional buildings are born from the
-              union of creative vision and engineering precision, we serve private
-              developers, government authorities, luxury real-estate developers, and
-              international corporations.
+              Our team works across new construction, redevelopment, and additions,
+              with experience in residential schemes, industrial projects, and mosques
+              under Dubai Municipality, Dubai Development Authority, Dubai South, and
+              Trakhees jurisdictions.
+            </p>
+            <p className="mt-6 text-[0.92rem] leading-[1.8] text-[var(--color-deep-charcoal)]">
+              With experienced professionals from varied construction backgrounds, PEC
+              helps clients move projects forward with better control over time, cost,
+              performance, and approval requirements.
             </p>
             <div className="mt-7 grid gap-4 sm:grid-cols-2">
               {aboutBadges.map((badge) => (
