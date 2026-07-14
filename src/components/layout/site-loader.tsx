@@ -54,7 +54,7 @@ export function SiteLoader() {
 
   return (
     <div
-      className="fixed inset-0 z-[9000] flex flex-col items-center justify-center gap-8 bg-[var(--color-canvas)] px-6 text-center"
+      className="fixed inset-0 z-[9000] flex flex-col items-center justify-center gap-2 bg-[var(--color-canvas)] px-6 text-center"
       style={{
         opacity: fading ? 0 : 1,
         transition: "opacity .7s",
@@ -70,16 +70,16 @@ export function SiteLoader() {
         }}
       >
         <Image
-          src="/PEC_CORRECTED_logo_package/PEC_logo_APPROVED_transparent_clean.png"
+          src="/PEC_Pioneer_Engineering_Consultants_APPROVED_FINAL/PEC main logo12.png"
           alt="PEC Dubai"
           width={1880}
           height={1096}
           priority
-          className="h-24 w-auto object-contain sm:h-28 md:h-32"
+          className="h-32 w-auto object-contain sm:h-40 md:h-48"
         />
       </div>
       <div
-        className="max-w-[min(92vw,38rem)] px-2 font-display text-[1rem] italic tracking-[0.18em] text-[var(--color-cool-gray)] sm:text-[1.08rem] sm:tracking-[0.26em] md:text-[1.18rem]"
+        className="-mt-4 max-w-[min(92vw,38rem)] px-2 font-display text-[1rem] italic tracking-[0.18em] text-[var(--color-cool-gray)] sm:-mt-5 sm:text-[1.08rem] sm:tracking-[0.26em] md:-mt-6 md:text-[1.18rem]"
         style={{
           opacity: contentVisible ? 1 : 0,
           transition: "opacity .6s .4s",

@@ -6,9 +6,9 @@ import { Container } from "./container";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-[var(--color-divider)] bg-[var(--color-surface-muted)] py-4 md:py-5">
+    <footer className="border-t border-[var(--color-divider)] bg-[var(--color-surface-muted)] py-0">
       <Container>
-        <div className="grid items-center gap-3 text-center md:grid-cols-[1fr_auto_1fr] md:gap-4">
+        <div className="grid items-center gap-0 text-center md:grid-cols-[1fr_auto_1fr]">
           <nav className="hidden items-center justify-center gap-5 md:flex md:justify-start">
             <Link
               href="/about"
@@ -31,14 +31,14 @@ export function SiteFooter() {
               aria-label="PEC Dubai home"
             >
               <Image
-                src="/PEC_CORRECTED_logo_package/PEC_logo_APPROVED_transparent_clean.png"
+                src="/PEC_Pioneer_Engineering_Consultants_APPROVED_FINAL/PEC main logo12.png"
                 alt="PEC Dubai"
                 width={1880}
                 height={1096}
-                className="h-12 w-auto object-contain md:h-14"
+                className="footerlogo h-16 w-auto object-contain md:h-20"
               />
             </Link>
-            <div className="mt-2 flex items-center justify-center gap-3 md:hidden">
+            <div className="mt-1 flex items-center justify-center gap-3 md:hidden">
               <a
                 href={`mailto:${siteMeta.email}`}
                 className="flex size-9 items-center justify-center rounded-full bg-transparent text-[var(--color-deep-charcoal)] transition hover:text-[var(--color-steel-blue)]"
@@ -54,7 +54,7 @@ export function SiteFooter() {
                 <Instagram className="size-4" />
               </a>
             </div>
-            <p className="mt-0.5 text-[0.72rem] text-[var(--color-cool-gray)] md:mt-1 md:text-[0.76rem]">
+            <p className="-mt-4 text-[0.72rem] text-[var(--color-cool-gray)] md:-mt-5 md:text-[0.76rem]">
               &copy; 2026 PEC Dubai. All rights reserved.
             </p>
           </div>
@@ -82,5 +82,3 @@ export function SiteFooter() {
     </footer>
   );
 }
-
-

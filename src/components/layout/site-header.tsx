@@ -80,7 +80,10 @@ export function SiteHeader() {
             width={1880}
             height={1096}
             priority
-            className="h-6 w-auto object-contain sm:h-7"
+            className={cn(
+              "h-10 w-auto object-contain transition-all duration-300 sm:h-11 min-[1051px]:h-12",
+              scrolled && "min-[1051px]:h-10",
+            )}
           />
         </Link>
 
