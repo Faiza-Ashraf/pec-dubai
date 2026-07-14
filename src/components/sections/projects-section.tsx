@@ -96,7 +96,7 @@ export function ProjectsSection() {
                     fill
                     sizes="(max-width: 640px) 90vw, (max-width: 1024px) 80vw, 58vw"
                     priority={index === 0}
-                    className="object-cover transition duration-500 ease-out group-hover:scale-[1.025]"
+                    className="project-image object-cover transition duration-500 ease-out"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(29,36,48,0.02)_0%,rgba(29,36,48,0.18)_42%,rgba(29,36,48,0.74)_100%)]" />
                   <div className="absolute inset-x-0 bottom-0 p-4 text-white sm:p-5">
