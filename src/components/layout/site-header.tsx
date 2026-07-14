@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { navItems } from "@/data/home";
 import { cn } from "@/lib/cn";
 import { Container } from "./container";
+import { ThemeToggle } from "./theme-toggle";
 
 const mobileNavItems = navItems;
 
@@ -100,6 +101,8 @@ export function SiteHeader() {
           ))}
         </nav>
 
+        <ThemeToggle />
+
         {/* MOBILE MENU BUTTON */}
         <button
           type="button"
@@ -142,7 +145,7 @@ export function SiteHeader() {
 
       <div
         className={cn(
-          "fixed right-0 top-16 z-[110] flex h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] w-[40vw] flex-col border-l border-t border-[rgba(255,255,255,0.65)] bg-[rgba(255,255,255,0.95)] px-4 py-8 shadow-[-18px_0_55px_rgba(18,24,31,0.18)] backdrop-blur-[18px] transition-all duration-500 ease-[cubic-bezier(.16,1,.3,1)] min-[1051px]:hidden",
+          "fixed right-0 top-16 z-[110] flex h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] w-[40vw] flex-col border-l border-t border-[var(--color-divider)] bg-[var(--color-surface)] px-4 py-8 shadow-[-18px_0_55px_rgba(18,24,31,0.18)] backdrop-blur-[18px] transition-all duration-500 ease-[cubic-bezier(.16,1,.3,1)] min-[1051px]:hidden",
           open
             ? "translate-x-0 opacity-100"
             : "pointer-events-none translate-x-full opacity-0",
@@ -154,7 +157,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="flex min-h-[52px] w-full items-center justify-center border-b border-[rgba(44,51,60,0.14)] px-4 text-center font-display text-[clamp(1.25rem,5.5vw,1.75rem)] font-medium text-[var(--color-deep-charcoal)] transition-all duration-300 last:border-b-0 hover:text-[var(--color-charcoal)]"
+              className="flex min-h-[52px] w-full items-center justify-center border-b border-[var(--color-divider)] px-4 text-center font-display text-[clamp(1.25rem,5.5vw,1.75rem)] font-medium text-[var(--color-charcoal)] transition-all duration-300 last:border-b-0 hover:text-[var(--color-steel-blue)]"
               onClick={() => setOpen(false)}
             >
               {item.label}

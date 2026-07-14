@@ -6,6 +6,8 @@ import { PullToRefresh } from "@/components/layout/pull-to-refresh";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteLoader } from "@/components/layout/site-loader";
+import { ScrollProgress } from "@/components/layout/scroll-progress";
+import { SectionMotion } from "@/components/layout/section-motion";
 import { buildMetadata } from "@/lib/schema";
 import "./globals.css";
 
@@ -45,9 +47,11 @@ export default function RootLayout({
         <SiteLoader />
         <SiteHeader />
         <PullToRefresh />
+        <SectionMotion />
         {children}
         <SiteFooter />
         <MobileStickyCta />
+        <ScrollProgress />
         <Analytics />
       </body>
     </html>

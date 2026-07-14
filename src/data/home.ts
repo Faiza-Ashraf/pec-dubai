@@ -102,125 +102,45 @@ export const services = [
 
 export const projects = [
   {
-    title: "Burj Al Noor Residences",
-    location: "Dubai Marina, UAE",
-    summary:
-      "32-storey luxury residential tower featuring 180 premium units. Full structural, MEP, and architectural design services delivered under one roof.",
-    metrics: "Residential Tower",
-    featured: true,
-    palette: "from-[#989DA3] to-[#567287]",
-    image: "/hero/villa-12.jpeg",
-    href: "/projects#burj-al-noor-residences",
-  },
-  {
-    title: "Al Barari Signature Villa",
-    location: "Al Barari, Dubai",
-    summary:
-      "10,000 sqft ultra-luxury villa with smart home integration, outdoor entertainment and infinity pool.",
-    metrics: "Private Villa",
-    palette: "from-[#989DA3] to-[#567287]",
-    image: "/hero/villa-08.jpg",
-    href: "/projects#al-barari-signature-villa",
-  },
-  {
-    title: "Palm Jumeirah Garden Villa",
+    title: "Palm Jumeirah",
     location: "Palm Jumeirah, Dubai",
     summary:
-      "Contemporary villa concept with refined glazing, shaded outdoor living, and integrated architectural and structural detailing.",
+      "A beachfront villa setting balancing privacy, planted edges, and a relaxed relationship with the shoreline.",
     metrics: "Luxury Villa",
+    featured: true,
     palette: "from-[#989DA3] to-[#567287]",
-    image: "/hero/villa-01.jpg",
-    href: "/projects#palm-jumeirah-garden-villa",
+    image: "/projects/palm-jumeirah.png",
+    href: "/projects#palm-jumeirah",
   },
   {
-    title: "Emirates Hills Residence",
-    location: "Emirates Hills, Dubai",
+    title: "Dubai Hills",
+    location: "Dubai Hills, Dubai",
     summary:
-      "Private residence shaped around calm proportions, premium facade treatments, and coordinated engineering documentation.",
-    metrics: "Private Residence",
+      "Contemporary villa design shaped around generous glazing, calm proportions, and a refined connection to the landscape.",
+    metrics: "Private Villa",
     palette: "from-[#989DA3] to-[#567287]",
-    image: "/hero/villa-02.jpg",
-    href: "/projects#emirates-hills-residence",
+    image: "/projects/dubai-hills.png",
+    href: "/projects#dubai-hills",
   },
   {
-    title: "Jumeirah Contemporary Villa",
-    location: "Jumeirah, Dubai",
+    title: "Schon Park DIP",
+    location: "Dubai Investment Park, Dubai",
     summary:
-      "Modern family villa with clean massing, warm night lighting, and authority-ready architectural design packages.",
-    metrics: "Residential",
-    palette: "from-[#FFFFFF] to-[#989DA3]",
-    image: "/hero/villa-03.jpg",
-    href: "/projects#jumeirah-contemporary-villa",
-  },
-  {
-    title: "Meydan Minimal Residence",
-    location: "Meydan, Dubai",
-    summary:
-      "Minimal villa elevation with generous glass, precise structural coordination, and a restrained luxury material language.",
-    metrics: "Villa Concept",
-    palette: "from-[#FFFFFF] to-[#989DA3]",
-    image: "/hero/villa-04.jpg",
-    href: "/projects#meydan-minimal-residence",
-  },
-  {
-    title: "Dubai Hills Courtyard Villa",
-    location: "Dubai Hills Estate",
-    summary:
-      "Premium residential concept arranged around landscape views, privacy, and seamless indoor-outdoor family living.",
-    metrics: "Premium Villa",
+      "A contemporary business park facade with clear commercial identity, generous glazing, and coordinated public frontage.",
+    metrics: "Business Park",
     palette: "from-[#989DA3] to-[#567287]",
-    image: "/hero/villa-05.jpg",
-    href: "/projects#dubai-hills-courtyard-villa",
+    image: "/projects/schon-park-dip.png",
+    href: "/projects#schon-park-dip",
   },
   {
-    title: "GENESIS Experience Center",
-    location: "Jumeirah 1, Dubai",
+    title: "Muhaisnah School",
+    location: "Muhaisnah, Dubai",
     summary:
-      "Luxury automotive brand experience center with specialized MEP, climate control, and AV systems.",
-    metrics: "Commercial",
-    palette: "from-[#FFFFFF] to-[#989DA3]",
-    image: "/hero/villa-10.jpg",
-    href: "/projects#genesis-experience-center",
-  },
-  {
-    title: "Nad Al Sheba Villa",
-    location: "Nad Al Sheba, Dubai",
-    summary:
-      "Elegant residential facade with layered privacy, technical coordination, and refined architectural supervision.",
-    metrics: "Residential Villa",
+      "A multi-storey school campus designed around safe arrival, clear circulation, and welcoming learning spaces.",
+    metrics: "Education",
     palette: "from-[#989DA3] to-[#567287]",
-    image: "/hero/villa-07.jpg",
-    href: "/projects#nad-al-sheba-villa",
-  },
-  {
-    title: "District One Villa Concept",
-    location: "Mohammed Bin Rashid City",
-    summary:
-      "Large villa concept with broad glazing, balanced proportions, and integrated design development for approvals.",
-    metrics: "Villa Development",
-    palette: "from-[#FFFFFF] to-[#989DA3]",
-    image: "/hero/villa-09.jpg",
-    href: "/projects#district-one-villa-concept",
-  },
-  {
-    title: "Creek Harbour Plaza",
-    location: "Dubai Creek Harbour",
-    summary:
-      "Mixed-use retail, F&B and office complex with structural peer review and MEP coordination.",
-    metrics: "Mixed-Use",
-    palette: "from-[#FFFFFF] to-[#989DA3]",
-    image: "/hero/villa-11.jpg",
-    href: "/projects#creek-harbour-plaza",
-  },
-  {
-    title: "MedCity Specialist Clinic",
-    location: "Business Bay, Dubai",
-    summary:
-      "Medical specialist clinic with compliant MEP, medical gas systems, and DHA-ready design logic.",
-    metrics: "Healthcare",
-    palette: "from-[#FFFFFF] to-[#989DA3]",
-    image: "/hero/villa-06.jpg",
-    href: "/projects#medcity-specialist-clinic",
+    image: "/projects/muhaisnah-school.png",
+    href: "/projects#muhaisnah-school",
   },
 ];
 

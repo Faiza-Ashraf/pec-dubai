@@ -38,7 +38,7 @@ export function ContactSection() {
               </div>
               <div className="overflow-hidden rounded-[8px] border border-[var(--color-divider)] bg-[var(--color-surface-muted)]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.085010567674!2d55.314743374474155!3d25.27051687766382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5cb583641b27%3A0x1f0118f368d13c37!2sPioneer%20Engineering%20Consultants!5e1!3m2!1sen!2sae!4v1783609477523!5m2!1sen!2sae"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7215.998329849802!2d55.31294078833009!3d25.270613531927175!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5cb583641b27%3A0x1f0118f368d13c37!2sPioneer%20Engineering%20Consultants!5e0!3m2!1sen!2sae!4v1784034123943!5m2!1sen!2sae" 
                   title="PEC Dubai office location map"
                   className="h-[250px] w-full sm:h-[280px]"
                   loading="lazy"
