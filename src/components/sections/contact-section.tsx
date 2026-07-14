@@ -48,10 +48,10 @@ export function ContactSection() {
                 />
               </div>
 
-              <div className="mt-5 grid grid-cols-2 divide-x divide-y divide-[var(--color-divider)] border-y border-[var(--color-divider)] sm:grid-cols-4 sm:divide-y-0">
+              <div className="mt-5 grid grid-cols-2 border border-[var(--color-divider)] sm:grid-cols-4">
                 <a
                   href={`mailto:${siteMeta.email}`}
-                  className="group flex min-h-16 flex-col items-center justify-center gap-1.5 text-center text-[var(--color-deep-charcoal)] transition hover:bg-[var(--color-surface-muted)]"
+                  className="group flex min-h-16 flex-col items-center justify-center gap-1.5 border-b border-r border-[var(--color-divider)] text-center text-[var(--color-deep-charcoal)] transition hover:bg-[var(--color-surface-muted)] sm:border-b-0"
                   aria-label={`Email ${siteMeta.email}`}
                 >
                   <Mail className="size-5 transition group-hover:text-[var(--color-deep-charcoal)]" />
@@ -61,7 +61,7 @@ export function ContactSection() {
                 </a>
                 <a
                   href={`tel:${siteMeta.phone.replace(/\s/g, "")}`}
-                  className="group flex min-h-16 flex-col items-center justify-center gap-1.5 text-center text-[var(--color-deep-charcoal)] transition hover:bg-[var(--color-surface-muted)]"
+                  className="group flex min-h-16 flex-col items-center justify-center gap-1.5 border-b border-[var(--color-divider)] text-center text-[var(--color-deep-charcoal)] transition hover:bg-[var(--color-surface-muted)] sm:border-b-0 sm:border-r"
                   aria-label={`Call ${siteMeta.phone}`}
                 >
                   <Phone className="size-5 transition group-hover:text-[var(--color-deep-charcoal)]" />
@@ -73,7 +73,7 @@ export function ContactSection() {
                   href={siteMeta.whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex min-h-16 flex-col items-center justify-center gap-1.5 text-center text-[var(--color-deep-charcoal)] transition hover:bg-[var(--color-surface-muted)]"
+                  className="group flex min-h-16 flex-col items-center justify-center gap-1.5 border-r border-[var(--color-divider)] text-center text-[var(--color-deep-charcoal)] transition hover:bg-[var(--color-surface-muted)]"
                   aria-label="Message PEC Dubai on WhatsApp"
                 >
                   <MessageCircle className="size-5 transition group-hover:text-[var(--color-deep-charcoal)]" />
