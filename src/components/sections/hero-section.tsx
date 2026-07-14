@@ -16,9 +16,9 @@ export function HeroSection() {
           preload="auto"
           aria-label="Blueprint folding into a 3D architectural building"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.12),rgba(86,114,135,0.08),rgba(44,51,60,0.02))] lg:bg-[linear-gradient(90deg,var(--color-canvas)_0%,rgba(255,255,255,0.82)_8%,rgba(255,255,255,0.58)_20%,rgba(255,255,255,0.22)_36%,rgba(255,255,255,0.05)_56%,rgba(255,255,255,0.01)_100%)]" />
-        <div className="absolute inset-0 hidden bg-[linear-gradient(135deg,rgba(86,114,135,0.08),rgba(255,255,255,0.04)_42%,rgba(86,114,135,0.05))] lg:block" />
-        <div className="absolute inset-y-0 left-0 hidden w-[30%] backdrop-blur-[3px] lg:block" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.12),rgba(86,114,135,0.08),rgba(44,51,60,0.02))] lg:bg-[linear-gradient(90deg,var(--color-canvas)_0%,rgba(255,255,255,0.82)_8%,rgba(255,255,255,0.58)_20%,rgba(255,255,255,0.22)_36%,rgba(255,255,255,0.05)_56%,rgba(255,255,255,0.01)_100%)]" />
+        <div className="pointer-events-none absolute inset-0 hidden bg-[linear-gradient(135deg,rgba(86,114,135,0.08),rgba(255,255,255,0.04)_42%,rgba(86,114,135,0.05))] lg:block" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-[30%] backdrop-blur-[3px] lg:block" />
       </div>
 
       <div className="relative z-10 mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center px-5 pb-8 sm:px-8 lg:min-h-[100svh] lg:grid-cols-[minmax(0,0.72fr)_minmax(520px,1fr)] lg:gap-20 lg:px-12 lg:pb-20 lg:pt-32 xl:grid-cols-[minmax(0,0.68fr)_minmax(600px,1fr)]">

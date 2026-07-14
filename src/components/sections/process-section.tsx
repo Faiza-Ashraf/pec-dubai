@@ -31,7 +31,7 @@ export function ProcessSection() {
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: rootRef.current,
-          start: isDesktop ? "top 78%" : "top 72%",
+          start: isDesktop ? "top 70%" : "top 72%",
           end: isDesktop ? "bottom 65%" : "bottom 42%",
           scrub: isDesktop ? 0.35 : 1,
         },
