@@ -7,13 +7,13 @@ export function WhyPecSection() {
       <Container>
         <div className="grid gap-[72px] lg:grid-cols-2 lg:items-start">
           <div>
-            <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-steel-blue)]">
+            <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-deep-charcoal)]">
               Why Choose Us
             </span>
             <h2 className="mt-4 font-display text-[clamp(2rem,5vw,3.8rem)] font-light leading-[1.1] text-[var(--color-charcoal)]">
               Why the UAE&apos;s Best
               <br />
-              Choose <span className="text-[var(--color-light-gray)] italic">PEC</span>
+              Choose <span className="text-[var(--color-cool-gray)] italic">PEC</span>
             </h2>
             <div className="mt-9 flex flex-col">
               {whyPec.map((item, index) => (
@@ -21,7 +21,7 @@ export function WhyPecSection() {
                   key={item.title}
                   className="grid grid-cols-[44px_1fr] gap-[18px] border-b border-[var(--color-divider)] py-6 transition hover:pl-1.5"
                 >
-                  <span className="pt-[3px] font-mono text-[0.6rem] text-[var(--color-steel-blue)]">
+                  <span className="pt-[3px] font-mono text-[0.6rem] text-[var(--color-deep-charcoal)]">
                     0{index + 1}
                   </span>
                   <div>
@@ -43,7 +43,7 @@ export function WhyPecSection() {
                 key={credential.id}
                 className="border border-[var(--color-divider)] bg-[var(--color-surface)] p-[22px_16px] text-center transition hover:border-[var(--color-deep-charcoal)] hover:bg-[var(--color-surface)]"
               >
-                <p className="font-mono text-[0.6rem] tracking-[0.15em] text-[var(--color-steel-blue)]">
+                <p className="font-mono text-[0.6rem] tracking-[0.15em] text-[var(--color-deep-charcoal)]">
                   {credential.id}
                 </p>
                 <p className="mt-2 text-[0.78rem] leading-[1.35] text-[var(--color-deep-charcoal)]">

@@ -166,16 +166,16 @@ export function PullToRefresh() {
         transform: `translate3d(0, ${Math.max(0, pullDistance - 44)}px, 0)`,
       }}
     >
-      <div className="flex h-10 items-center gap-2 rounded-full border border-[rgba(86,114,135,0.2)] bg-white/92 px-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[var(--color-deep-charcoal)] shadow-[0_12px_32px_rgba(44,51,60,0.14)] backdrop-blur-md">
+      <div className="flex h-10 items-center gap-2 rounded-full border border-[rgba(76,106,135,0.2)] bg-white/92 px-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[var(--color-deep-charcoal)] shadow-[0_12px_32px_rgba(29,36,48,0.14)] backdrop-blur-md">
         <span className="relative flex size-5 items-center justify-center">
           <span
-            className="absolute inset-0 rounded-full border border-[rgba(86,114,135,0.22)]"
+            className="absolute inset-0 rounded-full border border-[rgba(76,106,135,0.22)]"
             style={{ transform: `scale(${0.78 + progress * 0.22})` }}
           />
           <RefreshCw
             aria-hidden="true"
             className={cn(
-              "size-3.5 text-[var(--color-steel-blue)]",
+              "size-3.5 text-[var(--color-deep-charcoal)]",
               refreshState === "refreshing" && "animate-spin",
             )}
             style={{

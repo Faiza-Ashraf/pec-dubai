@@ -240,13 +240,13 @@ export function HeroCoverflowCarousel() {
         onPointerUp={onPointerEnd}
         onPointerCancel={onPointerEnd}
       >
-        <div className="absolute inset-x-8 bottom-3 h-16 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(44,51,60,0.16),transparent_68%)] blur-xl" />
+        <div className="absolute inset-x-8 bottom-3 h-16 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(29,36,48,0.16),transparent_68%)] blur-xl" />
         {visibleSlides.map((slide) => (
           <button
             key={slide.src}
             type="button"
             className={cn(
-              "absolute left-1/2 top-5 h-[78%] w-[min(72vw,620px)] -translate-x-1/2 overflow-hidden rounded-[18px] border border-[var(--color-divider)] bg-[var(--color-surface)] shadow-[0_34px_80px_rgba(44,51,60,0.18)] outline-none transition-[box-shadow,border-color] duration-300 will-change-[transform,opacity,filter] focus-visible:border-[var(--color-steel-blue)] focus-visible:shadow-[0_0_0_4px_rgba(86,114,135,0.22),0_34px_80px_rgba(44,51,60,0.18)]",
+              "absolute left-1/2 top-5 h-[78%] w-[min(72vw,620px)] -translate-x-1/2 overflow-hidden rounded-[18px] border border-[var(--color-divider)] bg-[var(--color-surface)] shadow-[0_34px_80px_rgba(29,36,48,0.18)] outline-none transition-[box-shadow,border-color] duration-300 will-change-[transform,opacity,filter] focus-visible:border-[var(--color-steel-blue)] focus-visible:shadow-[0_0_0_4px_rgba(76,106,135,0.22),0_34px_80px_rgba(29,36,48,0.18)]",
               slide.abs > 3.4 && "pointer-events-none",
             )}
             style={slide.style}
@@ -272,7 +272,7 @@ export function HeroCoverflowCarousel() {
       <div className="mt-5 flex items-center justify-center gap-4">
         <button
           type="button"
-          className="grid size-11 place-items-center rounded-full border border-[var(--color-divider)] bg-[var(--color-surface)] text-[var(--color-charcoal)] shadow-[0_12px_28px_rgba(44,51,60,0.08)] transition hover:border-[var(--color-deep-charcoal)] hover:text-[var(--color-deep-charcoal)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-steel-blue)]"
+          className="grid size-11 place-items-center rounded-full border border-[var(--color-divider)] bg-[var(--color-surface)] text-[var(--color-charcoal)] shadow-[0_12px_28px_rgba(29,36,48,0.08)] transition hover:border-[var(--color-deep-charcoal)] hover:text-[var(--color-deep-charcoal)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-steel-blue)]"
           onClick={() => goToOffset(-1)}
           aria-label="Previous architectural render"
         >
@@ -283,7 +283,7 @@ export function HeroCoverflowCarousel() {
         </div>
         <button
           type="button"
-          className="grid size-11 place-items-center rounded-full border border-[var(--color-divider)] bg-[var(--color-surface)] text-[var(--color-charcoal)] shadow-[0_12px_28px_rgba(44,51,60,0.08)] transition hover:border-[var(--color-deep-charcoal)] hover:text-[var(--color-deep-charcoal)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-steel-blue)]"
+          className="grid size-11 place-items-center rounded-full border border-[var(--color-divider)] bg-[var(--color-surface)] text-[var(--color-charcoal)] shadow-[0_12px_28px_rgba(29,36,48,0.08)] transition hover:border-[var(--color-deep-charcoal)] hover:text-[var(--color-deep-charcoal)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-steel-blue)]"
           onClick={() => goToOffset(1)}
           aria-label="Next architectural render"
         >

@@ -12,13 +12,13 @@ export function ContactSection() {
       <div className="absolute left-1/2 top-0 h-[60px] w-px -translate-x-1/2 bg-[linear-gradient(to_bottom,transparent,var(--color-steel-blue))]" />
       <Container>
         <div className="mx-auto mb-[72px] max-w-[680px] text-center">
-          <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-steel-blue)]">
+          <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-deep-charcoal)]">
             Let&apos;s Build Together
           </span>
           <h2 className="mt-4 font-display text-[clamp(2.2rem,6vw,4.5rem)] font-light leading-[1.05] text-[var(--color-charcoal)]">
             Ready to Begin
             <br />
-            Your <span className="text-[var(--color-light-gray)] italic">Project?</span>
+            Your <span className="text-[var(--color-cool-gray)] italic">Project?</span>
           </h2>
           <p className="mt-[18px] text-[0.95rem] text-[var(--color-cool-gray)]">
             Tell us about your vision. Our senior consultants respond within 24 hours
@@ -27,13 +27,13 @@ export function ContactSection() {
         </div>
 
         <div className="mx-auto grid max-w-[1180px] gap-[52px] lg:grid-cols-2 lg:items-start">
-          <div className="border border-[var(--color-divider)] bg-[var(--color-surface)] p-[28px_20px] shadow-[0_24px_70px_rgba(44,51,60,0.08)] sm:p-11">
+          <div className="border border-[var(--color-divider)] bg-[var(--color-surface)] p-[28px_20px] shadow-[0_24px_70px_rgba(29,36,48,0.08)] sm:p-11">
             <InquiryForm />
           </div>
 
           <div className="flex flex-col justify-between">
             <div>
-              <div className="mb-[10px] font-mono text-[0.58rem] uppercase tracking-[0.22em] text-[var(--color-steel-blue)]">
+              <div className="mb-[10px] font-mono text-[0.58rem] uppercase tracking-[0.22em] text-[var(--color-deep-charcoal)]">
                 Office Address
               </div>
               <div className="overflow-hidden rounded-[8px] border border-[var(--color-divider)] bg-[var(--color-surface-muted)]">
@@ -51,7 +51,7 @@ export function ContactSection() {
               <div className="mt-5 grid grid-cols-2 divide-x divide-y divide-[var(--color-divider)] border-y border-[var(--color-divider)] sm:grid-cols-4 sm:divide-y-0">
                 <a
                   href={`mailto:${siteMeta.email}`}
-                  className="group flex min-h-16 flex-col items-center justify-center gap-1.5 text-center text-[var(--color-steel-blue)] transition hover:bg-[var(--color-surface-muted)]"
+                  className="group flex min-h-16 flex-col items-center justify-center gap-1.5 text-center text-[var(--color-deep-charcoal)] transition hover:bg-[var(--color-surface-muted)]"
                   aria-label={`Email ${siteMeta.email}`}
                 >
                   <Mail className="size-5 transition group-hover:text-[var(--color-deep-charcoal)]" />
@@ -61,7 +61,7 @@ export function ContactSection() {
                 </a>
                 <a
                   href={`tel:${siteMeta.phone.replace(/\s/g, "")}`}
-                  className="group flex min-h-16 flex-col items-center justify-center gap-1.5 text-center text-[var(--color-steel-blue)] transition hover:bg-[var(--color-surface-muted)]"
+                  className="group flex min-h-16 flex-col items-center justify-center gap-1.5 text-center text-[var(--color-deep-charcoal)] transition hover:bg-[var(--color-surface-muted)]"
                   aria-label={`Call ${siteMeta.phone}`}
                 >
                   <Phone className="size-5 transition group-hover:text-[var(--color-deep-charcoal)]" />
@@ -73,7 +73,7 @@ export function ContactSection() {
                   href={siteMeta.whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex min-h-16 flex-col items-center justify-center gap-1.5 text-center text-[var(--color-steel-blue)] transition hover:bg-[var(--color-surface-muted)]"
+                  className="group flex min-h-16 flex-col items-center justify-center gap-1.5 text-center text-[var(--color-deep-charcoal)] transition hover:bg-[var(--color-surface-muted)]"
                   aria-label="Message PEC Dubai on WhatsApp"
                 >
                   <MessageCircle className="size-5 transition group-hover:text-[var(--color-deep-charcoal)]" />
@@ -85,7 +85,7 @@ export function ContactSection() {
                   href={siteMeta.instagram}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex min-h-16 flex-col items-center justify-center gap-1.5 text-center text-[var(--color-steel-blue)] transition hover:bg-[var(--color-surface-muted)]"
+                  className="group flex min-h-16 flex-col items-center justify-center gap-1.5 text-center text-[var(--color-deep-charcoal)] transition hover:bg-[var(--color-surface-muted)]"
                   aria-label="PEC Dubai on Instagram"
                 >
                   <Instagram className="size-5 transition group-hover:text-[var(--color-deep-charcoal)]" />

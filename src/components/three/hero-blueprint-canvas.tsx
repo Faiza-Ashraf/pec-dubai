@@ -42,7 +42,7 @@ export function HeroBlueprintCanvas() {
 
   if (!state.canRender) {
     return (
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_65%_32%,rgba(86,114,135,0.12),transparent_18%),radial-gradient(circle_at_20%_18%,rgba(152,157,163,0.62),transparent_22%),linear-gradient(180deg,rgba(44,51,60,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(44,51,60,0.045)_1px,transparent_1px)] bg-[size:auto,auto,68px_68px,68px_68px]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_65%_32%,rgba(76,106,135,0.12),transparent_18%),radial-gradient(circle_at_20%_18%,rgba(141,147,155,0.62),transparent_22%),linear-gradient(180deg,rgba(29,36,48,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(29,36,48,0.045)_1px,transparent_1px)] bg-[size:auto,auto,68px_68px,68px_68px]" />
     );
   }
 

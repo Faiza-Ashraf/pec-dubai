@@ -16,14 +16,14 @@ export function HeroSection() {
           preload="auto"
           aria-label="Blueprint folding into a 3D architectural building"
         />
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.12),rgba(86,114,135,0.08),rgba(44,51,60,0.02))] lg:bg-[linear-gradient(90deg,var(--color-canvas)_0%,rgba(255,255,255,0.82)_8%,rgba(255,255,255,0.58)_20%,rgba(255,255,255,0.22)_36%,rgba(255,255,255,0.05)_56%,rgba(255,255,255,0.01)_100%)]" />
-        <div className="pointer-events-none absolute inset-0 hidden bg-[linear-gradient(135deg,rgba(86,114,135,0.08),rgba(255,255,255,0.04)_42%,rgba(86,114,135,0.05))] lg:block" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.12),rgba(76,106,135,0.08),rgba(29,36,48,0.02))] lg:bg-[linear-gradient(90deg,var(--color-canvas)_0%,rgba(255,255,255,0.82)_8%,rgba(255,255,255,0.58)_20%,rgba(255,255,255,0.22)_36%,rgba(255,255,255,0.05)_56%,rgba(255,255,255,0.01)_100%)]" />
+        <div className="pointer-events-none absolute inset-0 hidden bg-[linear-gradient(135deg,rgba(76,106,135,0.08),rgba(255,255,255,0.04)_42%,rgba(76,106,135,0.05))] lg:block" />
         <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-[30%] backdrop-blur-[3px] lg:block" />
       </div>
 
       <div className="relative z-10 mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center px-5 pb-8 sm:px-8 lg:min-h-[100svh] lg:grid-cols-[minmax(0,0.72fr)_minmax(520px,1fr)] lg:gap-20 lg:px-12 lg:pb-20 lg:pt-32 xl:grid-cols-[minmax(0,0.68fr)_minmax(600px,1fr)]">
         <div className="max-w-[600px] pr-0 text-left lg:pr-8">
-          <p className="hidden font-mono text-[0.58rem] uppercase tracking-[0.35em] text-[var(--color-steel-blue)] lg:block">
+          <p className="hidden font-mono text-[0.58rem] uppercase tracking-[0.35em] text-[var(--color-deep-charcoal)] lg:block">
             Luxury Architecture & Engineering
           </p>
           <h1 className="mt-0 max-w-[580px] pt-4 font-display text-[clamp(3rem,5.4vw,5.9rem)] font-light leading-[0.98] text-[var(--color-charcoal)] max-md:pt-4 lg:mt-6 lg:pt-0">
@@ -37,7 +37,7 @@ export function HeroSection() {
             <Button href="#contact" className="w-full sm:w-auto">
               Book Consultation
             </Button>
-            <Button href="#services" variant="secondary" className="w-full sm:w-auto">
+            <Button href="#services" variant="secondary" className="w-full !border-[var(--color-deep-charcoal)] !bg-[var(--color-canvas)] !text-[var(--color-deep-charcoal)] hover:!border-[var(--color-steel-blue)] hover:!bg-[var(--color-steel-blue)] hover:!text-[var(--color-canvas)] sm:w-auto">
               View Services
             </Button>
           </div>

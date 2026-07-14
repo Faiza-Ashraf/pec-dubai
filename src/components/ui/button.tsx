@@ -11,11 +11,11 @@ type ButtonProps = {
 
 const variants = {
   primary:
-    "border border-[var(--color-deep-charcoal)] bg-[var(--color-deep-charcoal)] text-white shadow-[0_18px_45px_rgba(44,51,60,0.12)] hover:border-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)] hover:shadow-[0_22px_55px_rgba(44,51,60,0.24)]",
+    "border border-[var(--color-deep-charcoal)] bg-[rgba(29,36,48,0.94)] text-[var(--color-canvas)] shadow-[0_18px_45px_rgba(29,36,48,0.18)] hover:border-[var(--color-steel-blue)] hover:bg-[var(--color-steel-blue)] hover:text-[var(--color-canvas)] hover:shadow-[0_22px_55px_rgba(76,106,135,0.28)]",
   secondary:
-    "border border-[var(--color-divider)] bg-[var(--color-surface)] text-[var(--color-charcoal)] hover:border-[var(--color-deep-charcoal)] hover:text-[var(--color-deep-charcoal)] hover:shadow-[0_18px_42px_rgba(44,51,60,0.14)]",
+    "border border-[rgba(29,36,48,0.94)] bg-[rgba(29,36,48,0.94)] text-[var(--color-canvas)] hover:border-[var(--color-steel-blue)] hover:bg-[var(--color-steel-blue)] hover:text-[var(--color-canvas)] hover:shadow-[0_18px_42px_rgba(76,106,135,0.22)]",
   ghost:
-    "text-[var(--color-deep-charcoal)] hover:bg-[rgba(50,56,66,0.08)] hover:text-[var(--color-charcoal)] hover:shadow-[0_14px_32px_rgba(44,51,60,0.1)]",
+    "text-[var(--color-deep-charcoal)] hover:bg-[var(--color-deep-charcoal)] hover:text-[var(--color-canvas)] hover:shadow-[0_14px_32px_rgba(29,36,48,0.18)]",
 };
 
 const baseClassName =

@@ -20,7 +20,7 @@ export default function ServicesPage() {
         {services.map((service) => (
           <article
             key={service.title}
-            className="rounded-lg border border-[var(--color-divider)] bg-[var(--color-surface)] p-6 shadow-[0_18px_45px_rgba(44,51,60,0.06)]"
+            className="rounded-lg border border-[var(--color-divider)] bg-[var(--color-surface)] p-6 shadow-[0_18px_45px_rgba(29,36,48,0.06)]"
           >
             <h2 className="font-display text-4xl text-[var(--color-charcoal)]">
               {service.title}

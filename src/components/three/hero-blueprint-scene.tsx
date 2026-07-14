@@ -95,15 +95,15 @@ export function HeroBlueprintScene({
       <color attach="background" args={["#FFFFFF"]} />
       <fog attach="fog" args={["#FFFFFF", 6, 12]} />
       <ambientLight intensity={1} />
-      <pointLight position={[2.8, 4, 2]} color="#567287" intensity={15} distance={14} />
-      <pointLight position={[-4, 2, 4]} color="#989DA3" intensity={10} distance={12} />
+      <pointLight position={[2.8, 4, 2]} color="#4C6A87" intensity={15} distance={14} />
+      <pointLight position={[-4, 2, 4]} color="#8D939B" intensity={10} distance={12} />
 
       <mesh rotation-x={-Math.PI / 2} position={[0, -0.08, 0]}>
         <planeGeometry args={[18, 18]} />
         <meshStandardMaterial color="#FFFFFF" />
       </mesh>
 
-      <gridHelper args={[12, 24, "#567287", "#989DA3"]} position={[0, -0.07, 0]} />
+      <gridHelper args={[12, 24, "#4C6A87", "#8D939B"]} position={[0, -0.07, 0]} />
 
       <Points positions={points} stride={3}>
         <PointMaterial
@@ -120,7 +120,7 @@ export function HeroBlueprintScene({
         <Line
           key={index}
           points={line}
-          color={index === 0 ? "#2C333C" : "#567287"}
+          color={index === 0 ? "#1D2430" : "#4C6A87"}
           lineWidth={index === 0 ? 1.3 : 0.95}
           transparent
           opacity={0.88}
@@ -130,7 +130,7 @@ export function HeroBlueprintScene({
       <group ref={groupRef}>
         <mesh position={[0, 0.02, 0]}>
           <boxGeometry args={[4.95, 0.04, 3.65]} />
-          <meshStandardMaterial color="#989DA3" metalness={0.08} roughness={0.92} />
+          <meshStandardMaterial color="#8D939B" metalness={0.08} roughness={0.92} />
         </mesh>
 
         {walls.map((wall, index) => (
@@ -147,7 +147,7 @@ export function HeroBlueprintScene({
         <mesh position={[0, 0.64, 1.73]}>
           <boxGeometry args={[3.8, 0.92, 0.04]} />
           <meshPhysicalMaterial
-            color="#989DA3"
+            color="#8D939B"
             transparent
             opacity={0.22}
             roughness={0.06}

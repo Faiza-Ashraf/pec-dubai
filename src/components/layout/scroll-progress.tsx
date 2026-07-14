@@ -32,7 +32,7 @@ export function ScrollProgress() {
     <button
       type="button"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-[calc(var(--footer-offset)+20px)] left-5 z-50 grid size-12 place-items-center rounded-full p-[3px] shadow-[0_10px_28px_rgba(44,51,60,0.18)] transition-[bottom,transform] duration-150 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-steel-blue)] sm:bottom-[calc(var(--footer-offset)+28px)] sm:left-7"
+      className="fixed bottom-[calc(var(--footer-offset)+20px)] left-5 z-50 grid size-12 place-items-center rounded-full p-[3px] shadow-[0_10px_28px_rgba(29,36,48,0.18)] transition-[bottom,transform] duration-150 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-steel-blue)] sm:bottom-[calc(var(--footer-offset)+28px)] sm:left-7"
       style={{
         "--footer-offset": `${footerOffset}px`,
         background: `conic-gradient(var(--color-charcoal) ${progress * 3.6}deg, var(--color-divider) 0deg)`,

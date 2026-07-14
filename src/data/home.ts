@@ -108,7 +108,7 @@ export const projects = [
       "A beachfront villa setting balancing privacy, planted edges, and a relaxed relationship with the shoreline.",
     metrics: "Luxury Villa",
     featured: true,
-    palette: "from-[#989DA3] to-[#567287]",
+    palette: "from-[#8D939B] to-[#4C6A87]",
     image: "/projects/palm-jumeirah.png",
     href: "/projects#palm-jumeirah",
   },
@@ -118,7 +118,7 @@ export const projects = [
     summary:
       "Contemporary villa design shaped around generous glazing, calm proportions, and a refined connection to the landscape.",
     metrics: "Private Villa",
-    palette: "from-[#989DA3] to-[#567287]",
+    palette: "from-[#8D939B] to-[#4C6A87]",
     image: "/projects/dubai-hills.png",
     href: "/projects#dubai-hills",
   },
@@ -128,7 +128,7 @@ export const projects = [
     summary:
       "A contemporary business park facade with clear commercial identity, generous glazing, and coordinated public frontage.",
     metrics: "Business Park",
-    palette: "from-[#989DA3] to-[#567287]",
+    palette: "from-[#8D939B] to-[#4C6A87]",
     image: "/projects/schon-park-dip.png",
     href: "/projects#schon-park-dip",
   },
@@ -138,9 +138,119 @@ export const projects = [
     summary:
       "A multi-storey school campus designed around safe arrival, clear circulation, and welcoming learning spaces.",
     metrics: "Education",
-    palette: "from-[#989DA3] to-[#567287]",
+    palette: "from-[#8D939B] to-[#4C6A87]",
     image: "/projects/muhaisnah-school.png",
     href: "/projects#muhaisnah-school",
+  },
+  {
+    title: "Al Furjan Villa",
+    location: "Al Furjan, Dubai",
+    summary:
+      "A refined residential villa shaped around generous frontage, balanced proportions, and quiet neighborhood presence.",
+    metrics: "Private Villa",
+    palette: "from-[#8D939B] to-[#4C6A87]",
+    image: "/projects/Furjan.jpg",
+    href: "/projects#al-furjan-villa",
+  },
+  {
+    title: "Hor Al Anz Residence",
+    location: "Hor Al Anz, Dubai",
+    summary:
+      "A residential project with composed massing, practical access, and a calm architectural expression for an established Dubai district.",
+    metrics: "Residential",
+    palette: "from-[#8D939B] to-[#4C6A87]",
+    image: "/projects/Hor Al Anz.jpg",
+    href: "/projects#hor-al-anz-residence",
+  },
+  {
+    title: "Madinat Hind Villa",
+    location: "Madinat Hind, Dubai",
+    summary:
+      "A contemporary family villa planned for privacy, strong street presence, and comfortable indoor-outdoor living.",
+    metrics: "Private Villa",
+    palette: "from-[#8D939B] to-[#4C6A87]",
+    image: "/projects/Madinat Hind.jpg",
+    href: "/projects#madinat-hind-villa",
+  },
+  {
+    title: "Madinat Hind Residence",
+    location: "Madinat Hind, Dubai",
+    summary:
+      "A residential design with clean facade rhythm, layered glazing, and a balanced relationship to its plot.",
+    metrics: "Residential Villa",
+    palette: "from-[#8D939B] to-[#4C6A87]",
+    image: "/projects/madinat hind 2.jpg",
+    href: "/projects#madinat-hind-residence",
+  },
+  {
+    title: "Al Aweer Courtyard Villa",
+    location: "Al Aweer, Dubai",
+    summary:
+      "A villa composition arranged around privacy, shaded edges, and a measured architectural presence.",
+    metrics: "Private Villa",
+    palette: "from-[#8D939B] to-[#4C6A87]",
+    image: "/projects/awiir.jpg",
+    href: "/projects#al-aweer-courtyard-villa",
+  },
+  {
+    title: "Al Aweer Family Villa",
+    location: "Al Aweer, Dubai",
+    summary:
+      "A family-focused villa with strong massing, practical circulation, and a calm residential character.",
+    metrics: "Private Villa",
+    palette: "from-[#8D939B] to-[#4C6A87]",
+    image: "/projects/al awir 2.jpg",
+    href: "/projects#al-aweer-family-villa",
+  },
+  {
+    title: "Al Aweer Contemporary Villa",
+    location: "Al Aweer, Dubai",
+    summary:
+      "A contemporary villa study using layered volumes, defined openings, and restrained material contrast.",
+    metrics: "Private Villa",
+    palette: "from-[#8D939B] to-[#4C6A87]",
+    image: "/projects/New folder/Al Awir.jpg",
+    href: "/projects#al-aweer-contemporary-villa",
+  },
+  {
+    title: "Al Aweer Private Residence",
+    location: "Al Aweer, Dubai",
+    summary:
+      "A private residence designed with generous frontage, clear entry sequence, and controlled street-facing privacy.",
+    metrics: "Private Residence",
+    palette: "from-[#8D939B] to-[#4C6A87]",
+    image: "/projects/New folder/awir.jpg",
+    href: "/projects#al-aweer-private-residence",
+  },
+  {
+    title: "Al Aweer Modern Villa",
+    location: "Al Aweer, Dubai",
+    summary:
+      "A modern villa concept with crisp planes, shaded glazing, and an understated residential profile.",
+    metrics: "Private Villa",
+    palette: "from-[#8D939B] to-[#4C6A87]",
+    image: "/projects/New folder/awiiir.jpg",
+    href: "/projects#al-aweer-modern-villa",
+  },
+  {
+    title: "Al Aweer Villa",
+    location: "Al Aweer, Dubai",
+    summary:
+      "A villa design tuned for family living, privacy, and architectural clarity within a low-rise neighborhood setting.",
+    metrics: "Private Villa",
+    palette: "from-[#8D939B] to-[#4C6A87]",
+    image: "/projects/New folder/al awir 3.jpg",
+    href: "/projects#al-aweer-villa",
+  },
+  {
+    title: "Al Aweer Residence",
+    location: "Al Aweer, Dubai",
+    summary:
+      "A residential villa with a composed facade, shaded outdoor thresholds, and efficient internal planning.",
+    metrics: "Residential Villa",
+    palette: "from-[#8D939B] to-[#4C6A87]",
+    image: "/projects/New folder/al awir 4.jpg",
+    href: "/projects#al-aweer-residence",
   },
 ];
 

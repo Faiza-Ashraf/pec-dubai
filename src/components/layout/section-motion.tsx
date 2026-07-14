@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export function SectionMotion() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const sections = Array.from(document.querySelectorAll<HTMLElement>("main > section"));
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -27,7 +30,7 @@ export function SectionMotion() {
     sections.forEach((section) => observer.observe(section));
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   return null;
 }

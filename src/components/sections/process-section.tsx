@@ -67,9 +67,9 @@ export function ProcessSection() {
         timeline.to(
           dot,
           {
-            borderColor: "#567287",
-            backgroundColor: "#567287",
-            boxShadow: "0 0 28px rgba(86,114,135,0.28)",
+            borderColor: "#4C6A87",
+            backgroundColor: "#4C6A87",
+            boxShadow: "0 0 28px rgba(76,106,135,0.28)",
             duration: 0.15,
           },
           startAt,
@@ -85,7 +85,7 @@ export function ProcessSection() {
         timeline.to(
           title,
           {
-            color: "#2C333C",
+            color: "#1D2430",
             duration: 0.12,
           },
           startAt,
@@ -114,12 +114,12 @@ export function ProcessSection() {
       <Container>
         <div ref={rootRef}>
           <div className="text-center">
-            <p className="font-mono text-[0.72rem] uppercase tracking-[0.35em] text-[var(--color-steel-blue)]">
+            <p className="font-mono text-[0.72rem] uppercase tracking-[0.35em] text-[var(--color-deep-charcoal)]">
               How We Work
             </p>
             <h2 className="mt-4 font-display text-[clamp(2rem,5vw,3.8rem)] font-light leading-[1.1] text-[var(--color-charcoal)]">
               A Process Built for{" "}
-              <span className="text-[var(--color-light-gray)] italic">Perfection</span>
+              <span className="text-[var(--color-cool-gray)] italic">Perfection</span>
             </h2>
             <p className="mx-auto mt-5 max-w-[540px] text-[1.04rem] leading-[1.75] text-[var(--color-cool-gray)]">
               Every great building follows a disciplined path. Here&apos;s ours.
@@ -152,7 +152,7 @@ export function ProcessSection() {
                     ref={(element) => {
                       phaseRefs.current[index] = element;
                     }}
-                    className="pb-2 pl-14 pt-5 font-mono text-[0.72rem] uppercase tracking-[0.18em] text-[var(--color-steel-blue)] opacity-45 lg:pb-[12px] lg:pl-0 lg:pt-0"
+                    className="pb-2 pl-14 pt-5 font-mono text-[0.72rem] uppercase tracking-[0.18em] text-[var(--color-deep-charcoal)] opacity-45 lg:pb-[12px] lg:pl-0 lg:pt-0"
                   >
                     {step.phase}
                   </p>

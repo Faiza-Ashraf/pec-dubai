@@ -21,7 +21,7 @@ export default function ProjectsPage() {
           <article
             key={project.title}
             id={project.href.split("#")[1]}
-            className="rounded-lg border border-[var(--color-divider)] bg-[var(--color-surface)] p-6 shadow-[0_18px_45px_rgba(44,51,60,0.06)]"
+            className="rounded-lg border border-[var(--color-divider)] bg-[var(--color-surface)] p-6 shadow-[0_18px_45px_rgba(29,36,48,0.06)]"
           >
             <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-[var(--color-light-gray)]">
               {project.location}

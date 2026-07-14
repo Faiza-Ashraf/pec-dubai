@@ -34,7 +34,7 @@ const serviceItems = [
     title: "Authority Approvals & NOCs",
     description:
       "End-to-end coordination with authorities and developers to secure permits and NOCs efficiently.",
-    tags: ["Dubai Municipality", "Trakhees", "DDA", "DEWA NOC", "RTA NOC", "Nakheel", "Emaar"],
+    tags: ["Dubai Municipality", "Trakhees", "DDA", "DEWA NOC", "RTA NOC", "Nakheel", "Emaar", "Dubai South"],
     image: "/Services/Authority_Approvals_Government_D…_202607091744.jpeg",
     replacementImage: "/images/services/authority-approvals.jpg",
   },
@@ -73,7 +73,7 @@ export function ServicesSection() {
     >
       <Container>
         <div className="mx-auto max-w-[700px] text-center">
-          <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-steel-blue)]">
+          <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-deep-charcoal)]">
             Our Services
           </span>
           <h2 className="mt-3 font-display text-[clamp(1.9rem,3.8vw,3.35rem)] font-light leading-[1.06] text-[var(--color-charcoal)]">
@@ -106,7 +106,7 @@ export function ServicesSection() {
                   aria-selected={active}
                   className={cn(
                     "group block w-full px-0 py-4 text-left outline-none transition duration-300 focus-visible:bg-[var(--color-surface-muted)] sm:py-5",
-                    active && "bg-[linear-gradient(90deg,rgba(86,114,135,0.08),transparent)]",
+                    active && "bg-[var(--color-canvas)]",
                   )}
                   onClick={() => setActiveIndex(index)}
                   onMouseEnter={() => setActiveIndex(index)}
@@ -115,7 +115,7 @@ export function ServicesSection() {
                     <span
                       className={cn(
                         "pt-1 font-mono text-[0.78rem] tracking-[0.18em] transition",
-                        active ? "text-[var(--color-steel-blue)]" : "text-[var(--color-cool-gray)]",
+                        active ? "text-[var(--color-deep-charcoal)]" : "text-[var(--color-cool-gray)]",
                       )}
                     >
                       {String(index + 1).padStart(2, "0")}
@@ -176,7 +176,7 @@ export function ServicesSection() {
                 )}
               />
             ))}
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.22),rgba(86,114,135,0.14),rgba(44,51,60,0.08))]" />
+            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.22),rgba(76,106,135,0.14),rgba(29,36,48,0.08))]" />
           </div>
         </div>
       </Container>

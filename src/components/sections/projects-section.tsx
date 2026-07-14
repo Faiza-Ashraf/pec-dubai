@@ -2,27 +2,28 @@
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Container } from "@/components/layout/container";
-import { Button } from "@/components/ui/button";
 import { projects } from "@/data/home";
 import { cn } from "@/lib/cn";
 
 export function ProjectsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isAutoScrollPaused, setIsAutoScrollPaused] = useState(false);
   const viewportRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLAnchorElement | null)[]>([]);
-
-  const activeProject = projects[activeIndex];
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const scrollToProject = (index: number) => {
     const nextIndex = (index + projects.length) % projects.length;
+    const viewport = viewportRef.current;
+    const card = cardRefs.current[nextIndex];
+
     setActiveIndex(nextIndex);
-    cardRefs.current[nextIndex]?.scrollIntoView({
+    if (!viewport || !card) return;
+
+    viewport.scrollTo({
+      left: Math.max(0, card.offsetLeft - (viewport.clientWidth - card.offsetWidth) / 2),
       behavior: "smooth",
-      block: "nearest",
-      inline: "center",
     });
   };
 
@@ -40,7 +41,7 @@ export function ProjectsSection() {
     }, { index: activeIndex, distance: Number.POSITIVE_INFINITY }).index;
 
     if (closestIndex !== activeIndex) {
-      setActiveIndex(closestIndex);
+      setActiveIndex(closestIndex % projects.length);
     }
   };
 
@@ -52,40 +53,42 @@ export function ProjectsSection() {
       <Container>
         <div className="flex flex-col items-start justify-between gap-4 md:mb-7 md:flex-row md:items-end">
           <div>
-            <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-steel-blue)]">
+            <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-deep-charcoal)]">
               Selected Work
             </span>
             <h2 className="mt-3 font-display text-[clamp(2rem,4vw,3.6rem)] font-light leading-[1.05] text-[var(--color-charcoal)]">
-              Featured <span className="text-[var(--color-light-gray)] italic">Projects</span>
+              Featured <span className="text-[var(--color-cool-gray)] italic">Projects</span>
             </h2>
           </div>
-          <Button href="/projects" variant="secondary" className="min-h-12 px-6 py-3">
-            View All Projects
-          </Button>
         </div>
 
-        <div className="mt-5 lg:mt-7">
+        <div
+          className="mt-5 lg:mt-7"
+          onMouseEnter={() => setIsAutoScrollPaused(true)}
+          onMouseLeave={() => setIsAutoScrollPaused(false)}
+          onFocusCapture={() => setIsAutoScrollPaused(true)}
+          onBlurCapture={() => setIsAutoScrollPaused(false)}
+          onTouchStart={() => setIsAutoScrollPaused(true)}
+          onTouchEnd={() => setIsAutoScrollPaused(false)}
+        >
           <div
             ref={viewportRef}
             className="overflow-x-auto pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             aria-label="Featured project gallery"
             onScroll={updateActiveFromScroll}
           >
-            <div className="flex w-max snap-x snap-mandatory gap-4 lg:gap-6">
+            <div className="flex w-max gap-4 lg:gap-6">
               {projects.map((project, index) => (
-                <Link
-                  key={project.title}
-                  href={project.href}
+                <div
+                  key={`${project.title}-${index}`}
                   ref={(element) => {
                     cardRefs.current[index] = element;
                   }}
                   className={cn(
-                    "group relative isolate h-[280px] w-[min(90vw,520px)] snap-center overflow-hidden rounded-[8px] border border-[var(--color-divider)] bg-[var(--color-surface-muted)] shadow-[0_22px_62px_rgba(44,51,60,0.1)] outline-none transition duration-300 hover:-translate-y-1 hover:border-[rgba(86,114,135,0.58)] hover:shadow-[0_28px_76px_rgba(44,51,60,0.15)] focus-visible:border-[var(--color-steel-blue)] focus-visible:shadow-[0_0_0_4px_rgba(86,114,135,0.22),0_28px_76px_rgba(44,51,60,0.15)] sm:h-[330px] sm:w-[min(80vw,620px)] lg:h-[min(46svh,500px)] lg:min-h-[390px] lg:w-[min(58vw,860px)]",
-                    index === activeIndex && "border-[rgba(86,114,135,0.62)]",
+                    "group relative isolate h-[280px] w-[min(90vw,520px)] snap-center overflow-hidden rounded-[8px] border border-[var(--color-divider)] bg-[var(--color-surface-muted)] shadow-[0_22px_62px_rgba(29,36,48,0.1)] outline-none transition duration-300 hover:-translate-y-1 hover:border-[rgba(76,106,135,0.58)] hover:shadow-[0_28px_76px_rgba(29,36,48,0.15)] focus-visible:border-[var(--color-steel-blue)] focus-visible:shadow-[0_0_0_4px_rgba(76,106,135,0.22),0_28px_76px_rgba(29,36,48,0.15)] sm:h-[330px] sm:w-[min(80vw,620px)] lg:h-[min(46svh,500px)] lg:min-h-[390px] lg:w-[min(58vw,860px)]",
+                    index === activeIndex && "border-[rgba(76,106,135,0.62)]",
                   )}
-                  aria-label={`Open ${project.title}`}
                   onMouseEnter={() => setActiveIndex(index)}
-                  onFocus={() => setActiveIndex(index)}
                 >
                   <Image
                     src={project.image}
@@ -95,7 +98,7 @@ export function ProjectsSection() {
                     priority={index === 0}
                     className="object-cover transition duration-500 ease-out group-hover:scale-[1.025]"
                   />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(44,51,60,0.02)_0%,rgba(44,51,60,0.18)_42%,rgba(44,51,60,0.74)_100%)]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(29,36,48,0.02)_0%,rgba(29,36,48,0.18)_42%,rgba(29,36,48,0.74)_100%)]" />
                   <div className="absolute inset-x-0 bottom-0 p-4 text-white sm:p-5">
                     <div className="flex flex-wrap items-center gap-2 font-mono text-[0.58rem] uppercase tracking-[0.22em] text-[rgba(255,255,255,0.76)]">
                       <span>{project.metrics}</span>
@@ -106,14 +109,13 @@ export function ProjectsSection() {
                       {project.title}
                     </h3>
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
           </div>
 
-          <Link
-            href={activeProject.href}
-            className="relative mx-auto mt-1 block h-[136px] max-w-[840px] overflow-hidden border-y border-[var(--color-steel-blue)] text-center transition hover:border-[var(--color-deep-charcoal)] sm:h-[148px] lg:h-[152px]"
+          <div
+            className="relative mx-auto mt-1 block h-[136px] max-w-[840px] overflow-hidden border-y border-[var(--color-steel-blue)] text-center sm:h-[148px] lg:h-[152px]"
           >
             {projects.map((project, index) => (
               <div
@@ -126,7 +128,7 @@ export function ProjectsSection() {
                     : "pointer-events-none translate-y-2 opacity-0 blur-[2px]",
                 )}
               >
-                <p className="font-mono text-[0.54rem] uppercase tracking-[0.3em] text-[var(--color-steel-blue)]">
+                <p className="font-mono text-[0.54rem] uppercase tracking-[0.3em] text-[var(--color-deep-charcoal)]">
                   {project.location}
                 </p>
                 <h3 className="mt-1 font-display text-[clamp(1.45rem,2.8vw,2.35rem)] font-light leading-[1.02] text-[var(--color-charcoal)]">
@@ -140,7 +142,7 @@ export function ProjectsSection() {
                 </p>
               </div>
             ))}
-          </Link>
+          </div>
 
           <div className="mt-3 flex items-center justify-center gap-4">
             <button

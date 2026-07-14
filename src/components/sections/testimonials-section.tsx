@@ -9,11 +9,11 @@ export function TestimonialsSection() {
     >
       <Container>
         <div className="text-center">
-          <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-steel-blue)]">
+          <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-deep-charcoal)]">
             Client Stories
           </span>
           <h2 className="mt-4 font-display text-[clamp(2rem,5vw,3.8rem)] font-light leading-[1.1] text-[var(--color-charcoal)]">
-            What Our Clients <span className="text-[var(--color-light-gray)] italic">Say</span>
+            What Our Clients <span className="text-[var(--color-cool-gray)] italic">Say</span>
           </h2>
         </div>
 
@@ -21,19 +21,19 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial) => (
             <article
               key={testimonial.author}
-              className="relative border border-[var(--color-divider)] bg-[var(--color-surface)] px-[30px] py-9 shadow-[0_18px_45px_rgba(44,51,60,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[var(--color-deep-charcoal)]"
+              className="relative border border-[var(--color-divider)] bg-[var(--color-surface)] px-[30px] py-9 shadow-[0_18px_45px_rgba(29,36,48,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[var(--color-deep-charcoal)]"
             >
-              <div className="mb-[18px] font-display text-[3rem] italic leading-[0.7] text-[var(--color-steel-blue)]">
+              <div className="mb-[18px] font-display text-[3rem] italic leading-[0.7] text-[var(--color-deep-charcoal)]">
                 &ldquo;
               </div>
-              <div className="absolute right-7 top-7 text-[0.6rem] tracking-[3px] text-[var(--color-steel-blue)]">
+              <div className="absolute right-7 top-7 text-[0.6rem] tracking-[3px] text-[var(--color-deep-charcoal)]">
                 ★★★★★
               </div>
               <p className="font-display text-[0.97rem] italic leading-[1.75] text-[var(--color-deep-charcoal)]">
                 {testimonial.quote}
               </p>
               <div className="mt-6 flex items-center gap-[14px]">
-                <div className="grid size-10 place-items-center rounded-full border border-[var(--color-divider)] bg-[var(--color-surface-muted)] font-display text-[0.95rem] text-[var(--color-steel-blue)]">
+                <div className="grid size-10 place-items-center rounded-full border border-[var(--color-divider)] bg-[var(--color-surface-muted)] font-display text-[0.95rem] text-[var(--color-deep-charcoal)]">
                   {testimonial.initials}
                 </div>
                 <div>
@@ -51,7 +51,7 @@ export function TestimonialsSection() {
               key={stat.value}
               className="border-b border-r border-[var(--color-divider)] px-7 py-7 text-center last:border-r-0 max-lg:last:border-b-0 lg:border-b-0"
             >
-              <p className="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-light leading-none text-[var(--color-steel-blue)]">
+              <p className="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-light leading-none text-[var(--color-deep-charcoal)]">
                 {stat.value}
               </p>
               <p className="mt-[7px] text-[0.62rem] uppercase tracking-[0.18em] text-[var(--color-cool-gray)]">

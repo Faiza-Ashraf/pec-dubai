@@ -80,7 +80,7 @@ export function InquiryForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-1 w-full bg-[var(--color-deep-charcoal)] px-4 py-4 text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-white transition hover:-translate-y-0.5 hover:bg-[var(--color-charcoal)]"
+        className="mt-1 w-full bg-[rgba(29,36,48,0.94)] px-4 py-4 text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-white transition hover:-translate-y-0.5 hover:bg-[var(--color-steel-blue)]"
       >
         {isSubmitting ? "Sending..." : "Send Inquiry — It’s Free"}
       </button>
