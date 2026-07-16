@@ -117,6 +117,20 @@ body {
   }
 }
 
+@keyframes projectImageZoom {
+  from {
+    transform: scale(1.02);
+  }
+
+  to {
+    transform: scale(1.11);
+  }
+}
+
+.project-image {
+  animation: projectImageZoom 8s ease-in-out infinite alternate;
+  will-change: transform;
+}
 @keyframes sectionReveal {
   from {
     opacity: 0;

@@ -35,23 +35,25 @@ export function SiteFooter() {
                 alt="PEC Dubai"
                 width={1880}
                 height={1096}
-                className="footerlogo h-16 w-auto origin-center translate-y-3 scale-[1.3] object-contain md:h-20"
+                className="footerlogo h-12 w-auto origin-center object-contain md:h-20 md:translate-y-3 md:scale-[1.3]"
               />
             </Link>
-            <div className="mt-1 flex items-center justify-center gap-3 md:hidden">
+            <div className="mt-0 flex items-center justify-center gap-3 max-md:-mt-5 md:hidden">
               <a
                 href={`mailto:${siteMeta.email}`}
-                className="flex size-9 items-center justify-center rounded-full bg-transparent text-[var(--color-canvas)] transition hover:bg-[var(--color-steel-blue)]"
+                className="flex size-11 items-center justify-center rounded-full bg-transparent text-[var(--color-canvas)] transition hover:bg-[var(--color-steel-blue)]"
                 aria-label="Email PEC Dubai"
               >
-                <Mail className="size-4" />
+                <Mail className="size-6" />
               </a>
               <a
                 href={siteMeta.instagram}
-                className="flex size-9 items-center justify-center rounded-full bg-transparent text-[var(--color-canvas)] transition hover:bg-[var(--color-steel-blue)]"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex size-11 items-center justify-center rounded-full bg-transparent text-[var(--color-canvas)] transition hover:bg-[var(--color-steel-blue)]"
                 aria-label="PEC Dubai on Instagram"
               >
-                <Instagram className="size-4" />
+                <Instagram className="size-6" />
               </a>
             </div>
           </div>

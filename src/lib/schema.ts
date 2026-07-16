@@ -15,6 +15,14 @@ export function buildMetadata(
     alternates: {
       canonical: url,
     },
+    icons: {
+      icon: [
+        {
+          url: "/PEC_Pioneer_Engineering_Consultants_APPROVED_FINAL/PEC favicon.png",
+          type: "image/png",
+        },
+      ],
+    },
     openGraph: {
       title,
       description,
