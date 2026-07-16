@@ -9,7 +9,7 @@ export function ContactSection() {
       id="contact"
       className="relative bg-[var(--color-surface-muted)] py-[clamp(70px,10vw,140px)] max-md:py-12"
     >
-      <div className="absolute left-1/2 top-0 h-[60px] w-px -translate-x-1/2 bg-[linear-gradient(to_bottom,transparent,var(--color-steel-blue))]" />
+      <div className="absolute left-1/2 top-0 h-[60px] w-px -translate-x-1/2 bg-[linear-gradient(to_bottom,transparent,var(--color-steel-blue))] max-md:h-8" />
       <Container>
         <div className="mx-auto mb-[72px] max-w-[680px] text-center">
           <span className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[var(--color-deep-charcoal)]">

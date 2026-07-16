@@ -77,7 +77,7 @@ export function ProjectsSection() {
             aria-label="Featured project gallery"
             onScroll={updateActiveFromScroll}
           >
-            <div className="flex w-max gap-4 lg:gap-6">
+            <div className="flex w-max gap-4 max-md:px-1 lg:gap-6">
               {projects.map((project, index) => (
                 <div
                   key={`${project.title}-${index}`}
@@ -85,7 +85,7 @@ export function ProjectsSection() {
                     cardRefs.current[index] = element;
                   }}
                   className={cn(
-                    "group relative isolate h-[280px] w-[min(90vw,520px)] snap-center overflow-hidden rounded-[8px] border border-[var(--color-divider)] bg-[var(--color-surface-muted)] shadow-[0_22px_62px_rgba(29,36,48,0.1)] outline-none transition duration-300 hover:-translate-y-1 hover:border-[rgba(76,106,135,0.58)] hover:shadow-[0_28px_76px_rgba(29,36,48,0.15)] focus-visible:border-[var(--color-steel-blue)] focus-visible:shadow-[0_0_0_4px_rgba(76,106,135,0.22),0_28px_76px_rgba(29,36,48,0.15)] sm:h-[330px] sm:w-[min(80vw,620px)] lg:h-[min(46svh,500px)] lg:min-h-[390px] lg:w-[min(58vw,860px)]",
+                    "group relative isolate h-[280px] w-[min(90vw,520px)] snap-center overflow-hidden rounded-[8px] border border-[var(--color-divider)] bg-[var(--color-surface-muted)] shadow-[0_22px_62px_rgba(29,36,48,0.1)] outline-none transition duration-300 hover:-translate-y-1 hover:border-[rgba(76,106,135,0.58)] hover:shadow-[0_28px_76px_rgba(29,36,48,0.15)] focus-visible:border-[var(--color-steel-blue)] focus-visible:shadow-[0_0_0_4px_rgba(76,106,135,0.22),0_28px_76px_rgba(29,36,48,0.15)] max-md:w-[calc(100vw-3rem)] sm:h-[330px] sm:w-[min(80vw,620px)] lg:h-[min(46svh,500px)] lg:min-h-[390px] lg:w-[min(58vw,860px)]",
                     index === activeIndex && "border-[rgba(76,106,135,0.62)]",
                   )}
                   onMouseEnter={() => setActiveIndex(index)}
@@ -96,11 +96,11 @@ export function ProjectsSection() {
                     fill
                     sizes="(max-width: 640px) 90vw, (max-width: 1024px) 80vw, 58vw"
                     priority={index === 0}
-                    className="project-image object-cover transition duration-500 ease-out"
+                    className="project-image !transform-none object-cover"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(29,36,48,0.02)_0%,rgba(29,36,48,0.18)_42%,rgba(29,36,48,0.74)_100%)]" />
-                  <div className="absolute inset-x-0 bottom-0 p-4 text-white sm:p-5">
-                    <div className="flex flex-wrap items-center gap-2 font-mono text-[0.58rem] uppercase tracking-[0.22em] text-[rgba(255,255,255,0.76)]">
+                  <div className="absolute inset-x-0 bottom-0 p-4 text-right text-white sm:p-5">
+                    <div className="flex flex-wrap items-center justify-end gap-2 font-mono text-[0.58rem] uppercase tracking-[0.22em] text-[rgba(255,255,255,0.76)]">
                       <span>{project.metrics}</span>
                       <span className="h-px w-7 bg-[rgba(255,255,255,0.45)]" aria-hidden="true" />
                       <span>{project.location}</span>
