@@ -71,20 +71,37 @@ export function SiteHeader() {
         {/* LOGO */}
         <Link
           href="/"
-          className="relative z-[120] flex items-center"
+          className="relative z-[120] flex h-16 min-w-0 max-w-[min(49.6vw,218px)] items-center gap-3 min-[1051px]:h-14 min-[1051px]:w-[clamp(205px,23.04vw,333px)] min-[1051px]:max-w-none min-[1051px]:shrink-0 min-[1051px]:gap-4"
           aria-label="PEC Dubai home"
         >
-          <Image
-            src="/PEC_Pioneer_Engineering_Consultants_APPROVED_FINAL/White PEC with blue E.png"
-            alt="PEC Dubai"
-            width={1880}
-            height={1096}
-            priority
-            className={cn(
-              "h-10 w-auto object-contain transition-all duration-300 sm:h-11 min-[1051px]:h-12",
-              scrolled && "min-[1051px]:h-10",
-            )}
-          />
+          <span className="relative block w-[32%] shrink-0">
+            <Image
+              src="/PEC_Pioneer_Engineering_Consultants_APPROVED_FINAL/White PEC with blue E.png"
+              alt="PEC"
+              width={1536}
+              height={1024}
+              sizes="(min-width: 1051px) clamp(102px, 11.5vw, 166px), min(25vw, 109px)"
+              priority
+              className={cn(
+                "h-auto w-full object-contain object-[left_center] transition-all duration-300",
+                scrolled && "min-[1051px]:w-full",
+              )}
+            />
+          </span>
+          <span className="relative block min-w-0 flex-1">
+            <Image
+              src="/PEC_Pioneer_Engineering_Consultants_APPROVED_FINAL/side text only white.png"
+              alt="PEC Dubai"
+              width={1672}
+              height={941}
+              sizes="(min-width: 1051px) clamp(202px, 22.5vw, 338px), min(50vw, 219px)"
+              priority
+              className={cn(
+                "h-auto w-full object-contain object-[left_center] transition-all duration-300",
+                scrolled && "min-[1051px]:w-full",
+              )}
+            />
+          </span>
         </Link>
 
         {/* DESKTOP NAV */}
